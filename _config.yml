@@ -16,10 +16,10 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "배움을 담다"
+title                    : "YoonJae's DevLog"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "기묘인재"
+name                     : "YoonJae Kim"
 description              : "Computer Engineering and Science, 기록을 통한 기억"
 url                      : "https://y00njaekim.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -101,8 +101,8 @@ analytics:
 
 # Site Author
 author:
-  name             : "기묘인재"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  name             : "YoonJae Kim"
+  avatar           : "/assets/images/bio-photo.jpg"
   bio              : "GIST undergrate stud."
   location         : "South Korea"
   email            : "rladbswo12@gm.gist.ac.kr"
