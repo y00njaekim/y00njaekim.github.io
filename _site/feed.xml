@@ -1,1 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://y00njaekim.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://y00njaekim.github.io/" rel="alternate" type="text/html" /><updated>2021-08-06T22:22:41+09:00</updated><id>https://y00njaekim.github.io/feed.xml</id><title type="html">배움을 담다</title><subtitle>Computer Engineering and Science, 기록을 통한 기억</subtitle><author><name>기묘인재</name><email>rladbswo12@gm.gist.ac.kr</email></author></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://y00njaekim.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://y00njaekim.github.io/" rel="alternate" type="text/html" /><updated>2021-08-07T13:50:14+09:00</updated><id>https://y00njaekim.github.io/feed.xml</id><title type="html">배움을 담다</title><subtitle>Computer Engineering and Science, 기록을 통한 기억</subtitle><author><name>기묘인재</name><email>rladbswo12@gm.gist.ac.kr</email></author><entry><title type="html">블로그 계획</title><link href="https://y00njaekim.github.io/blog/blog-plan/" rel="alternate" type="text/html" title="블로그 계획" /><published>2021-08-07T00:00:00+09:00</published><updated>2019-04-30T22:06:00+09:00</updated><id>https://y00njaekim.github.io/blog/blog-plan</id><content type="html" xml:base="https://y00njaekim.github.io/blog/blog-plan/">&lt;p&gt;GitHub Pages의 github.io 블로그 시작하기로 하였다.
+블로그 계획을 한번 세워보았다. h2 태그로 제목을 쓰면
+TOC 테이블로 오른쪽 사이드바에 보여줄 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;1-최신-기술-공부하기&quot;&gt;1. 최신 기술 공부하기&lt;/h2&gt;
+
+&lt;p&gt;최신 기술에 대해 공부하고 블로그 글로 게시하자.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-최신-뉴스-게시하기&quot;&gt;2. 최신 뉴스 게시하기&lt;/h2&gt;
+
+&lt;p&gt;관심있는 뉴스가 나오면 사람들과 공유하고 의견을 나눠보자.&lt;/p&gt;
+
+&lt;h2 id=&quot;3-토이-프로젝트-소개하기&quot;&gt;3. 토이 프로젝트 소개하기&lt;/h2&gt;
+
+&lt;p&gt;개인적으로 진행하는 토이 프로젝트를 진행해보고
+결과를 소개해보자&lt;/p&gt;</content><author><name>기묘인재</name><email>rladbswo12@gm.gist.ac.kr</email></author><category term="Blog" /><category term="Blog" /><summary type="html">GitHub github.io 블로그 계획.</summary></entry></feed>

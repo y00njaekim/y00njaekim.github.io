@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>https://y00njaekim.github.io/blog/blog-plan/</loc>
+<lastmod>2019-04-30T22:06:00+09:00</lastmod>
+</url>
+<url>
 <loc>https://y00njaekim.github.io/about/</loc>
 </url>
 <url>
@@ -15,5 +19,9 @@
 <url>
 <loc>https://y00njaekim.github.io/googlee90ac75fa5e80d1f.html</loc>
 <lastmod>2021-08-06T22:22:24+09:00</lastmod>
+</url>
+<url>
+<loc>https://y00njaekim.github.io/navercc60d84357ad2397f7669acc5edd8cf3.html</loc>
+<lastmod>2021-08-07T13:29:57+09:00</lastmod>
 </url>
 </urlset>
