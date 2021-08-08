@@ -31,6 +31,12 @@ layout: default
           </h1>{% endif %}
           {% include page__meta.html %}
         </header>
+        {% if post.date %}
+        <span class="page__date">
+          <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
+          {{ post.date | date: "%Y.%m.%d" }}
+        </span>
+      {% endif %}
       {% endunless %}
 
       <section class="page__content e-content" itemprop="text">

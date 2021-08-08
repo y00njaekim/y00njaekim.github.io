@@ -129,6 +129,10 @@
     margin: 0 0 4px;
     font-size: 0.6em;
   }
+  .page__date {
+    margin: 0 0 4px;
+    font-size: 0.7em;
+  }
 }
 
 /*
@@ -198,10 +202,23 @@
 
   .page__meta {
     margin: 0 0 4px;
-    font-size: 0.6em;
+    font-size: 0.7em;
   }
 
   .page__meta-sep {
+    display: block;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .page__date {
+    margin: 0 0 4px;
+    font-size: 0.7em;
+  }
+
+  .page__date-sep {
     display: block;
 
     &::before {
