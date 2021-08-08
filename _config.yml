@@ -109,9 +109,9 @@ author:
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "rladbswo12@gm.gist.ac.kr"
+      # url: "rladbswo12@gm.gist.ac.kr"
     # - label: "Website"
-    #   icon: "fas fa-fw fa-link"
+      # icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
     # - label: "Twitter"
       # icon: "fab fa-fw fa-twitter-square"
