@@ -69,11 +69,13 @@ body {
 }
 
 .page__title {
-  margin-top: 0;
+  margin-top: 1rem;
   line-height: 1;
-
+  font-size: 1.3rem;
+  color: #7e868b;
+  font-weight: lighter;
   a {
-    color: $text-color;
+    // color: $text-color;
     text-decoration: none;
   }
 
@@ -376,7 +378,9 @@ body {
   grid-template-columns: repeat(2, 1fr);
   margin: 1.414em 0;
   padding: 0;
-  font-size: 0.75em;
+  font-size: 0.9rem;
+  font-weight: lighter;
+  color: #7e868b;
   list-style: none;
 
   @include breakpoint($large) {
