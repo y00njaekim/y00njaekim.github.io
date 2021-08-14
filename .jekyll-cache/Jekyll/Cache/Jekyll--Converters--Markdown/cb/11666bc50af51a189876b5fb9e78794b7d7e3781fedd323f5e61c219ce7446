@@ -1,0 +1,95 @@
+I"a<blockquote>
+  <p>최근 처음으로 해커톤에 참가하였다. 오아시스 해커톤이라고, 2021.08.09 ~ 2021.08.20 동안 열리는 호남지역 해커톤이다!</p>
+
+  <p>나는 팀원들과 상의하여 flutter 를 이용한 택시 매칭 앱을 만들기로 하였고, 지금 flutter 의 사용 언어인 dart 를 훑어보고 있다.</p>
+</blockquote>
+
+<hr />
+
+<h1 id="dart-문법">dart 문법</h1>
+
+<h2 id="class">class</h2>
+
+<p><strong>class constructor 에 관하여.</strong>
+<br /></p>
+<ul>
+  <li>일반적인 class constructor 사용</li>
+</ul>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
+  <span class="kt">int</span> <span class="n">age</span><span class="o">;</span>
+  <span class="kt">String</span> <span class="n">name</span><span class="o">;</span>
+  
+  <span class="n">Person</span><span class="o">(</span><span class="kt">int</span> <span class="n">age</span><span class="o">,</span> <span class="kt">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">age</span> <span class="o">=</span> <span class="n">age</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<ul>
+  <li>this 를 이용하여 추가적인 구현 없이 바로 class construct</li>
+</ul>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
+  <span class="kt">int</span> <span class="n">age</span><span class="o">;</span>
+  <span class="kt">String</span> <span class="n">name</span><span class="o">;</span>
+  
+  <span class="n">Person</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">age</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">name</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>특수한 constructor 생성</li>
+</ul>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
+  <span class="kt">int</span> <span class="n">age</span><span class="o">;</span>
+  <span class="kt">String</span> <span class="n">name</span><span class="o">;</span>
+  
+  <span class="n">Person</span><span class="o">.</span><span class="na">age</span><span class="o">(</span><span class="kt">int</span> <span class="n">age</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">age</span> <span class="o">=</span> <span class="n">age</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="s">'철수'</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>콜론을 이용한 특수한 constructor 생성</li>
+</ul>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
+  <span class="kt">int</span> <span class="n">age</span><span class="o">;</span>
+  <span class="kt">String</span> <span class="n">name</span><span class="o">;</span>
+  
+  <span class="n">Person</span><span class="o">.</span><span class="na">age</span><span class="o">(</span><span class="kt">int</span> <span class="n">age</span><span class="o">)</span> <span class="o">:</span> <span class="k">this</span><span class="o">(</span><span class="n">age</span><span class="o">,</span> <span class="s">'철수'</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><strong>class member function 의 get 과 ?(물음표)</strong></p>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Spacecraft</span> <span class="o">{</span>
+  <span class="kt">String</span> <span class="n">name</span><span class="o">;</span>
+  <span class="n">DateTime</span> <span class="n">launchDate</span><span class="o">;</span>
+  
+  <span class="kt">int</span> <span class="kd">get</span> <span class="n">launchYear</span> <span class="o">=&gt;</span>
+    <span class="n">launchDate</span><span class="o">?.</span><span class="na">year</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>와 같은 코드가 있다고 해보자</p>
+
+<p>이 때,</p>
+
+<p><code class="language-plaintext highlighter-rouge">int get launchYear =&gt; launchDate?.year;</code> 는</p>
+
+<p><code class="language-plaintext highlighter-rouge">int get launchYear { return launchDate?.year; }</code> 와 완전히 같은 표현이다.</p>
+
+<p>또한,</p>
+
+<p><code class="language-plaintext highlighter-rouge">launchDate?.year;</code> 에서 ? 는 launchDate 가 null 값이 아닐 때만 year 에 참조한다는 표현이다.</p>
+
+:ET

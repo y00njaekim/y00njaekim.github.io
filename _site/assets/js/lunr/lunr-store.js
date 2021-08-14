@@ -10,4 +10,10 @@ var store = [{
         "tags": ["코딩애플_리액트","react"],
         "url": "/react/%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%9E%85%EB%AC%B8/",
         "teaser": "/assets/images/react.png"
+      },{
+        "title": "dart 문법 정리",
+        "excerpt":"최근 처음으로 해커톤에 참가하였다. 오아시스 해커톤이라고, 2021.08.09 ~ 2021.08.20 동안 열리는 호남지역 해커톤이다! 나는 팀원들과 상의하여 flutter 를 이용한 택시 매칭 앱을 만들기로 하였고, 지금 flutter 의 사용 언어인 dart 를 훑어보고 있다. dart 문법 class class constructor 에 관하여. 일반적인 class constructor 사용 class Person { int age; String...","categories": ["undefined"],
+        "tags": ["flutter","dart"],
+        "url": "/undefined/dart-%EB%AC%B8%EB%B2%95/",
+        "teaser": "/assets/images/default.jpeg"
       }]
