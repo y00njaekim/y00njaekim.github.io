@@ -1,3 +1,18 @@
+---
+title:  "[Flutter] future, async, await 개념 정리"
+excerpt: "비동기란!?.."
+toc: true
+toc_sticky: true
+# header:
+#   teaser:
+
+categories: 'undefined'
+tags:
+  - flutter
+  - dart
+last_modified_at: 2021-08-16T08:06:00-05:00
+---
+
 ### Future
 
 future 의 값으로 세가지의 상태가 가능하다.
