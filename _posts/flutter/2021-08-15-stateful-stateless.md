@@ -1,3 +1,18 @@
+---
+title:  "[Flutter] stateful 위젯이란!?"
+excerpt: "stateful, stateless 위젯 차이점"
+toc: true
+toc_sticky: true
+# header:
+#   teaser:
+
+categories: 'flutter'
+tags:
+  - flutter
+  - dart
+last_modified_at: 2021-08-16T08:06:00-05:00
+---
+
 #### stateful 위젯
 
 - 사용자와 상호작용 존재

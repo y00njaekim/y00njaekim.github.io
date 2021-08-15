@@ -6,7 +6,7 @@ toc_sticky: true
 # header:
 #   teaser:
 
-categories: 'undefined'
+categories: 'flutter'
 tags:
   - flutter
   - dart
