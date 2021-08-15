@@ -48,7 +48,7 @@ Future<String> getData() {
 
 
 
-![Fig1](https://github.com/y00njaekim_github_io/_posts/flutter/2021-08-15-future-async-await.md/img/fig1.png)
+![Fig1](https://github.com/y00njaekim/y00njaekim.github.io/blob/master/_posts/flutter/2021-08-15-future-async-await.md/img/fig1.png)
 
 
 
@@ -79,5 +79,5 @@ Future<String> getData() {
 
 
 
-![Fig2](https://github.com/y00njaekim_github_io/_posts/flutter/2021-08-15-future-async-await.md/img/fig2.png)
+![Fig2](https://github.com/y00njaekim/y00njaekim.github.io/blob/master/_posts/flutter/2021-08-15-future-async-await.md/img/fig2.png)
 
