@@ -54,8 +54,7 @@ Future<String> getData() {
   return test; 
 }
 ```
-
-
+<br/>
 
 이 경우, `var myFuture = getData();` 에 의해 호출된 getData() 의 for 문이 다 돌아가기 전에 `print('result : $myFuture')` 이 실행된다.
 
