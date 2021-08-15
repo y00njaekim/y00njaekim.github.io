@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://y00njaekim.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://y00njaekim.github.io/" rel="alternate" type="text/html" /><updated>2021-08-15T20:45:44+09:00</updated><id>https://y00njaekim.github.io/feed.xml</id><title type="html">YoonJae’s DevLog</title><subtitle>Computer Engineering and Science, 기록을 통한 기억</subtitle><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><entry><title type="html">Future Async Await</title><link href="https://y00njaekim.github.io/future-async-await/" rel="alternate" type="text/html" title="Future Async Await" /><published>2021-08-15T00:00:00+09:00</published><updated>2021-08-15T00:00:00+09:00</updated><id>https://y00njaekim.github.io/future-async-await</id><content type="html" xml:base="https://y00njaekim.github.io/future-async-await/">&lt;h3 id=&quot;future&quot;&gt;Future&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://y00njaekim.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://y00njaekim.github.io/" rel="alternate" type="text/html" /><updated>2021-08-15T21:04:43+09:00</updated><id>https://y00njaekim.github.io/feed.xml</id><title type="html">YoonJae’s DevLog</title><subtitle>Computer Engineering and Science, 기록을 통한 기억</subtitle><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><entry><title type="html">Future Async Await</title><link href="https://y00njaekim.github.io/future-async-await/" rel="alternate" type="text/html" title="Future Async Await" /><published>2021-08-15T00:00:00+09:00</published><updated>2021-08-15T00:00:00+09:00</updated><id>https://y00njaekim.github.io/future-async-await</id><content type="html" xml:base="https://y00njaekim.github.io/future-async-await/">&lt;h3 id=&quot;future&quot;&gt;Future&lt;/h3&gt;
 
 &lt;p&gt;future 의 값으로 세가지의 상태가 가능하다.&lt;/p&gt;
 
@@ -41,31 +41,27 @@
 
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getDtata() &lt;/code&gt; 의 작업이 완료되지 않은 상태에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Future&lt;/code&gt;은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Uncomplete instance &lt;/code&gt; 값이 들어가 있기에 결과는 다음과 같이 출력된다.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;/_posts/flutter/2021-08-15-future-async-await/img/fig1.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;language-dart highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;start main()&apos;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-Dart&quot;&gt;main() async {
-  print(&apos;start main()&apos;);
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myFuture&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getData&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;result : &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$myFuture&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
 
-  var myFuture = await getData();
-  print(&apos;result : $myFuture&apos;);
+  &lt;span class=&quot;n&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;end main()&apos;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 
-  print(&apos;end main()&apos;);
-}
-
-Future&amp;lt;String&amp;gt; getData() {
-  var test = Future(() {
-    for(int i=0; i&amp;lt;1000000000; i++) {}
-    return &apos;I got a lot of data! Tehre are 1000000000&apos;;
-  });
-  return test; 
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;n&quot;&gt;Future&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getData&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Future&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000000000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;I got a lot of data! Tehre are 1000000000&apos;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; 
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;반면 이 경우에는, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;var myFuture = await getData();&lt;/code&gt; 에 의해 호출된 getData() 의 for 문이 다 돌아갈 때까지 event queue가 멈춰있다.&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getDtata() &lt;/code&gt; 의 작업이 완료된 후 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;var myFuture&lt;/code&gt; 에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Completed data&lt;/code&gt; 값이 들어가므로 다음과 같이 출력된다.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;_posts/flutter/2021-08-15-future-async-await/img/fig2.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;reference&quot;&gt;Reference&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&quot;https://brunch.co.kr/@mystoryg/134&quot;&gt;https://brunch.co.kr/@mystoryg/134&lt;/a&gt;&lt;/p&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><summary type="html">Future</summary></entry><entry><title type="html">Stateful Stateless</title><link href="https://y00njaekim.github.io/stateful-stateless/" rel="alternate" type="text/html" title="Stateful Stateless" /><published>2021-08-15T00:00:00+09:00</published><updated>2021-08-15T00:00:00+09:00</updated><id>https://y00njaekim.github.io/stateful-stateless</id><content type="html" xml:base="https://y00njaekim.github.io/stateful-stateless/">&lt;h4 id=&quot;stateful-위젯&quot;&gt;stateful 위젯&lt;/h4&gt;
