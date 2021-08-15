@@ -46,6 +46,7 @@ Future<String> getData() {
 
 `getDtata() ` 의 작업이 완료되지 않은 상태에서 `Future`은 `Uncomplete instance ` 값이 들어가 있기에 결과는 다음과 같이 출력된다.
 
+![fig1](/_posts/flutter/2021-08-15-future-async-await/img/fig1.png)
 
 ```dart
 main() async {
@@ -71,6 +72,8 @@ Future<String> getData() {
 반면 이 경우에는, `var myFuture = await getData();` 에 의해 호출된 getData() 의 for 문이 다 돌아갈 때까지 event queue가 멈춰있다.
 
 `getDtata() ` 의 작업이 완료된 후 `var myFuture` 에 `Completed data` 값이 들어가므로 다음과 같이 출력된다.
+
+![fig2](/_posts/flutter/2021-08-15-future-async-await/img/fig2.png)
 
 
 #### Reference
