@@ -46,7 +46,7 @@ Future<String> getData() {
 
 `getDtata() ` 의 작업이 완료되지 않은 상태에서 `Future`은 `Uncomplete instance ` 값이 들어가 있기에 결과는 다음과 같이 출력된다.
 
-![fig1](https://github.com/y00njaekim/y00njaekim.github.io/tree/master/_posts/flutter/2021-08-15-future-async-await/img/fig1.png)
+![fig1](https://user-images.githubusercontent.com/56385667/129482763-94447960-5e0b-4d58-af4b-beed9046f984.png)
 
 ```dart
 main() async {
@@ -73,7 +73,7 @@ Future<String> getData() {
 
 `getDtata() ` 의 작업이 완료된 후 `var myFuture` 에 `Completed data` 값이 들어가므로 다음과 같이 출력된다.
 
-![fig2](https://github.com/y00njaekim/y00njaekim.github.io/tree/master/_posts/flutter/2021-08-15-future-async-await/img/fig2.png)
+![fig2](https://user-images.githubusercontent.com/56385667/129482797-ff015288-7c3d-455c-98c3-1069da7183e8.png)
 
 
 #### Reference
