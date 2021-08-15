@@ -34,7 +34,7 @@ future 의 값으로 세가지의 상태가 가능하다.
 - `await` 는 `async` 함수 내에서만 사용 가능하다.
 - `async` 함수 내에서 `await` 가 붙은 작업은 해당 작업이 끝날 때까지 다음 작업으로 넘어가지 않고 기다린다.
 
-
+<br/>
 
 ```dart
 main() {
@@ -54,7 +54,6 @@ Future<String> getData() {
   return test; 
 }
 ```
-<br/>
 
 이 경우, `var myFuture = getData();` 에 의해 호출된 getData() 의 for 문이 다 돌아가기 전에 `print('result : $myFuture')` 이 실행된다.
 
