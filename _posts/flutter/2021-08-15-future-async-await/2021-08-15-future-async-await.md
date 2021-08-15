@@ -34,8 +34,6 @@ future 의 값으로 세가지의 상태가 가능하다.
 - `await` 는 `async` 함수 내에서만 사용 가능하다.
 - `async` 함수 내에서 `await` 가 붙은 작업은 해당 작업이 끝날 때까지 다음 작업으로 넘어가지 않고 기다린다.
 
-<br/>
-
 ```dart
 main() {
   print('start main()');
@@ -60,6 +58,8 @@ Future<String> getData() {
 `getDtata() ` 의 작업이 완료되지 않은 상태에서 `Future`은 `Uncomplete instance ` 값이 들어가 있기에 결과는 다음과 같이 출력된다.
 
 ![fig1](https://user-images.githubusercontent.com/56385667/129482763-94447960-5e0b-4d58-af4b-beed9046f984.png)
+
+<br/>
 
 ```dart
 main() async {
