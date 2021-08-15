@@ -1,0 +1,73 @@
+I"�<h3 id="future">Future</h3>
+
+<p>future 의 값으로 세가지의 상태가 가능하다.</p>
+
+<ol>
+  <li>Uncompleted</li>
+  <li>Completed, data return</li>
+  <li>Completed, error return</li>
+</ol>
+
+<p>처음 <code class="language-plaintext highlighter-rouge">Future</code> 를 사용해서 data 를 만들면 <code class="language-plaintext highlighter-rouge">Uncompleted future</code> 가 들어간다.</p>
+
+<p>이후 <code class="language-plaintext highlighter-rouge">Future</code> 가 작업을 끝내면 <code class="language-plaintext highlighter-rouge">Completed future</code> 가 들어간다.</p>
+
+<h3 id="async-await">async, await</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">await</code> 는 <code class="language-plaintext highlighter-rouge">async</code> 함수 내에서만 사용 가능하다.</li>
+  <li><code class="language-plaintext highlighter-rouge">async</code> 함수 내에서 <code class="language-plaintext highlighter-rouge">await</code> 가 붙은 작업은 해당 작업이 끝날 때까지 다음 작업으로 넘어가지 않고 기다린다.</li>
+</ul>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">main</span><span class="o">()</span> <span class="o">{</span>
+  <span class="n">print</span><span class="o">(</span><span class="s">'start main()'</span><span class="o">);</span>
+
+  <span class="kd">var</span> <span class="n">myFuture</span> <span class="o">=</span> <span class="n">getData</span><span class="o">();</span>
+  <span class="n">print</span><span class="o">(</span><span class="s">'result : </span><span class="si">$myFuture</span><span class="s">'</span><span class="o">);</span>
+
+  <span class="n">print</span><span class="o">(</span><span class="s">'end main()'</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="n">Future</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span> <span class="n">getData</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kd">var</span> <span class="n">test</span> <span class="o">=</span> <span class="n">Future</span><span class="o">(()</span> <span class="o">{</span>
+    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">1000000000</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{}</span>
+    <span class="k">return</span> <span class="s">'I got a lot of data! Tehre are 1000000000'</span><span class="o">;</span>
+  <span class="o">});</span>
+  <span class="k">return</span> <span class="n">test</span><span class="o">;</span> 
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>이 경우, <code class="language-plaintext highlighter-rouge">var myFuture = getData();</code> 에 의해 호출된 getData() 의 for 문이 다 돌아가기 전에 <code class="language-plaintext highlighter-rouge">print('result : $myFuture')</code> 이 실행된다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">getDtata() </code> 의 작업이 완료되지 않은 상태에서 <code class="language-plaintext highlighter-rouge">Future</code>은 <code class="language-plaintext highlighter-rouge">Uncomplete instance </code> 값이 들어가 있기에 결과는 다음과 같이 출력된다.</p>
+
+<p><a href="#"><img src="https://github.com/y00njaekim/y00njaekim.github.io/blob/master/_posts/flutter/2021-08-15-future-async-await.md/img/fig1.png" /></a></p>
+
+<pre><code class="language-Dart">main() async {
+  print('start main()');
+
+  var myFuture = await getData();
+  print('result : $myFuture');
+
+  print('end main()');
+}
+
+Future&lt;String&gt; getData() {
+  var test = Future(() {
+    for(int i=0; i&lt;1000000000; i++) {}
+    return 'I got a lot of data! Tehre are 1000000000';
+  });
+  return test; 
+}
+</code></pre>
+
+<p>반면 이 경우에는, <code class="language-plaintext highlighter-rouge">var myFuture = await getData();</code> 에 의해 호출된 getData() 의 for 문이 다 돌아갈 때까지 event queue가 멈춰있다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">getDtata() </code> 의 작업이 완료된 후 <code class="language-plaintext highlighter-rouge">var myFuture</code> 에 <code class="language-plaintext highlighter-rouge">Completed data</code> 값이 들어가므로 다음과 같이 출력된다.</p>
+
+<p><a href="#"><img src="https://github.com/y00njaekim/y00njaekim.github.io/blob/master/_posts/flutter/2021-08-15-future-async-await.md/img/fig2.png" /></a></p>
+
+<h4 id="reference">Reference</h4>
+<p><a href="https://brunch.co.kr/@mystoryg/134">https://brunch.co.kr/@mystoryg/134</a></p>
+
+:ET

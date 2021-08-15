@@ -16,4 +16,16 @@ var store = [{
         "tags": ["flutter","dart"],
         "url": "/undefined/dart-%EB%AC%B8%EB%B2%95/",
         "teaser": "/assets/images/default.jpeg"
+      },{
+        "title": "Future Async Await",
+        "excerpt":"Future future 의 값으로 세가지의 상태가 가능하다. Uncompleted Completed, data return Completed, error return 처음 Future 를 사용해서 data 를 만들면 Uncompleted future 가 들어간다. 이후 Future 가 작업을 끝내면 Completed future 가 들어간다. async, await await 는 async 함수 내에서만 사용 가능하다. async 함수 내에서 await 가 붙은 작업은...","categories": [],
+        "tags": [],
+        "url": "/future-async-await/",
+        "teaser": "/assets/images/default.jpeg"
+      },{
+        "title": "Stateful Stateless",
+        "excerpt":"stateful 위젯      사용자와 상호작용 존재   재렌더링 가능, 동적 화면 구현   LifeCycle 이 길고 build가 1회 이상 발생   stateless 위젯      사용자와 상호작용 없음   재렌더링 없음, 정적 화면 구현   LifeCycle이 짧고 build가 1회만 발생. 성능이 좋음      React 의 state 를 생각하면 될 듯!   ","categories": [],
+        "tags": [],
+        "url": "/stateful-stateless/",
+        "teaser": "/assets/images/default.jpeg"
       }]
