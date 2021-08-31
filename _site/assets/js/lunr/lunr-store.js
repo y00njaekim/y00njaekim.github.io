@@ -34,4 +34,10 @@ var store = [{
         "tags": ["Jekyll"],
         "url": "/jekyll/jekyll-code-font/",
         "teaser": "/assets/images/default.jpeg"
+      },{
+        "title": "[React] 리액트 state 사용법",
+        "excerpt":"What is ‘state’ state 는 변수 대신 사용하는 데이터 저장공간이다. 문자, 숫자, array, object 모두 저장 가능하다. Why to use ‘state’ react 를 웹앱처럼 동작하게 하는 데 핵심적인 역할을 한다. state 로 만들어진 데이터가 바뀌면 새로고침 없이도 데이터를 담고 있는 html 이 자동 재렌더링 된다. How to use ‘state’ 1...","categories": ["react"],
+        "tags": ["코딩애플_리액트","react"],
+        "url": "/react/state/",
+        "teaser": "/assets/images/react.png"
       }]

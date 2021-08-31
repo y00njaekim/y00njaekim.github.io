@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[Jekyll] jekyll 코드 폰트 바꾸는 법 - YoonJae’s DevLog</title>
-<meta name="description" content="Computer Engineering and Science, 기록을 통한 기억">
+<!-- begin _includes/seo.html --><title>[React] 리액트 state 사용법 - YoonJae’s DevLog</title>
+<meta name="description" content="리액트 state">
 
 
   <meta name="author" content="YoonJae Kim">
@@ -22,23 +22,25 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="YoonJae's DevLog">
-<meta property="og:title" content="[Jekyll] jekyll 코드 폰트 바꾸는 법">
-<meta property="og:url" content="https://y00njaekim.github.io/jekyll/jekyll-code-font/">
+<meta property="og:title" content="[React] 리액트 state 사용법">
+<meta property="og:url" content="https://y00njaekim.github.io/react/state/">
 
 
-  <meta property="og:description" content="Computer Engineering and Science, 기록을 통한 기억">
-
-
-
+  <meta property="og:description" content="리액트 state">
 
 
 
-
-  <meta property="article:published_time" content="2021-08-31T00:00:00+09:00">
-
+  <meta property="og:image" content="https://y00njaekim.github.io/assets/images/react.png">
 
 
-  <meta property="article:modified_time" content="2021-08-31T22:06:00+09:00">
+
+
+
+  <meta property="article:published_time" content="2021-09-01T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2021-09-01T22:06:00+09:00">
 
 
 
@@ -47,7 +49,7 @@
   
 
 
-<link rel="canonical" href="https://y00njaekim.github.io/jekyll/jekyll-code-font/">
+<link rel="canonical" href="https://y00njaekim.github.io/react/state/">
 
 
 
@@ -264,16 +266,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[Jekyll] jekyll 코드 폰트 바꾸는 법">
-    <meta itemprop="description" content="">
-    <meta itemprop="datePublished" content="2021-08-31T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2021-08-31T22:06:00+09:00">
+    <meta itemprop="headline" content="[React] 리액트 state 사용법">
+    <meta itemprop="description" content="리액트 state">
+    <meta itemprop="datePublished" content="2021-09-01T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-09-01T22:06:00+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="https://y00njaekim.github.io/jekyll/jekyll-code-font/" class="u-url" itemprop="url">[Jekyll] jekyll 코드 폰트 바꾸는 법
+            <a href="https://y00njaekim.github.io/react/state/" class="u-url" itemprop="url">[React] 리액트 state 사용법
 </a>
           </h1>
           
@@ -306,96 +308,117 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#font-face-와-font-family">@font-face 와 font-family</a></li><li><a href="#font-face-를-이용한-글씨체-적용">@font-face 를 이용한 글씨체 적용</a></li><li><a href="#reference">Reference</a></li></ul>
+              <ul class="toc__menu"><li><a href="#what-is-state">What is ‘state’</a></li><li><a href="#why-to-use-state">Why to use ‘state’</a></li><li><a href="#how-to-use-state">How to use ‘state’</a><ul><li><a href="#유의사항">유의사항</a></li></ul></li></ul>
 
             </nav>
           </aside>
         
-        <p>아니, ‘Jekyll 기반의 블로그 글씨체 바꾸는 법’ 에 관한 가이드 글은 너무나 많은데,</p>
+        <h3 id="what-is-state">What is ‘state’</h3>
 
-<p>왜 코드 글씨체 바꾸는 법은 아무도 안알려줄까..!!</p>
+<hr />
 
-<p><br />
-<img src="https://user-images.githubusercontent.com/56385667/131066966-8fa07166-2400-4821-abdc-71f05f9713aa.png" alt="fig1" /></p>
-
-<p>본문 글씨체는 내가 바라는 대로 정갈하게 맞추어 놓았지만 코드 글씨체가 너무 귀여워서 안어울린다..</p>
-
-<p><strong>그래서 이번에는 코드 글씨체를 바꾸는 방법을 알아보고 적용해 보려한다.</strong></p>
+<ul>
+  <li>state 는 변수 대신 사용하는 데이터 저장공간이다.</li>
+  <li>문자, 숫자, array, object 모두 저장 가능하다.</li>
+</ul>
 
 <p><br /></p>
 
-<h3 id="font-face-와-font-family">@font-face 와 font-family</h3>
+<h3 id="why-to-use-state">Why to use ‘state’</h3>
+
 <hr />
 
-<p><br />
-ms word 혹은 ms ppt 에서 새로운 서체를 이용하던 순간을 생각해보자. 우선 서체를 다운받고, 그 이후 서체를 적용시킨다. ‘다운로드’ 와 ‘적용’ 을 담당하는 css 명령어가 바로 <code class="language-plaintext highlighter-rouge">@font-face</code> 와 <code class="language-plaintext highlighter-rouge">font-family</code> 이다. <code class="language-plaintext highlighter-rouge">@font-face</code> 를 통해 서체를 다운받고 <code class="language-plaintext highlighter-rouge">font-family</code> 를 이용하여 서체를 적용한다.</p>
+<ul>
+  <li>react 를 웹앱처럼 동작하게 하는 데 핵심적인 역할을 한다.</li>
+  <li>state 로 만들어진 데이터가 바뀌면 <strong>새로고침 없이도 데이터를 담고 있는 html 이 자동 재렌더링</strong> 된다.</li>
+</ul>
 
-<p><img src="https://user-images.githubusercontent.com/56385667/131068267-b6409517-6898-4e7b-b4eb-2cdf353489f9.png" alt="fig2" /></p>
+<p><br /></p>
 
-<p><img src="https://user-images.githubusercontent.com/56385667/131068273-a3fa26e2-9b05-408d-94d1-cccaa8e8594f.png" alt="fig3" /></p>
+<h3 id="how-to-use-state">How to use ‘state’</h3>
 
-<p>아래 사진을보면 <code class="language-plaintext highlighter-rouge">font-family: $monospace</code> 가 적혀있는 줄을 볼 수 있다. 특정 영역 (ppt 에서 특정 텍스트박스에 글씨체를 적용하 듯이)에 <code class="language-plaintext highlighter-rouge">font-family</code> 명령어를 이용하여 ` $monospace` 라는 글씨체<del>(정확히는 서체배열?)</del>를 적용한다.</p>
-
-<p>위 사진에 나와있는 <code class="language-plaintext highlighter-rouge">$monospace</code> 를 보면 <code class="language-plaintext highlighter-rouge">Monaco, Consolas, ...</code> 등 여러 글씨체가 나열되어 있는데, 이는 <code class="language-plaintext highlighter-rouge">Monaco</code> 글씨체가 있으면 이를 우선으로 적용하고 만약 없으면 <code class="language-plaintext highlighter-rouge">Consolas</code> 를 적용하라는 의미로 1순위, 2순위, … 등의 우선순위를 나타낸다.</p>
-
-<h3 id="font-face-를-이용한-글씨체-적용">@font-face 를 이용한 글씨체 적용</h3>
 <hr />
 
+<p>1 . useState 를 import 한다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>2 . java script ES6 destructuring 문법을 사용하여 state 를 선언한다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="p">[</span><span class="nx">title</span><span class="p">,</span> <span class="nx">setTitle</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([</span><span class="dl">'</span><span class="s1">강남 우동 맛집</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">남자 코트 추천</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">개발팀 모집</span><span class="dl">'</span><span class="p">])</span>
+<span class="kd">let</span> <span class="p">[</span><span class="nx">thumbCount</span><span class="p">,</span> <span class="nx">setThumbCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
 <p><br />
-자, 그럼 이제 적용하고 싶은 폰트를 다운받아보자. 서체는 웹 폰트 형식의 <strong>woff 확장자</strong>를 이용하면 된다. Reference 1 블로그를 살펴보면 ttf -&gt; woff 변환이 가능하다는 내용이 있으니 필요시 참고하길 바란다!</p>
+​	<em>ES6 destructuring 문법이란?</em></p>
 
-<p>폰트를 다운받았다면 <code class="language-plaintext highlighter-rouge">/assets/fonts</code> 경로에 복사하자. (다른 reference 를 보니 폰트를 아무 곳에나 다운받아도 되지만, assets 하위 폴더로 통일하는 것이 좋다고 한다!)</p>
+<p>​	✔️ array, objectd 에 있던 자료를 변수에 쉽게 담고 싶을 때 사용</p>
 
-<p><img src="https://user-images.githubusercontent.com/56385667/131451274-3db2c6d4-622a-4d88-be8c-818b4b9d995d.png" alt="fig4" style="zoom:40%;" /></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="p">[</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span> <span class="c1">// a 에 10, b 에 100 이 담긴다</span>
+</code></pre></div></div>
 
-<p>폰트를 경로에 잘 붙여 넣었다면 이제 jekyll 에서 불러올 차례이다. <code class="language-plaintext highlighter-rouge">assets/css/main.css</code> 에 아래 코드를 추가하자</p>
+<p><br />
+3 . html(jsx) 의 필요한 부분에 데이터 바인딩을 한다.</p>
 
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@font-face</span> <span class="p">{</span>
-  <span class="nl">font-family</span><span class="p">:</span> <span class="s2">'D2Coding'</span><span class="p">;</span>
-  <span class="nl">src</span><span class="p">:</span> <span class="sx">url('/assets/fonts/D2Coding.woff')</span> <span class="n">format</span><span class="p">(</span><span class="s2">'woff'</span><span class="p">);</span>
-  <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">normal</span><span class="p">;</span>
-  <span class="nl">font-style</span><span class="p">:</span> <span class="nb">normal</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span> <span class="si">{</span> <span class="nx">title</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="si">}{</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="si">}</span>
+    <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>👍<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="si">{</span> <span class="nx">thumbCount</span> <span class="si">}</span> 
+  <span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div></div>
 
-<span class="k">@font-face</span> <span class="p">{</span>
-  <span class="nl">font-family</span><span class="p">:</span> <span class="s2">'D2Coding'</span><span class="p">;</span>
-  <span class="nl">src</span><span class="p">:</span> <span class="sx">url('/assets/fonts/D2CodingBold.woff')</span> <span class="n">format</span><span class="p">(</span><span class="s2">'woff'</span><span class="p">);</span>
-  <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
-  <span class="nl">font-style</span><span class="p">:</span> <span class="nb">normal</span><span class="p">;</span>
+<p><br />
+4 . 데이터 값을 변경하고 싶을 때 함수를 사용한다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span> <span class="si">{</span> <span class="nx">title</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="si">}{</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="si">}</span>
+    <span class="p">&lt;</span><span class="nt">span</span>
+      <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">setThumbCount</span><span class="p">(</span><span class="nx">thumbCount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+      <span class="p">}</span><span class="si">}</span>
+      
+      <span class="na">style</span><span class="p">=</span>
+      <span class="p">&gt;</span>
+      👍
+    <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="si">{</span> <span class="nx">thumbCount</span> <span class="si">}</span> 
+  <span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<h4 id="유의사항">유의사항</h4>
+
+<p>1 . array 가 저장된 state 를 사용하는 방법</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="p">[</span><span class="nx">title</span><span class="p">,</span> <span class="nx">setTitle</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([</span><span class="dl">'</span><span class="s1">강남 우동 맛집</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">남자 코트 추천</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">개발팀 모집</span><span class="dl">'</span><span class="p">])</span>
+
+<span class="kd">function</span> <span class="nx">changeTitle</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">newArray</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">title</span><span class="p">];</span>
+  <span class="nx">newArray</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">강남 라멘 맛집</span><span class="dl">'</span><span class="p">;</span>
+  <span class="nx">setTitle</span><span class="p">(</span> <span class="nx">newArray</span> <span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p><img src="https://user-images.githubusercontent.com/56385667/131452023-538964bd-a2ea-4ee9-9c43-655ca48570b7.png" alt="fig5" /></p>
+<p><code class="language-plaintext highlighter-rouge">var newArray = title</code>  이 아닌  <code class="language-plaintext highlighter-rouge">var newArray = [...title]</code>  이라 써야한다.</p>
 
-<p>코드의 폰트는 <code class="language-plaintext highlighter-rouge">_sass &gt; minimal-mistakes &gt; _base.scss</code> 에서 수정할 수 있다.</p>
+<p><code class="language-plaintext highlighter-rouge">var newArray = title</code> 라고 쓰면 <strong>값 공유</strong>가 이루어진다.</p>
 
-<p><img src="https://user-images.githubusercontent.com/56385667/131452551-bb37511e-22f6-47ed-8303-2261eedaa725.png" alt="fig6" /></p>
+<p>하지만  <code class="language-plaintext highlighter-rouge">var newArray = [...title]</code> 라고 쓰면 <strong>deep copy</strong>가 이루어진다. 즉, 서로 독립적인 값을 가지는 복사가 이루어진다.</p>
 
-<p>이 사진에 나오는 부분의 <code class="language-plaintext highlighter-rouge">font-family</code> 를 바꾸면 코드 글씨체가 변경된다. 이 때 방법은 두가지이다.</p>
+<p>더 자세한 사항은 <em>reference data type</em> 을 검색해서 찾아보자!</p>
 
-<ol>
-  <li><code class="language-plaintext highlighter-rouge">font-family: $monospace</code> 는 유지한 채 <code class="language-plaintext highlighter-rouge">$monospace</code>  에 다운로드 받은 폰트를 넣는다.</li>
-  <li><code class="language-plaintext highlighter-rouge">font-family: '다운로드 받은 폰트'</code> 의 문법으로 폰트를 바로 적용한다.</li>
-</ol>
+<blockquote>
+  <p>React 의 대원칙 : immutable data.</p>
+</blockquote>
 
-<p>나는 1번의 방법을 이용해서 폰트를 바꾸어 보겠다.</p>
-
-<p><code class="language-plaintext highlighter-rouge">_sass &gt; minimal-mistakes &gt; _variable.scss</code> 를 살펴보면 아래와 같은 부분을 찾을 수 있다.</p>
-
-<p><img src="https://user-images.githubusercontent.com/56385667/131452954-b1fe328d-7cb8-4ec2-beda-4b126279ee66.png" alt="fig7" /></p>
-
-<p>여기서 <code class="language-plaintext highlighter-rouge">$monospace</code> 에 내가 다운로드 받은 폰트 (여기서는 ‘D2Coding’) 를 넣으면 끝!</p>
-
-<p>그러면, 다음과 같이 코드의 글씨체가 바뀐 것을 볼 수 있다</p>
-
-<p><img src="https://user-images.githubusercontent.com/56385667/131453147-ce85fb72-50bd-41bb-8561-1d0b315a94b8.png" alt="fig8" /></p>
-
-<h3 id="reference">Reference</h3>
-
-<ol>
-  <li>https://webclub.tistory.com/261</li>
-  <li>https://oilmlio.com/blog/Change-the-GitHub-Blog-Font-RIDIBatang/</li>
-</ol>
+<blockquote>
+  <p>즉 state data 들은 직접적인 수정이 발생하지 않도록 하기.</p>
+</blockquote>
 
 
         
@@ -413,7 +436,9 @@ ms word 혹은 ms ppt 에서 새로운 서체를 이용하던 순간을 생각�
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#jekyll" class="page__taxonomy-item p-category" rel="tag">Jekyll</a>
+      <a href="/tags/#react" class="page__taxonomy-item p-category" rel="tag">react</a><span class="sep">, </span>
+    
+      <a href="/tags/#%EC%BD%94%EB%94%A9%EC%95%A0%ED%94%8C-%EB%A6%AC%EC%95%A1%ED%8A%B8" class="page__taxonomy-item p-category" rel="tag">코딩애플_리액트</a>
     
     </span>
   </p>
@@ -430,7 +455,7 @@ ms word 혹은 ms ppt 에서 새로운 서체를 이용하던 순간을 생각�
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#jekyll" class="page__taxonomy-item p-category" rel="tag">Jekyll</a>
+      <a href="/categories/#react" class="page__taxonomy-item p-category" rel="tag">react</a>
     
     </span>
   </p>
@@ -438,7 +463,7 @@ ms word 혹은 ms ppt 에서 새로운 서체를 이용하던 순간을 생각�
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-08-31">2021.08.31</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-09-01">2021.09.01</time></p>
 
       </footer>
 
@@ -447,23 +472,22 @@ ms word 혹은 ms ppt 에서 새로운 서체를 이용하던 순간을 생각�
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%5BJekyll%5D+jekyll+%EC%BD%94%EB%93%9C+%ED%8F%B0%ED%8A%B8+%EB%B0%94%EA%BE%B8%EB%8A%94+%EB%B2%95%20https%3A%2F%2Fy00njaekim.github.io%2Fjekyll%2Fjekyll-code-font%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5BReact%5D+%EB%A6%AC%EC%95%A1%ED%8A%B8+state+%EC%82%AC%EC%9A%A9%EB%B2%95%20https%3A%2F%2Fy00njaekim.github.io%2Freact%2Fstate%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fy00njaekim.github.io%2Fjekyll%2Fjekyll-code-font%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fy00njaekim.github.io%2Freact%2Fstate%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fy00njaekim.github.io%2Fjekyll%2Fjekyll-code-font%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fy00njaekim.github.io%2Freact%2Fstate%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/flutter/stateful-stateless/" class="pagination--pager" title="[Flutter] stateful 위젯이란!?
+      <a href="/jekyll/jekyll-code-font/" class="pagination--pager" title="[Jekyll] jekyll 코드 폰트 바꾸는 법
 ">Previous</a>
     
     
-      <a href="/react/state/" class="pagination--pager" title="[React] 리액트 state 사용법
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -486,19 +510,19 @@ ms word 혹은 ms ppt 에서 새로운 서체를 이용하던 순간을 생각�
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
       <div class="archive__item-teaser">
-        <img src="/assets/images/react.png" alt="">
+        <img src="/assets/images/default.jpeg" alt="">
       </div>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/react/state/" rel="permalink">[React] 리액트 state 사용법
+        <a href="/jekyll/jekyll-code-font/" rel="permalink">[Jekyll] jekyll 코드 폰트 바꾸는 법
 </a>
       
     </h2>
     
       <span class="page__date">
         <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        2021.09.01
+        2021.08.31
       </span>
     
     <!-- 
@@ -522,7 +546,7 @@ ms word 혹은 ms ppt 에서 새로운 서체를 이용하던 순간을 생각�
   </p>
 
  -->
-    <p class="archive__item-excerpt" itemprop="description">리액트 state
+    <p class="archive__item-excerpt" itemprop="description">
 </p>
   </article>
 </div>
