@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://y00njaekim.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://y00njaekim.github.io/" rel="alternate" type="text/html" /><updated>2021-09-01T02:44:58+09:00</updated><id>https://y00njaekim.github.io/feed.xml</id><title type="html">YoonJae’s DevLog</title><subtitle>Computer Engineering and Science, 기록을 통한 기억</subtitle><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><entry><title type="html">[React] 리액트 state 사용법</title><link href="https://y00njaekim.github.io/react/state/" rel="alternate" type="text/html" title="[React] 리액트 state 사용법" /><published>2021-09-01T00:00:00+09:00</published><updated>2021-09-01T22:06:00+09:00</updated><id>https://y00njaekim.github.io/react/state</id><content type="html" xml:base="https://y00njaekim.github.io/react/state/">&lt;h3 id=&quot;what-is-state&quot;&gt;What is ‘state’&lt;/h3&gt;
 
 &lt;hr /&gt;
@@ -104,6 +105,9 @@
 &lt;blockquote&gt;
   &lt;p&gt;즉 state data 들은 직접적인 수정이 발생하지 않도록 하기.&lt;/p&gt;
 &lt;/blockquote&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="react" /><category term="코딩애플_리액트" /><category term="react" /><summary type="html">리액트 state</summary></entry><entry><title type="html">[Jekyll] jekyll 코드 폰트 바꾸는 법</title><link href="https://y00njaekim.github.io/jekyll/jekyll-code-font/" rel="alternate" type="text/html" title="[Jekyll] jekyll 코드 폰트 바꾸는 법" /><published>2021-08-31T00:00:00+09:00</published><updated>2021-08-31T22:06:00+09:00</updated><id>https://y00njaekim.github.io/jekyll/jekyll-code-font</id><content type="html" xml:base="https://y00njaekim.github.io/jekyll/jekyll-code-font/">&lt;p&gt;아니, ‘Jekyll 기반의 블로그 글씨체 바꾸는 법’ 에 관한 가이드 글은 너무나 많은데,&lt;/p&gt;
+=======
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://y00njaekim.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://y00njaekim.github.io/" rel="alternate" type="text/html" /><updated>2021-08-31T16:23:12+09:00</updated><id>https://y00njaekim.github.io/feed.xml</id><title type="html">YoonJae’s DevLog</title><subtitle>Computer Engineering and Science, 기록을 통한 기억</subtitle><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><entry><title type="html">[Jekyll] jekyll 코드 폰트 바꾸는 법</title><link href="https://y00njaekim.github.io/jekyll/jekyll-code-font/" rel="alternate" type="text/html" title="[Jekyll] jekyll 코드 폰트 바꾸는 법" /><published>2021-08-31T00:00:00+09:00</published><updated>2021-08-31T22:06:00+09:00</updated><id>https://y00njaekim.github.io/jekyll/jekyll-code-font</id><content type="html" xml:base="https://y00njaekim.github.io/jekyll/jekyll-code-font/">&lt;p&gt;아니, ‘Jekyll 기반의 블로그 글씨체 바꾸는 법’ 에 관한 가이드 글은 너무나 많은데,&lt;/p&gt;
+>>>>>>> fe93b865afa26d2f7cb30df4f471bf9761572fe0
 
 &lt;p&gt;왜 코드 글씨체 바꾸는 법은 아무도 안알려줄까..!!&lt;/p&gt;
 
@@ -170,19 +174,24 @@ ms word 혹은 ms ppt 에서 새로운 서체를 이용하던 순간을 생각�
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;font-family: &apos;다운로드 받은 폰트&apos;&lt;/code&gt; 의 문법으로 폰트를 바로 적용한다.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;나는 1번의 방법을 이용해서 폰트를 바꾸어 보겠다.&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+나는 1번의 방법을 이용해서 폰트를 바꾸어 보겠다.&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_sass &amp;gt; minimal-mistakes &amp;gt; _variable.scss&lt;/code&gt; 를 살펴보면 아래와 같은 부분을 찾을 수 있다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/131452954-b1fe328d-7cb8-4ec2-beda-4b126279ee66.png&quot; alt=&quot;fig7&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;여기서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$monospace&lt;/code&gt; 에 내가 다운로드 받은 폰트 (여기서는 ‘D2Coding’) 를 넣으면 끝!&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+여기서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$monospace&lt;/code&gt; 에 내가 다운로드 받은 폰트 (여기서는 ‘D2Coding’) 를 넣으면 끝!&lt;/p&gt;
 
-&lt;p&gt;그러면, 다음과 같이 코드의 글씨체가 바뀐 것을 볼 수 있다&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+그러면, 다음과 같이 코드의 글씨체가 바뀐 것을 볼 수 있다&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/131453147-ce85fb72-50bd-41bb-8561-1d0b315a94b8.png&quot; alt=&quot;fig8&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/131453147-ce85fb72-50bd-41bb-8561-1d0b315a94b8.png&quot; alt=&quot;fig8&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
+&lt;hr /&gt;
 
 &lt;ol&gt;
   &lt;li&gt;https://webclub.tistory.com/261&lt;/li&gt;
