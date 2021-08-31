@@ -1,4 +1,4 @@
-I"P<p>아니, ‘Jekyll 기반의 블로그 글씨체 바꾸는 법’ 에 관한 가이드 글은 너무나 많은데,</p>
+I"�<p>아니, ‘Jekyll 기반의 블로그 글씨체 바꾸는 법’ 에 관한 가이드 글은 너무나 많은데,</p>
 
 <p>왜 코드 글씨체 바꾸는 법은 아무도 안알려줄까..!!</p>
 
@@ -10,9 +10,12 @@
 <p><strong>그래서 이번에는 코드 글씨체를 바꾸는 방법을 알아보고 적용해 보려한다.</strong></p>
 
 <p><br /></p>
-<h3 id="font-face-와-font-family">@font-face 와 font-family</h3>
 
-<p>ms word 혹은 ms ppt 에서 새로운 서체를 이용하던 순간을 생각해보자. 우선 서체를 다운받고, 그 이후 서체를 적용시킨다. ‘다운로드’ 와 ‘적용’ 을 담당하는 css 명령어가 바로 <code class="language-plaintext highlighter-rouge">@font-face</code> 와 <code class="language-plaintext highlighter-rouge">font-family</code> 이다. <code class="language-plaintext highlighter-rouge">@font-face</code> 를 통해 서체를 다운받고 <code class="language-plaintext highlighter-rouge">font-family</code> 를 이용하여 서체를 적용한다.</p>
+<h3 id="font-face-와-font-family">@font-face 와 font-family</h3>
+<hr />
+
+<p><br />
+ms word 혹은 ms ppt 에서 새로운 서체를 이용하던 순간을 생각해보자. 우선 서체를 다운받고, 그 이후 서체를 적용시킨다. ‘다운로드’ 와 ‘적용’ 을 담당하는 css 명령어가 바로 <code class="language-plaintext highlighter-rouge">@font-face</code> 와 <code class="language-plaintext highlighter-rouge">font-family</code> 이다. <code class="language-plaintext highlighter-rouge">@font-face</code> 를 통해 서체를 다운받고 <code class="language-plaintext highlighter-rouge">font-family</code> 를 이용하여 서체를 적용한다.</p>
 
 <p><img src="https://user-images.githubusercontent.com/56385667/131068267-b6409517-6898-4e7b-b4eb-2cdf353489f9.png" alt="fig2" /></p>
 
@@ -23,8 +26,10 @@
 <p>위 사진에 나와있는 <code class="language-plaintext highlighter-rouge">$monospace</code> 를 보면 <code class="language-plaintext highlighter-rouge">Monaco, Consolas, ...</code> 등 여러 글씨체가 나열되어 있는데, 이는 <code class="language-plaintext highlighter-rouge">Monaco</code> 글씨체가 있으면 이를 우선으로 적용하고 만약 없으면 <code class="language-plaintext highlighter-rouge">Consolas</code> 를 적용하라는 의미로 1순위, 2순위, … 등의 우선순위를 나타낸다.</p>
 
 <h3 id="font-face-를-이용한-글씨체-적용">@font-face 를 이용한 글씨체 적용</h3>
+<hr />
 
-<p>자, 그럼 이제 적용하고 싶은 폰트를 다운받아보자. 서체는 웹 폰트 형식의 <strong>woff 확장자</strong>를 이용하면 된다. Reference 1 블로그를 살펴보면 ttf -&gt; woff 변환이 가능하다는 내용이 있으니 필요시 참고하길 바란다!</p>
+<p><br />
+자, 그럼 이제 적용하고 싶은 폰트를 다운받아보자. 서체는 웹 폰트 형식의 <strong>woff 확장자</strong>를 이용하면 된다. Reference 1 블로그를 살펴보면 ttf -&gt; woff 변환이 가능하다는 내용이 있으니 필요시 참고하길 바란다!</p>
 
 <p>폰트를 다운받았다면 <code class="language-plaintext highlighter-rouge">/assets/fonts</code> 경로에 복사하자. (다른 reference 를 보니 폰트를 아무 곳에나 다운받아도 되지만, assets 하위 폴더로 통일하는 것이 좋다고 한다!)</p>
 
@@ -60,19 +65,24 @@
   <li><code class="language-plaintext highlighter-rouge">font-family: '다운로드 받은 폰트'</code> 의 문법으로 폰트를 바로 적용한다.</li>
 </ol>
 
-<p>나는 1번의 방법을 이용해서 폰트를 바꾸어 보겠다.</p>
+<p><br />
+나는 1번의 방법을 이용해서 폰트를 바꾸어 보겠다.</p>
 
 <p><code class="language-plaintext highlighter-rouge">_sass &gt; minimal-mistakes &gt; _variable.scss</code> 를 살펴보면 아래와 같은 부분을 찾을 수 있다.</p>
 
 <p><img src="https://user-images.githubusercontent.com/56385667/131452954-b1fe328d-7cb8-4ec2-beda-4b126279ee66.png" alt="fig7" /></p>
 
-<p>여기서 <code class="language-plaintext highlighter-rouge">$monospace</code> 에 내가 다운로드 받은 폰트 (여기서는 ‘D2Coding’) 를 넣으면 끝!</p>
+<p><br />
+여기서 <code class="language-plaintext highlighter-rouge">$monospace</code> 에 내가 다운로드 받은 폰트 (여기서는 ‘D2Coding’) 를 넣으면 끝!</p>
 
-<p>그러면, 다음과 같이 코드의 글씨체가 바뀐 것을 볼 수 있다</p>
+<p><br />
+그러면, 다음과 같이 코드의 글씨체가 바뀐 것을 볼 수 있다</p>
 
-<p><img src="https://user-images.githubusercontent.com/56385667/131453147-ce85fb72-50bd-41bb-8561-1d0b315a94b8.png" alt="fig8" /></p>
+<p><img src="https://user-images.githubusercontent.com/56385667/131453147-ce85fb72-50bd-41bb-8561-1d0b315a94b8.png" alt="fig8" />
+<br /></p>
 
 <h3 id="reference">Reference</h3>
+<hr />
 
 <ol>
   <li>https://webclub.tistory.com/261</li>

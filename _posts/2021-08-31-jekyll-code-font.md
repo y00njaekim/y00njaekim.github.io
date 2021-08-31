@@ -83,31 +83,24 @@ ms word 혹은 ms ppt 에서 새로운 서체를 이용하던 순간을 생각�
 1. `font-family: $monospace` 는 유지한 채 `$monospace`  에 다운로드 받은 폰트를 넣는다.
 2. `font-family: '다운로드 받은 폰트'` 의 문법으로 폰트를 바로 적용한다.
 
-
-
+<br/>
 나는 1번의 방법을 이용해서 폰트를 바꾸어 보겠다.
 
 `_sass > minimal-mistakes > _variable.scss` 를 살펴보면 아래와 같은 부분을 찾을 수 있다.
 
 ![fig7](https://user-images.githubusercontent.com/56385667/131452954-b1fe328d-7cb8-4ec2-beda-4b126279ee66.png)
 
-
-
+<br/>
 여기서 `$monospace` 에 내가 다운로드 받은 폰트 (여기서는 'D2Coding') 를 넣으면 끝!
 
+<br/>
 그러면, 다음과 같이 코드의 글씨체가 바뀐 것을 볼 수 있다
 
 ![fig8](https://user-images.githubusercontent.com/56385667/131453147-ce85fb72-50bd-41bb-8561-1d0b315a94b8.png)
-
-
-
-
-
-
-
-
+<br/>
 
 ### Reference
+---
 
 1. https://webclub.tistory.com/261
 2. https://oilmlio.com/blog/Change-the-GitHub-Blog-Font-RIDIBatang/
