@@ -1,5 +1,5 @@
 ---
-title:  "jekyll 코드 폰트 바꾸는 법"
+title:  "[Jekyll] jekyll 코드 폰트 바꾸는 법"
 excerpt: ""
 toc: true
 toc_sticky: true
@@ -13,20 +13,18 @@ tags:
 last_modified_at: 2021-08-31T08:06:00-05:00
 ---
 
-아니, <Jekyll 기반의 블로그 글씨체 바꾸는 법> 에 관한 가이드 글은 너무나 많은데,
+아니, 'Jekyll 기반의 블로그 글씨체 바꾸는 법' 에 관한 가이드 글은 너무나 많은데,
 
 왜 코드 글씨체 바꾸는 법은 아무도 안알려줄까..!!
 
+<br/>
 ![fig1](https://user-images.githubusercontent.com/56385667/131066966-8fa07166-2400-4821-abdc-71f05f9713aa.png)
 
 본문 글씨체는 내가 바라는 대로 정갈하게 맞추어 놓았지만 코드 글씨체가 너무 귀여워서 안어울린다..
 
-
-
 **그래서 이번에는 코드 글씨체를 바꾸는 방법을 알아보고 적용해 보려한다.**
 
-
-
+<br/>
 ### @font-face 와 font-family
 
 ms word 혹은 ms ppt 에서 새로운 서체를 이용하던 순간을 생각해보자. 우선 서체를 다운받고, 그 이후 서체를 적용시킨다. '다운로드' 와 '적용' 을 담당하는 css 명령어가 바로 `@font-face` 와 `font-family` 이다. `@font-face` 를 통해 서체를 다운받고 `font-family` 를 이용하여 서체를 적용한다.

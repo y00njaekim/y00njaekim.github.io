@@ -29,8 +29,8 @@ var store = [{
         "url": "/flutter/stateful-stateless/",
         "teaser": "/assets/images/default.jpeg"
       },{
-        "title": "jekyll 코드 폰트 바꾸는 법",
-        "excerpt":"아니, 에 관한 가이드 글은 너무나 많은데, 왜 코드 글씨체 바꾸는 법은 아무도 안알려줄까..!! 본문 글씨체는 내가 바라는 대로 정갈하게 맞추어 놓았지만 코드 글씨체가 너무 귀여워서 안어울린다.. 그래서 이번에는 코드 글씨체를 바꾸는 방법을 알아보고 적용해 보려한다. @font-face 와 font-family ms word 혹은 ms ppt 에서 새로운 서체를 이용하던 순간을 생각해보자....","categories": ["Jekyll"],
+        "title": "[Jekyll] jekyll 코드 폰트 바꾸는 법",
+        "excerpt":"아니, ‘Jekyll 기반의 블로그 글씨체 바꾸는 법’ 에 관한 가이드 글은 너무나 많은데, 왜 코드 글씨체 바꾸는 법은 아무도 안알려줄까..!! 본문 글씨체는 내가 바라는 대로 정갈하게 맞추어 놓았지만 코드 글씨체가 너무 귀여워서 안어울린다.. 그래서 이번에는 코드 글씨체를 바꾸는 방법을 알아보고 적용해 보려한다. @font-face 와 font-family ms word 혹은 ms ppt...","categories": ["Jekyll"],
         "tags": ["Jekyll"],
         "url": "/jekyll/jekyll-code-font/",
         "teaser": "/assets/images/default.jpeg"
