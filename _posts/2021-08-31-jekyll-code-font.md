@@ -25,8 +25,11 @@ last_modified_at: 2021-08-31T08:06:00-05:00
 **그래서 이번에는 코드 글씨체를 바꾸는 방법을 알아보고 적용해 보려한다.**
 
 <br/>
-### @font-face 와 font-family
 
+### @font-face 와 font-family
+---
+
+<br/>
 ms word 혹은 ms ppt 에서 새로운 서체를 이용하던 순간을 생각해보자. 우선 서체를 다운받고, 그 이후 서체를 적용시킨다. '다운로드' 와 '적용' 을 담당하는 css 명령어가 바로 `@font-face` 와 `font-family` 이다. `@font-face` 를 통해 서체를 다운받고 `font-family` 를 이용하여 서체를 적용한다.
 
 ![fig2](https://user-images.githubusercontent.com/56385667/131068267-b6409517-6898-4e7b-b4eb-2cdf353489f9.png)
@@ -40,7 +43,9 @@ ms word 혹은 ms ppt 에서 새로운 서체를 이용하던 순간을 생각�
 
 
 ### @font-face 를 이용한 글씨체 적용
+---
 
+<br/>
 자, 그럼 이제 적용하고 싶은 폰트를 다운받아보자. 서체는 웹 폰트 형식의 **woff 확장자**를 이용하면 된다. Reference 1 블로그를 살펴보면 ttf -> woff 변환이 가능하다는 내용이 있으니 필요시 참고하길 바란다!
 
 폰트를 다운받았다면 `/assets/fonts` 경로에 복사하자. (다른 reference 를 보니 폰트를 아무 곳에나 다운받아도 되지만, assets 하위 폴더로 통일하는 것이 좋다고 한다!)
