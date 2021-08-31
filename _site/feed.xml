@@ -1,4 +1,81 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://y00njaekim.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://y00njaekim.github.io/" rel="alternate" type="text/html" /><updated>2021-08-15T21:04:43+09:00</updated><id>https://y00njaekim.github.io/feed.xml</id><title type="html">YoonJae’s DevLog</title><subtitle>Computer Engineering and Science, 기록을 통한 기억</subtitle><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><entry><title type="html">Future Async Await</title><link href="https://y00njaekim.github.io/future-async-await/" rel="alternate" type="text/html" title="Future Async Await" /><published>2021-08-15T00:00:00+09:00</published><updated>2021-08-15T00:00:00+09:00</updated><id>https://y00njaekim.github.io/future-async-await</id><content type="html" xml:base="https://y00njaekim.github.io/future-async-await/">&lt;h3 id=&quot;future&quot;&gt;Future&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://y00njaekim.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://y00njaekim.github.io/" rel="alternate" type="text/html" /><updated>2021-08-31T15:56:54+09:00</updated><id>https://y00njaekim.github.io/feed.xml</id><title type="html">YoonJae’s DevLog</title><subtitle>Computer Engineering and Science, 기록을 통한 기억</subtitle><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><entry><title type="html">jekyll 코드 폰트 바꾸는 법</title><link href="https://y00njaekim.github.io/jekyll/jekyll-code-font/" rel="alternate" type="text/html" title="jekyll 코드 폰트 바꾸는 법" /><published>2021-08-31T00:00:00+09:00</published><updated>2021-08-31T22:06:00+09:00</updated><id>https://y00njaekim.github.io/jekyll/jekyll-code-font</id><content type="html" xml:base="https://y00njaekim.github.io/jekyll/jekyll-code-font/">&lt;p&gt;아니, &lt;Jekyll 기반의=&quot;&quot; 블로그=&quot;&quot; 글씨체=&quot;&quot; 바꾸는=&quot;&quot; 법=&quot;&quot;&gt; 에 관한 가이드 글은 너무나 많은데,&lt;/Jekyll&gt;&lt;/p&gt;
+
+&lt;p&gt;왜 코드 글씨체 바꾸는 법은 아무도 안알려줄까..!!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/131066966-8fa07166-2400-4821-abdc-71f05f9713aa.png&quot; alt=&quot;fig1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;본문 글씨체는 내가 바라는 대로 정갈하게 맞추어 놓았지만 코드 글씨체가 너무 귀여워서 안어울린다..&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;그래서 이번에는 코드 글씨체를 바꾸는 방법을 알아보고 적용해 보려한다.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;font-face-와-font-family&quot;&gt;@font-face 와 font-family&lt;/h3&gt;
+
+&lt;p&gt;ms word 혹은 ms ppt 에서 새로운 서체를 이용하던 순간을 생각해보자. 우선 서체를 다운받고, 그 이후 서체를 적용시킨다. ‘다운로드’ 와 ‘적용’ 을 담당하는 css 명령어가 바로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@font-face&lt;/code&gt; 와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;font-family&lt;/code&gt; 이다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@font-face&lt;/code&gt; 를 통해 서체를 다운받고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;font-family&lt;/code&gt; 를 이용하여 서체를 적용한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/131068267-b6409517-6898-4e7b-b4eb-2cdf353489f9.png&quot; alt=&quot;fig2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/131068273-a3fa26e2-9b05-408d-94d1-cccaa8e8594f.png&quot; alt=&quot;fig3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;아래 사진을보면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;font-family: $monospace&lt;/code&gt; 가 적혀있는 줄을 볼 수 있다. 특정 영역 (ppt 에서 특정 텍스트박스에 글씨체를 적용하 듯이)에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;font-family&lt;/code&gt; 명령어를 이용하여 ` $monospace` 라는 글씨체&lt;del&gt;(정확히는 서체배열?)&lt;/del&gt;를 적용한다.&lt;/p&gt;
+
+&lt;p&gt;위 사진에 나와있는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$monospace&lt;/code&gt; 를 보면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Monaco, Consolas, ...&lt;/code&gt; 등 여러 글씨체가 나열되어 있는데, 이는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Monaco&lt;/code&gt; 글씨체가 있으면 이를 우선으로 적용하고 만약 없으면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Consolas&lt;/code&gt; 를 적용하라는 의미로 1순위, 2순위, … 등의 우선순위를 나타낸다.&lt;/p&gt;
+
+&lt;h3 id=&quot;font-face-를-이용한-글씨체-적용&quot;&gt;@font-face 를 이용한 글씨체 적용&lt;/h3&gt;
+
+&lt;p&gt;자, 그럼 이제 적용하고 싶은 폰트를 다운받아보자. 서체는 웹 폰트 형식의 &lt;strong&gt;woff 확장자&lt;/strong&gt;를 이용하면 된다. Reference 1 블로그를 살펴보면 ttf -&amp;gt; woff 변환이 가능하다는 내용이 있으니 필요시 참고하길 바란다!&lt;/p&gt;
+
+&lt;p&gt;폰트를 다운받았다면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/assets/fonts&lt;/code&gt; 경로에 복사하자. (다른 reference 를 보니 폰트를 아무 곳에나 다운받아도 되지만, assets 하위 폴더로 통일하는 것이 좋다고 한다!)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/131451274-3db2c6d4-622a-4d88-be8c-818b4b9d995d.png&quot; alt=&quot;fig4&quot; style=&quot;zoom:40%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;폰트를 경로에 잘 붙여 넣었다면 이제 jekyll 에서 불러올 차례이다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;assets/css/main.css&lt;/code&gt; 에 아래 코드를 추가하자&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@font-face&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&apos;D2Coding&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;url(&apos;/assets/fonts/D2Coding.woff&apos;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&apos;woff&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;font-weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;normal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;font-style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;normal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@font-face&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&apos;D2Coding&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;url(&apos;/assets/fonts/D2CodingBold.woff&apos;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&apos;woff&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;font-weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;bold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;font-style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;normal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/131452023-538964bd-a2ea-4ee9-9c43-655ca48570b7.png&quot; alt=&quot;fig5&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;코드의 폰트는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_sass &amp;gt; minimal-mistakes &amp;gt; _base.scss&lt;/code&gt; 에서 수정할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/131452551-bb37511e-22f6-47ed-8303-2261eedaa725.png&quot; alt=&quot;fig6&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이 사진에 나오는 부분의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;font-family&lt;/code&gt; 를 바꾸면 코드 글씨체가 변경된다. 이 때 방법은 두가지이다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;font-family: $monospace&lt;/code&gt; 는 유지한 채 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$monospace&lt;/code&gt;  에 다운로드 받은 폰트를 넣는다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;font-family: &apos;다운로드 받은 폰트&apos;&lt;/code&gt; 의 문법으로 폰트를 바로 적용한다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;나는 1번의 방법을 이용해서 폰트를 바꾸어 보겠다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_sass &amp;gt; minimal-mistakes &amp;gt; _variable.scss&lt;/code&gt; 를 살펴보면 아래와 같은 부분을 찾을 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/131452954-b1fe328d-7cb8-4ec2-beda-4b126279ee66.png&quot; alt=&quot;fig7&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;여기서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$monospace&lt;/code&gt; 에 내가 다운로드 받은 폰트 (여기서는 ‘D2Coding’) 를 넣으면 끝!&lt;/p&gt;
+
+&lt;p&gt;그러면, 다음과 같이 코드의 글씨체가 바뀐 것을 볼 수 있다&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/131453147-ce85fb72-50bd-41bb-8561-1d0b315a94b8.png&quot; alt=&quot;fig8&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;https://webclub.tistory.com/261&lt;/li&gt;
+  &lt;li&gt;https://oilmlio.com/blog/Change-the-GitHub-Blog-Font-RIDIBatang/&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="Jekyll" /><category term="Jekyll" /></entry><entry><title type="html">[Flutter] future, async, await 개념 정리</title><link href="https://y00njaekim.github.io/flutter/future-async-await/" rel="alternate" type="text/html" title="[Flutter] future, async, await 개념 정리" /><published>2021-08-15T00:00:00+09:00</published><updated>2021-08-16T22:06:00+09:00</updated><id>https://y00njaekim.github.io/flutter/future-async-await</id><content type="html" xml:base="https://y00njaekim.github.io/flutter/future-async-await/">&lt;h3 id=&quot;future&quot;&gt;Future&lt;/h3&gt;
 
 &lt;p&gt;future 의 값으로 세가지의 상태가 가능하다.&lt;/p&gt;
 
@@ -41,6 +118,10 @@
 
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getDtata() &lt;/code&gt; 의 작업이 완료되지 않은 상태에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Future&lt;/code&gt;은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Uncomplete instance &lt;/code&gt; 값이 들어가 있기에 결과는 다음과 같이 출력된다.&lt;/p&gt;
 
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/129482763-94447960-5e0b-4d58-af4b-beed9046f984.png&quot; alt=&quot;fig1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
 &lt;div class=&quot;language-dart highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;n&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;start main()&apos;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
 
@@ -63,8 +144,10 @@
 
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getDtata() &lt;/code&gt; 의 작업이 완료된 후 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;var myFuture&lt;/code&gt; 에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Completed data&lt;/code&gt; 값이 들어가므로 다음과 같이 출력된다.&lt;/p&gt;
 
-&lt;h4 id=&quot;reference&quot;&gt;Reference&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&quot;https://brunch.co.kr/@mystoryg/134&quot;&gt;https://brunch.co.kr/@mystoryg/134&lt;/a&gt;&lt;/p&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><summary type="html">Future</summary></entry><entry><title type="html">Stateful Stateless</title><link href="https://y00njaekim.github.io/stateful-stateless/" rel="alternate" type="text/html" title="Stateful Stateless" /><published>2021-08-15T00:00:00+09:00</published><updated>2021-08-15T00:00:00+09:00</updated><id>https://y00njaekim.github.io/stateful-stateless</id><content type="html" xml:base="https://y00njaekim.github.io/stateful-stateless/">&lt;h4 id=&quot;stateful-위젯&quot;&gt;stateful 위젯&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/129482797-ff015288-7c3d-455c-98c3-1069da7183e8.png&quot; alt=&quot;fig2&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://brunch.co.kr/@mystoryg/134&quot;&gt;https://brunch.co.kr/@mystoryg/134&lt;/a&gt;&lt;/p&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="flutter" /><category term="flutter" /><category term="dart" /><summary type="html">비동기란!?..</summary></entry><entry><title type="html">[Flutter] stateful 위젯이란!?</title><link href="https://y00njaekim.github.io/flutter/stateful-stateless/" rel="alternate" type="text/html" title="[Flutter] stateful 위젯이란!?" /><published>2021-08-15T00:00:00+09:00</published><updated>2021-08-16T22:06:00+09:00</updated><id>https://y00njaekim.github.io/flutter/stateful-stateless</id><content type="html" xml:base="https://y00njaekim.github.io/flutter/stateful-stateless/">&lt;h4 id=&quot;stateful-위젯&quot;&gt;stateful 위젯&lt;/h4&gt;
 
 &lt;ul&gt;
   &lt;li&gt;사용자와 상호작용 존재&lt;/li&gt;
@@ -82,7 +165,7 @@
 
 &lt;blockquote&gt;
   &lt;p&gt;React 의 state 를 생각하면 될 듯!&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><summary type="html">stateful 위젯</summary></entry><entry><title type="html">dart 문법 정리</title><link href="https://y00njaekim.github.io/undefined/dart-%EB%AC%B8%EB%B2%95/" rel="alternate" type="text/html" title="dart 문법 정리" /><published>2021-08-14T00:00:00+09:00</published><updated>2021-08-14T22:06:00+09:00</updated><id>https://y00njaekim.github.io/undefined/dart-%EB%AC%B8%EB%B2%95</id><content type="html" xml:base="https://y00njaekim.github.io/undefined/dart-%EB%AC%B8%EB%B2%95/">&lt;blockquote&gt;
+&lt;/blockquote&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="flutter" /><category term="flutter" /><category term="dart" /><summary type="html">stateful, stateless 위젯 차이점</summary></entry><entry><title type="html">[Flutter] dart 문법 정리</title><link href="https://y00njaekim.github.io/flutter/dart-%EB%AC%B8%EB%B2%95/" rel="alternate" type="text/html" title="[Flutter] dart 문법 정리" /><published>2021-08-14T00:00:00+09:00</published><updated>2021-08-14T22:06:00+09:00</updated><id>https://y00njaekim.github.io/flutter/dart-%EB%AC%B8%EB%B2%95</id><content type="html" xml:base="https://y00njaekim.github.io/flutter/dart-%EB%AC%B8%EB%B2%95/">&lt;blockquote&gt;
   &lt;p&gt;최근 처음으로 해커톤에 참가하였다. 오아시스 해커톤이라고, 2021.08.09 ~ 2021.08.20 동안 열리는 호남지역 해커톤이다!&lt;/p&gt;
 
   &lt;p&gt;나는 팀원들과 상의하여 flutter 를 이용한 택시 매칭 앱을 만들기로 하였고, 지금 flutter 의 사용 언어인 dart 를 훑어보고 있다.&lt;/p&gt;
@@ -183,7 +266,7 @@
 
 &lt;p&gt;또한,&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;launchDate?.year;&lt;/code&gt; 에서 ? 는 launchDate 가 null 값이 아닐 때만 year 에 참조한다는 표현이다.&lt;/p&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="undefined" /><category term="flutter" /><category term="dart" /><summary type="html">flutter 입문!</summary></entry><entry><title type="html">리액트 입문</title><link href="https://y00njaekim.github.io/react/%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%9E%85%EB%AC%B8/" rel="alternate" type="text/html" title="리액트 입문" /><published>2021-08-10T00:00:00+09:00</published><updated>2021-08-10T22:06:00+09:00</updated><id>https://y00njaekim.github.io/react/%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%9E%85%EB%AC%B8</id><content type="html" xml:base="https://y00njaekim.github.io/react/%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%9E%85%EB%AC%B8/">&lt;h1 id=&quot;리액트에-입문하다&quot;&gt;리액트에 입문하다&lt;/h1&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="react" /><category term="코딩애플_리액트" /><category term="react" /><summary type="html">리액트 입문하다</summary></entry><entry><title type="html">블로그 계획</title><link href="https://y00njaekim.github.io/blog/blog-plan/" rel="alternate" type="text/html" title="블로그 계획" /><published>2021-08-07T00:00:00+09:00</published><updated>2021-08-10T22:06:00+09:00</updated><id>https://y00njaekim.github.io/blog/blog-plan</id><content type="html" xml:base="https://y00njaekim.github.io/blog/blog-plan/">&lt;p&gt;GitHub Pages의 github.io 블로그 시작하기로 하였다.
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;launchDate?.year;&lt;/code&gt; 에서 ? 는 launchDate 가 null 값이 아닐 때만 year 에 참조한다는 표현이다.&lt;/p&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="flutter" /><category term="flutter" /><category term="dart" /><summary type="html">flutter 입문!</summary></entry><entry><title type="html">[React] 리액트 입문</title><link href="https://y00njaekim.github.io/react/%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%9E%85%EB%AC%B8/" rel="alternate" type="text/html" title="[React] 리액트 입문" /><published>2021-08-10T00:00:00+09:00</published><updated>2021-08-16T22:06:00+09:00</updated><id>https://y00njaekim.github.io/react/%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%9E%85%EB%AC%B8</id><content type="html" xml:base="https://y00njaekim.github.io/react/%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%9E%85%EB%AC%B8/">&lt;h1 id=&quot;리액트에-입문하다&quot;&gt;리액트에 입문하다&lt;/h1&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="react" /><category term="코딩애플_리액트" /><category term="react" /><summary type="html">리액트 입문하다</summary></entry><entry><title type="html">블로그 계획</title><link href="https://y00njaekim.github.io/blog/blog-plan/" rel="alternate" type="text/html" title="블로그 계획" /><published>2021-08-07T00:00:00+09:00</published><updated>2021-08-10T22:06:00+09:00</updated><id>https://y00njaekim.github.io/blog/blog-plan</id><content type="html" xml:base="https://y00njaekim.github.io/blog/blog-plan/">&lt;p&gt;GitHub Pages의 github.io 블로그 시작하기로 하였다.
 블로그 계획을 한번 세워보았다. h2 태그로 제목을 쓰면
 TOC 테이블로 오른쪽 사이드바에 보여줄 수 있다.&lt;/p&gt;
 

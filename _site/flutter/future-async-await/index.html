@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[React] 리액트 입문 - YoonJae’s DevLog</title>
-<meta name="description" content="리액트 입문하다">
+<!-- begin _includes/seo.html --><title>[Flutter] future, async, await 개념 정리 - YoonJae’s DevLog</title>
+<meta name="description" content="비동기란!?..">
 
 
   <meta name="author" content="YoonJae Kim">
@@ -22,21 +22,19 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="YoonJae's DevLog">
-<meta property="og:title" content="[React] 리액트 입문">
-<meta property="og:url" content="https://y00njaekim.github.io/react/%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%9E%85%EB%AC%B8/">
+<meta property="og:title" content="[Flutter] future, async, await 개념 정리">
+<meta property="og:url" content="https://y00njaekim.github.io/flutter/future-async-await/">
 
 
-  <meta property="og:description" content="리액트 입문하다">
-
-
-
-  <meta property="og:image" content="https://y00njaekim.github.io/assets/images/react.png">
+  <meta property="og:description" content="비동기란!?..">
 
 
 
 
 
-  <meta property="article:published_time" content="2021-08-10T00:00:00+09:00">
+
+
+  <meta property="article:published_time" content="2021-08-15T00:00:00+09:00">
 
 
 
@@ -49,7 +47,7 @@
   
 
 
-<link rel="canonical" href="https://y00njaekim.github.io/react/%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%9E%85%EB%AC%B8/">
+<link rel="canonical" href="https://y00njaekim.github.io/flutter/future-async-await/">
 
 
 
@@ -266,16 +264,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[React] 리액트 입문">
-    <meta itemprop="description" content="리액트 입문하다">
-    <meta itemprop="datePublished" content="2021-08-10T00:00:00+09:00">
+    <meta itemprop="headline" content="[Flutter] future, async, await 개념 정리">
+    <meta itemprop="description" content="비동기란!?..">
+    <meta itemprop="datePublished" content="2021-08-15T00:00:00+09:00">
     <meta itemprop="dateModified" content="2021-08-16T22:06:00+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="https://y00njaekim.github.io/react/%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%9E%85%EB%AC%B8/" class="u-url" itemprop="url">[React] 리액트 입문
+            <a href="https://y00njaekim.github.io/flutter/future-async-await/" class="u-url" itemprop="url">[Flutter] future, async, await 개념 정리
 </a>
           </h1>
           
@@ -292,7 +290,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          less than 1 minute read
+          1 minute read
         
       </span>
     
@@ -308,12 +306,85 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#리액트에-입문하다">리액트에 입문하다</a></li></ul>
+              <ul class="toc__menu"><li><a href="#future">Future</a></li><li><a href="#async-await">async, await</a></li><li><a href="#reference">Reference</a></li></ul>
 
             </nav>
           </aside>
         
-        <h1 id="리액트에-입문하다">리액트에 입문하다</h1>
+        <h3 id="future">Future</h3>
+
+<p>future 의 값으로 세가지의 상태가 가능하다.</p>
+
+<ol>
+  <li>Uncompleted</li>
+  <li>Completed, data return</li>
+  <li>Completed, error return</li>
+</ol>
+
+<p>처음 <code class="language-plaintext highlighter-rouge">Future</code> 를 사용해서 data 를 만들면 <code class="language-plaintext highlighter-rouge">Uncompleted future</code> 가 들어간다.</p>
+
+<p>이후 <code class="language-plaintext highlighter-rouge">Future</code> 가 작업을 끝내면 <code class="language-plaintext highlighter-rouge">Completed future</code> 가 들어간다.</p>
+
+<h3 id="async-await">async, await</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">await</code> 는 <code class="language-plaintext highlighter-rouge">async</code> 함수 내에서만 사용 가능하다.</li>
+  <li><code class="language-plaintext highlighter-rouge">async</code> 함수 내에서 <code class="language-plaintext highlighter-rouge">await</code> 가 붙은 작업은 해당 작업이 끝날 때까지 다음 작업으로 넘어가지 않고 기다린다.</li>
+</ul>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">main</span><span class="o">()</span> <span class="o">{</span>
+  <span class="n">print</span><span class="o">(</span><span class="s">'start main()'</span><span class="o">);</span>
+
+  <span class="kd">var</span> <span class="n">myFuture</span> <span class="o">=</span> <span class="n">getData</span><span class="o">();</span>
+  <span class="n">print</span><span class="o">(</span><span class="s">'result : </span><span class="si">$myFuture</span><span class="s">'</span><span class="o">);</span>
+
+  <span class="n">print</span><span class="o">(</span><span class="s">'end main()'</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="n">Future</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span> <span class="n">getData</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kd">var</span> <span class="n">test</span> <span class="o">=</span> <span class="n">Future</span><span class="o">(()</span> <span class="o">{</span>
+    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">1000000000</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{}</span>
+    <span class="k">return</span> <span class="s">'I got a lot of data! Tehre are 1000000000'</span><span class="o">;</span>
+  <span class="o">});</span>
+  <span class="k">return</span> <span class="n">test</span><span class="o">;</span> 
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>이 경우, <code class="language-plaintext highlighter-rouge">var myFuture = getData();</code> 에 의해 호출된 getData() 의 for 문이 다 돌아가기 전에 <code class="language-plaintext highlighter-rouge">print('result : $myFuture')</code> 이 실행된다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">getDtata() </code> 의 작업이 완료되지 않은 상태에서 <code class="language-plaintext highlighter-rouge">Future</code>은 <code class="language-plaintext highlighter-rouge">Uncomplete instance </code> 값이 들어가 있기에 결과는 다음과 같이 출력된다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56385667/129482763-94447960-5e0b-4d58-af4b-beed9046f984.png" alt="fig1" /></p>
+
+<p><br /></p>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">main</span><span class="o">()</span> <span class="n">async</span> <span class="o">{</span>
+  <span class="n">print</span><span class="o">(</span><span class="s">'start main()'</span><span class="o">);</span>
+
+  <span class="kd">var</span> <span class="n">myFuture</span> <span class="o">=</span> <span class="n">await</span> <span class="n">getData</span><span class="o">();</span>
+  <span class="n">print</span><span class="o">(</span><span class="s">'result : </span><span class="si">$myFuture</span><span class="s">'</span><span class="o">);</span>
+
+  <span class="n">print</span><span class="o">(</span><span class="s">'end main()'</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="n">Future</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span> <span class="n">getData</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kd">var</span> <span class="n">test</span> <span class="o">=</span> <span class="n">Future</span><span class="o">(()</span> <span class="o">{</span>
+    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">1000000000</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{}</span>
+    <span class="k">return</span> <span class="s">'I got a lot of data! Tehre are 1000000000'</span><span class="o">;</span>
+  <span class="o">});</span>
+  <span class="k">return</span> <span class="n">test</span><span class="o">;</span> 
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>반면 이 경우에는, <code class="language-plaintext highlighter-rouge">var myFuture = await getData();</code> 에 의해 호출된 getData() 의 for 문이 다 돌아갈 때까지 event queue가 멈춰있다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">getDtata() </code> 의 작업이 완료된 후 <code class="language-plaintext highlighter-rouge">var myFuture</code> 에 <code class="language-plaintext highlighter-rouge">Completed data</code> 값이 들어가므로 다음과 같이 출력된다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56385667/129482797-ff015288-7c3d-455c-98c3-1069da7183e8.png" alt="fig2" /></p>
+
+<h3 id="reference">Reference</h3>
+<p><a href="https://brunch.co.kr/@mystoryg/134">https://brunch.co.kr/@mystoryg/134</a></p>
+
 
         
       </section>
@@ -330,9 +401,9 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#react" class="page__taxonomy-item p-category" rel="tag">react</a><span class="sep">, </span>
+      <a href="/tags/#dart" class="page__taxonomy-item p-category" rel="tag">dart</a><span class="sep">, </span>
     
-      <a href="/tags/#%EC%BD%94%EB%94%A9%EC%95%A0%ED%94%8C-%EB%A6%AC%EC%95%A1%ED%8A%B8" class="page__taxonomy-item p-category" rel="tag">코딩애플_리액트</a>
+      <a href="/tags/#flutter" class="page__taxonomy-item p-category" rel="tag">flutter</a>
     
     </span>
   </p>
@@ -349,7 +420,7 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#react" class="page__taxonomy-item p-category" rel="tag">react</a>
+      <a href="/categories/#flutter" class="page__taxonomy-item p-category" rel="tag">flutter</a>
     
     </span>
   </p>
@@ -366,22 +437,22 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%5BReact%5D+%EB%A6%AC%EC%95%A1%ED%8A%B8+%EC%9E%85%EB%AC%B8%20https%3A%2F%2Fy00njaekim.github.io%2Freact%2F%25EB%25A6%25AC%25EC%2595%25A1%25ED%258A%25B8-%25EC%259E%2585%25EB%25AC%25B8%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5BFlutter%5D+future%2C+async%2C+await+%EA%B0%9C%EB%85%90+%EC%A0%95%EB%A6%AC%20https%3A%2F%2Fy00njaekim.github.io%2Fflutter%2Ffuture-async-await%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fy00njaekim.github.io%2Freact%2F%25EB%25A6%25AC%25EC%2595%25A1%25ED%258A%25B8-%25EC%259E%2585%25EB%25AC%25B8%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fy00njaekim.github.io%2Fflutter%2Ffuture-async-await%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fy00njaekim.github.io%2Freact%2F%25EB%25A6%25AC%25EC%2595%25A1%25ED%258A%25B8-%25EC%259E%2585%25EB%25AC%25B8%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fy00njaekim.github.io%2Fflutter%2Ffuture-async-await%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/blog/blog-plan/" class="pagination--pager" title="블로그 계획
+      <a href="/flutter/dart-%EB%AC%B8%EB%B2%95/" class="pagination--pager" title="[Flutter] dart 문법 정리
 ">Previous</a>
     
     
-      <a href="/flutter/dart-%EB%AC%B8%EB%B2%95/" class="pagination--pager" title="[Flutter] dart 문법 정리
+      <a href="/flutter/stateful-stateless/" class="pagination--pager" title="[Flutter] stateful 위젯이란!?
 ">Next</a>
     
   </nav>
@@ -510,56 +581,6 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/flutter/future-async-await/" rel="permalink">[Flutter] future, async, await 개념 정리
-</a>
-      
-    </h2>
-    
-      <span class="page__date">
-        <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        2021.08.15
-      </span>
-    
-    <!-- 
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
- -->
-    <p class="archive__item-excerpt" itemprop="description">비동기란!?..
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/images/default.jpeg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
         <a href="/flutter/dart-%EB%AC%B8%EB%B2%95/" rel="permalink">[Flutter] dart 문법 정리
 </a>
       
@@ -584,7 +605,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          1 minute read
+          less than 1 minute read
         
       </span>
     
@@ -592,6 +613,56 @@
 
  -->
     <p class="archive__item-excerpt" itemprop="description">flutter 입문!
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/react.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/react/%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%9E%85%EB%AC%B8/" rel="permalink">[React] 리액트 입문
+</a>
+      
+    </h2>
+    
+      <span class="page__date">
+        <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        2021.08.10
+      </span>
+    
+    <!-- 
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+ -->
+    <p class="archive__item-excerpt" itemprop="description">리액트 입문하다
 </p>
   </article>
 </div>

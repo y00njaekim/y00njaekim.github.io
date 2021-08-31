@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[React] 리액트 입문 - YoonJae’s DevLog</title>
-<meta name="description" content="리액트 입문하다">
+<!-- begin _includes/seo.html --><title>[Flutter] stateful 위젯이란!? - YoonJae’s DevLog</title>
+<meta name="description" content="stateful, stateless 위젯 차이점">
 
 
   <meta name="author" content="YoonJae Kim">
@@ -22,21 +22,19 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="YoonJae's DevLog">
-<meta property="og:title" content="[React] 리액트 입문">
-<meta property="og:url" content="https://y00njaekim.github.io/react/%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%9E%85%EB%AC%B8/">
+<meta property="og:title" content="[Flutter] stateful 위젯이란!?">
+<meta property="og:url" content="https://y00njaekim.github.io/flutter/stateful-stateless/">
 
 
-  <meta property="og:description" content="리액트 입문하다">
-
-
-
-  <meta property="og:image" content="https://y00njaekim.github.io/assets/images/react.png">
+  <meta property="og:description" content="stateful, stateless 위젯 차이점">
 
 
 
 
 
-  <meta property="article:published_time" content="2021-08-10T00:00:00+09:00">
+
+
+  <meta property="article:published_time" content="2021-08-15T00:00:00+09:00">
 
 
 
@@ -49,7 +47,7 @@
   
 
 
-<link rel="canonical" href="https://y00njaekim.github.io/react/%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%9E%85%EB%AC%B8/">
+<link rel="canonical" href="https://y00njaekim.github.io/flutter/stateful-stateless/">
 
 
 
@@ -266,16 +264,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[React] 리액트 입문">
-    <meta itemprop="description" content="리액트 입문하다">
-    <meta itemprop="datePublished" content="2021-08-10T00:00:00+09:00">
+    <meta itemprop="headline" content="[Flutter] stateful 위젯이란!?">
+    <meta itemprop="description" content="stateful, stateless 위젯 차이점">
+    <meta itemprop="datePublished" content="2021-08-15T00:00:00+09:00">
     <meta itemprop="dateModified" content="2021-08-16T22:06:00+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="https://y00njaekim.github.io/react/%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%9E%85%EB%AC%B8/" class="u-url" itemprop="url">[React] 리액트 입문
+            <a href="https://y00njaekim.github.io/flutter/stateful-stateless/" class="u-url" itemprop="url">[Flutter] stateful 위젯이란!?
 </a>
           </h1>
           
@@ -308,12 +306,30 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#리액트에-입문하다">리액트에 입문하다</a></li></ul>
+              <ul class="toc__menu"><li><a href="#stateful-위젯">stateful 위젯</a></li><li><a href="#stateless-위젯">stateless 위젯</a></li></ul>
 
             </nav>
           </aside>
         
-        <h1 id="리액트에-입문하다">리액트에 입문하다</h1>
+        <h4 id="stateful-위젯">stateful 위젯</h4>
+
+<ul>
+  <li>사용자와 상호작용 존재</li>
+  <li>재렌더링 가능, 동적 화면 구현</li>
+  <li>LifeCycle 이 길고 build가 1회 이상 발생</li>
+</ul>
+
+<h4 id="stateless-위젯">stateless 위젯</h4>
+
+<ul>
+  <li>사용자와 상호작용 없음</li>
+  <li>재렌더링 없음, 정적 화면 구현</li>
+  <li>LifeCycle이 짧고 build가 1회만 발생. 성능이 좋음</li>
+</ul>
+
+<blockquote>
+  <p>React 의 state 를 생각하면 될 듯!</p>
+</blockquote>
 
         
       </section>
@@ -330,9 +346,9 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#react" class="page__taxonomy-item p-category" rel="tag">react</a><span class="sep">, </span>
+      <a href="/tags/#dart" class="page__taxonomy-item p-category" rel="tag">dart</a><span class="sep">, </span>
     
-      <a href="/tags/#%EC%BD%94%EB%94%A9%EC%95%A0%ED%94%8C-%EB%A6%AC%EC%95%A1%ED%8A%B8" class="page__taxonomy-item p-category" rel="tag">코딩애플_리액트</a>
+      <a href="/tags/#flutter" class="page__taxonomy-item p-category" rel="tag">flutter</a>
     
     </span>
   </p>
@@ -349,7 +365,7 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#react" class="page__taxonomy-item p-category" rel="tag">react</a>
+      <a href="/categories/#flutter" class="page__taxonomy-item p-category" rel="tag">flutter</a>
     
     </span>
   </p>
@@ -366,22 +382,22 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%5BReact%5D+%EB%A6%AC%EC%95%A1%ED%8A%B8+%EC%9E%85%EB%AC%B8%20https%3A%2F%2Fy00njaekim.github.io%2Freact%2F%25EB%25A6%25AC%25EC%2595%25A1%25ED%258A%25B8-%25EC%259E%2585%25EB%25AC%25B8%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5BFlutter%5D+stateful+%EC%9C%84%EC%A0%AF%EC%9D%B4%EB%9E%80%21%3F%20https%3A%2F%2Fy00njaekim.github.io%2Fflutter%2Fstateful-stateless%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fy00njaekim.github.io%2Freact%2F%25EB%25A6%25AC%25EC%2595%25A1%25ED%258A%25B8-%25EC%259E%2585%25EB%25AC%25B8%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fy00njaekim.github.io%2Fflutter%2Fstateful-stateless%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fy00njaekim.github.io%2Freact%2F%25EB%25A6%25AC%25EC%2595%25A1%25ED%258A%25B8-%25EC%259E%2585%25EB%25AC%25B8%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fy00njaekim.github.io%2Fflutter%2Fstateful-stateless%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/blog/blog-plan/" class="pagination--pager" title="블로그 계획
+      <a href="/flutter/future-async-await/" class="pagination--pager" title="[Flutter] future, async, await 개념 정리
 ">Previous</a>
     
     
-      <a href="/flutter/dart-%EB%AC%B8%EB%B2%95/" class="pagination--pager" title="[Flutter] dart 문법 정리
+      <a href="/jekyll/jekyll-code-font/" class="pagination--pager" title="jekyll 코드 폰트 바꾸는 법
 ">Next</a>
     
   </nav>
@@ -460,56 +476,6 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/flutter/stateful-stateless/" rel="permalink">[Flutter] stateful 위젯이란!?
-</a>
-      
-    </h2>
-    
-      <span class="page__date">
-        <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        2021.08.15
-      </span>
-    
-    <!-- 
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
- -->
-    <p class="archive__item-excerpt" itemprop="description">stateful, stateless 위젯 차이점
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/images/default.jpeg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
         <a href="/flutter/future-async-await/" rel="permalink">[Flutter] future, async, await 개념 정리
 </a>
       
@@ -534,7 +500,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          less than 1 minute read
+          1 minute read
         
       </span>
     
@@ -584,7 +550,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          1 minute read
+          less than 1 minute read
         
       </span>
     
@@ -592,6 +558,56 @@
 
  -->
     <p class="archive__item-excerpt" itemprop="description">flutter 입문!
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/react.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/react/%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%9E%85%EB%AC%B8/" rel="permalink">[React] 리액트 입문
+</a>
+      
+    </h2>
+    
+      <span class="page__date">
+        <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        2021.08.10
+      </span>
+    
+    <!-- 
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+ -->
+    <p class="archive__item-excerpt" itemprop="description">리액트 입문하다
 </p>
   </article>
 </div>
