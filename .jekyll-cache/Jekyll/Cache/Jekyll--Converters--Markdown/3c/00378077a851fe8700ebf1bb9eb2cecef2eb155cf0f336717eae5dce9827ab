@@ -1,4 +1,4 @@
-I"_<h3 id="what-is-state">What is ‘state’</h3>
+I"�<h3 id="what-is-state">What is ‘state’</h3>
 
 <hr />
 
@@ -37,7 +37,8 @@
 <span class="kd">let</span> <span class="p">[</span><span class="nx">thumbCount</span><span class="p">,</span> <span class="nx">setThumbCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>​	<em>ES6 destructuring 문법이란?</em></p>
+<p><br />
+​	<em>ES6 destructuring 문법이란?</em></p>
 
 <p>​	✔️ array, objectd 에 있던 자료를 변수에 쉽게 담고 싶을 때 사용</p>
 
@@ -73,11 +74,11 @@
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></div></div>
 
+<p><br /></p>
 <h4 id="유의사항">유의사항</h4>
+<hr />
 
-<ol>
-  <li>array 가 저장된 state 를 사용하는 방법</li>
-</ol>
+<p>1 . array 가 저장된 state 를 사용하는 방법</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="p">[</span><span class="nx">title</span><span class="p">,</span> <span class="nx">setTitle</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([</span><span class="dl">'</span><span class="s1">강남 우동 맛집</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">남자 코트 추천</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">개발팀 모집</span><span class="dl">'</span><span class="p">])</span>
 
@@ -88,8 +89,6 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>✔️</p>
-
 <p><code class="language-plaintext highlighter-rouge">var newArray = title</code>  이 아닌  <code class="language-plaintext highlighter-rouge">var newArray = [...title]</code>  이라 써야한다.</p>
 
 <p><code class="language-plaintext highlighter-rouge">var newArray = title</code> 라고 쓰면 <strong>값 공유</strong>가 이루어진다.</p>
@@ -99,7 +98,10 @@
 <p>더 자세한 사항은 <em>reference data type</em> 을 검색해서 찾아보자!</p>
 
 <blockquote>
-  <p>React 의 대원칙 : immutable data, 즉 state data 들은 직접적인 수정이 발생하지 않도록 하기.</p>
+  <p>React 의 대원칙 : immutable data.</p>
 </blockquote>
 
+<blockquote>
+  <p>즉 state data 들은 직접적인 수정이 발생하지 않도록 하기.</p>
+</blockquote>
 :ET

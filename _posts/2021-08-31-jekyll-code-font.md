@@ -102,6 +102,6 @@ ms word 혹은 ms ppt 에서 새로운 서체를 이용하던 순간을 생각�
 ### Reference
 ---
 
-1. https://webclub.tistory.com/261
-2. https://oilmlio.com/blog/Change-the-GitHub-Blog-Font-RIDIBatang/
+1. [https://webclub.tistory.com/261](https://webclub.tistory.com/261)
+2. [https://oilmlio.com/blog/Change-the-GitHub-Blog-Font-RIDIBatang/](https://oilmlio.com/blog/Change-the-GitHub-Blog-Font-RIDIBatang/)
 
