@@ -23,7 +23,7 @@ var store = [{
         "url": "/flutter/future-async-await/",
         "teaser": "/assets/images/default.jpeg"
       },{
-        "title": "[Flutter] stateful 위젯이란!?",
+        "title": "[Flutter] stateful 위젯이란?",
         "excerpt":"stateful 위젯      사용자와 상호작용 존재   재렌더링 가능, 동적 화면 구현   LifeCycle 이 길고 build가 1회 이상 발생   stateless 위젯      사용자와 상호작용 없음   재렌더링 없음, 정적 화면 구현   LifeCycle이 짧고 build가 1회만 발생. 성능이 좋음      React 의 state 를 생각하면 될 듯!   ","categories": ["flutter"],
         "tags": ["flutter","dart"],
         "url": "/flutter/stateful-stateless/",
@@ -40,4 +40,10 @@ var store = [{
         "tags": ["코딩애플_리액트","react"],
         "url": "/react/state/",
         "teaser": "/assets/images/react.png"
+      },{
+        "title": "[HTTP] 생활코딩 HTTP-2.소개",
+        "excerpt":"웹 브라우저, 웹 서버 식당에 가면 직원과 손님이 있다. 손님은 직원에게 음식을 요청 하고 직원은 손님에게 음식을 제공 한다. 웹브라우저와 웹서버도 이와 같은 관계이다. 웹브라우저는 웹서버에게 특정 컨텐츠를 요청하고 웹서버는 웹브라우저에게 해당 컨텐츠를 제공, 응답한다. 어떤 컨텐츠들이 요청, 응답에서 오가는 지를 보려면 특정 웹페이지에 접속한 후 [개발자도구-네트워크] 를 열어보면 된다....","categories": ["cs"],
+        "tags": ["생활코딩","cs","http"],
+        "url": "/cs/http-2/",
+        "teaser": ""
       }]

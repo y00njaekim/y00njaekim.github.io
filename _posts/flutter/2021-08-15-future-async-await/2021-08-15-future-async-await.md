@@ -1,6 +1,6 @@
 ---
 title:  "[Flutter] future, async, await 개념 정리"
-excerpt: "비동기란!?.."
+excerpt: "비동기란?"
 toc: true
 toc_sticky: true
 # header:

@@ -1,5 +1,5 @@
 ---
-title:  "[Flutter] stateful 위젯이란!?"
+title:  "[Flutter] stateful 위젯이란?"
 excerpt: "stateful, stateless 위젯 차이점"
 toc: true
 toc_sticky: true

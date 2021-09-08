@@ -1,4 +1,73 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://y00njaekim.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://y00njaekim.github.io/" rel="alternate" type="text/html" /><updated>2021-09-01T13:25:21+09:00</updated><id>https://y00njaekim.github.io/feed.xml</id><title type="html">YoonJae’s DevLog</title><subtitle>Computer Engineering and Science, 기록을 통한 기억</subtitle><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><entry><title type="html">[React] 리액트 state 사용법</title><link href="https://y00njaekim.github.io/react/state/" rel="alternate" type="text/html" title="[React] 리액트 state 사용법" /><published>2021-09-01T00:00:00+09:00</published><updated>2021-09-01T22:06:00+09:00</updated><id>https://y00njaekim.github.io/react/state</id><content type="html" xml:base="https://y00njaekim.github.io/react/state/">&lt;h3 id=&quot;what-is-state&quot;&gt;What is ‘state’&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://y00njaekim.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://y00njaekim.github.io/" rel="alternate" type="text/html" /><updated>2021-09-08T14:08:15+09:00</updated><id>https://y00njaekim.github.io/feed.xml</id><title type="html">YoonJae’s DevLog</title><subtitle>Computer Engineering and Science, 기록을 통한 기억</subtitle><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><entry><title type="html">[HTTP] 생활코딩 HTTP-2.소개</title><link href="https://y00njaekim.github.io/cs/http-2/" rel="alternate" type="text/html" title="[HTTP] 생활코딩 HTTP-2.소개" /><published>2021-09-08T00:00:00+09:00</published><updated>2021-09-08T22:06:00+09:00</updated><id>https://y00njaekim.github.io/cs/http-2</id><content type="html" xml:base="https://y00njaekim.github.io/cs/http-2/">&lt;h3 id=&quot;웹-브라우저-웹-서버&quot;&gt;웹 브라우저, 웹 서버&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/132447069-123206b7-bc2a-469f-862f-89813aedebe3.png&quot; alt=&quot;fig1&quot; style=&quot;zoom:30%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+식당에 가면 직원과 손님이 있다. 손님은 직원에게 음식을 &lt;strong&gt;요청&lt;/strong&gt; 하고 직원은 손님에게 음식을 &lt;strong&gt;제공&lt;/strong&gt; 한다.&lt;/p&gt;
+
+&lt;p&gt;웹브라우저와 웹서버도 이와 같은 관계이다. 웹브라우저는 웹서버에게 특정 컨텐츠를 &lt;strong&gt;요청&lt;/strong&gt;하고 웹서버는 웹브라우저에게 해당 컨텐츠를 &lt;strong&gt;제공, 응답&lt;/strong&gt;한다.&lt;/p&gt;
+
+&lt;p&gt;어떤 컨텐츠들이 요청, 응답에서 오가는 지를 보려면 특정 웹페이지에 접속한 후 &lt;strong&gt;[개발자도구-네트워크]&lt;/strong&gt; 를 열어보면 된다.&lt;/p&gt;
+
+&lt;p&gt;그러면 다음과 같은 모습을 확인할 수 있다. &lt;del&gt;보이지 않는다면 네트워크 창을 연 후 새로고침을 해보자.&lt;/del&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/132447634-0da84e02-1825-4fc3-9112-92b34616a0ff.png&quot; alt=&quot;fig2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;오른쪽에 나열되어 있는 모든 요소들이 웹브라우저와 웹서버 사이에서 전송된 컨텐츠들이다.&lt;/p&gt;
+
+&lt;p&gt;오른쪽 창 아래를 보면 &lt;strong&gt;356 requests&lt;/strong&gt; 라고 써져있는 걸 볼 수 있는데, 웹브라우저가 웹서버에게 총 356 번의 요청 주문을 하였다는 의미이다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;http-란-무엇인가&quot;&gt;HTTP 란 무엇인가&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;
+웹브라우저와 웹서버 사이의 통신이 발생할 때 우리는 그 통신이 좀 더 원활하게 진행될 수 있도록 규칙을 만들어 놓았다.&lt;/p&gt;
+
+&lt;p&gt;그 규칙(프로토콜) 이 바로 HTTP(HyperText Transer Protocol) 이다.&lt;/p&gt;
+
+&lt;p&gt;원래는 HTTP 의 규칙을 따라 컨텐츠를 전송할 때, 그 컨텐츠의 타입이 HyperText 에 국한되었다.&lt;/p&gt;
+
+&lt;p&gt;하지만 HTTP의 발전에 따라 현재는 이미지, 동영상 등의 다양한 미디어 컨텐츠를 전송할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;[개발자도구-네트워크]&lt;/strong&gt; 를 열어서 아무 컨텐츠나 한 개를 클릭해보자.&lt;/p&gt;
+
+&lt;p&gt;그러면 다음과 같은 화면을 볼 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/132448034-58935063-738c-445f-812b-373d2a3a6a38.png&quot; alt=&quot;fig3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;오른쪽 창에 보면 Response Headers, Request Headers 에 적혀있는 내용을 볼 수 있는데, 이 형식이 HTTP 가 정해놓은 통신 규칙이다.&lt;/p&gt;
+
+&lt;p&gt;Response Headers 는 요청의 규칭이며 Request Headers 는 응답의 규칙이다.&lt;/p&gt;
+
+&lt;p&gt;우리가 보는 모든 웹 화면은 웹브라우저가 웹서버에게 요청하여 응답받은 것을 보여주는 것이다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;웹의-네가지-요소&quot;&gt;웹의 네가지 요소&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;
+마지막으로 간단하게 웹의 네가지 요소를 살펴보고 끝내자.&lt;/p&gt;
+
+&lt;p&gt;모든 웹은 다음과 같은 네가지 요소로 이루어져있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;html : 웹페이지를 만드는 컴퓨터 언어&lt;/li&gt;
+  &lt;li&gt;url : 특정 웹페이지에 방문할 수 있도록 도와주는 주소 체계&lt;/li&gt;
+  &lt;li&gt;web browser : 웹서버와의 통신을 통해 웹페이지를 주고받는 소프트웨어&lt;/li&gt;
+  &lt;li&gt;http (HyperText Transfer Protocol) : 웹브라우저와 웹서버가 통신할 때 사용하는 통신 규칙&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=vHhWcTyJoS0&quot;&gt;https://www.youtube.com/watch?v=vHhWcTyJoS0&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="cs" /><category term="생활코딩" /><category term="cs" /><category term="http" /><summary type="html">HTTP 란 무엇인가</summary></entry><entry><title type="html">[React] 리액트 state 사용법</title><link href="https://y00njaekim.github.io/react/state/" rel="alternate" type="text/html" title="[React] 리액트 state 사용법" /><published>2021-09-01T00:00:00+09:00</published><updated>2021-09-01T22:06:00+09:00</updated><id>https://y00njaekim.github.io/react/state</id><content type="html" xml:base="https://y00njaekim.github.io/react/state/">&lt;h3 id=&quot;what-is-state&quot;&gt;What is ‘state’&lt;/h3&gt;
 
 &lt;hr /&gt;
 
@@ -192,7 +261,25 @@ ms word 혹은 ms ppt 에서 새로운 서체를 이용하던 순간을 생각�
 &lt;ol&gt;
   &lt;li&gt;&lt;a href=&quot;https://webclub.tistory.com/261&quot;&gt;https://webclub.tistory.com/261&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://oilmlio.com/blog/Change-the-GitHub-Blog-Font-RIDIBatang/&quot;&gt;https://oilmlio.com/blog/Change-the-GitHub-Blog-Font-RIDIBatang/&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="Jekyll" /><category term="Jekyll" /></entry><entry><title type="html">[Flutter] future, async, await 개념 정리</title><link href="https://y00njaekim.github.io/flutter/future-async-await/" rel="alternate" type="text/html" title="[Flutter] future, async, await 개념 정리" /><published>2021-08-15T00:00:00+09:00</published><updated>2021-08-16T22:06:00+09:00</updated><id>https://y00njaekim.github.io/flutter/future-async-await</id><content type="html" xml:base="https://y00njaekim.github.io/flutter/future-async-await/">&lt;h3 id=&quot;future&quot;&gt;Future&lt;/h3&gt;
+&lt;/ol&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="Jekyll" /><category term="Jekyll" /></entry><entry><title type="html">[Flutter] stateful 위젯이란?</title><link href="https://y00njaekim.github.io/flutter/stateful-stateless/" rel="alternate" type="text/html" title="[Flutter] stateful 위젯이란?" /><published>2021-08-15T00:00:00+09:00</published><updated>2021-08-16T22:06:00+09:00</updated><id>https://y00njaekim.github.io/flutter/stateful-stateless</id><content type="html" xml:base="https://y00njaekim.github.io/flutter/stateful-stateless/">&lt;h4 id=&quot;stateful-위젯&quot;&gt;stateful 위젯&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;사용자와 상호작용 존재&lt;/li&gt;
+  &lt;li&gt;재렌더링 가능, 동적 화면 구현&lt;/li&gt;
+  &lt;li&gt;LifeCycle 이 길고 build가 1회 이상 발생&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;stateless-위젯&quot;&gt;stateless 위젯&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;사용자와 상호작용 없음&lt;/li&gt;
+  &lt;li&gt;재렌더링 없음, 정적 화면 구현&lt;/li&gt;
+  &lt;li&gt;LifeCycle이 짧고 build가 1회만 발생. 성능이 좋음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;React 의 state 를 생각하면 될 듯!&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="flutter" /><category term="flutter" /><category term="dart" /><summary type="html">stateful, stateless 위젯 차이점</summary></entry><entry><title type="html">[Flutter] future, async, await 개념 정리</title><link href="https://y00njaekim.github.io/flutter/future-async-await/" rel="alternate" type="text/html" title="[Flutter] future, async, await 개념 정리" /><published>2021-08-15T00:00:00+09:00</published><updated>2021-08-16T22:06:00+09:00</updated><id>https://y00njaekim.github.io/flutter/future-async-await</id><content type="html" xml:base="https://y00njaekim.github.io/flutter/future-async-await/">&lt;h3 id=&quot;future&quot;&gt;Future&lt;/h3&gt;
 
 &lt;p&gt;future 의 값으로 세가지의 상태가 가능하다.&lt;/p&gt;
 
@@ -264,25 +351,7 @@ ms word 혹은 ms ppt 에서 새로운 서체를 이용하던 순간을 생각�
 &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/129482797-ff015288-7c3d-455c-98c3-1069da7183e8.png&quot; alt=&quot;fig2&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://brunch.co.kr/@mystoryg/134&quot;&gt;https://brunch.co.kr/@mystoryg/134&lt;/a&gt;&lt;/p&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="flutter" /><category term="flutter" /><category term="dart" /><summary type="html">비동기란!?..</summary></entry><entry><title type="html">[Flutter] stateful 위젯이란!?</title><link href="https://y00njaekim.github.io/flutter/stateful-stateless/" rel="alternate" type="text/html" title="[Flutter] stateful 위젯이란!?" /><published>2021-08-15T00:00:00+09:00</published><updated>2021-08-16T22:06:00+09:00</updated><id>https://y00njaekim.github.io/flutter/stateful-stateless</id><content type="html" xml:base="https://y00njaekim.github.io/flutter/stateful-stateless/">&lt;h4 id=&quot;stateful-위젯&quot;&gt;stateful 위젯&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;사용자와 상호작용 존재&lt;/li&gt;
-  &lt;li&gt;재렌더링 가능, 동적 화면 구현&lt;/li&gt;
-  &lt;li&gt;LifeCycle 이 길고 build가 1회 이상 발생&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;stateless-위젯&quot;&gt;stateless 위젯&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;사용자와 상호작용 없음&lt;/li&gt;
-  &lt;li&gt;재렌더링 없음, 정적 화면 구현&lt;/li&gt;
-  &lt;li&gt;LifeCycle이 짧고 build가 1회만 발생. 성능이 좋음&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;React 의 state 를 생각하면 될 듯!&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="flutter" /><category term="flutter" /><category term="dart" /><summary type="html">stateful, stateless 위젯 차이점</summary></entry><entry><title type="html">[Flutter] dart 문법 정리</title><link href="https://y00njaekim.github.io/flutter/dart-%EB%AC%B8%EB%B2%95/" rel="alternate" type="text/html" title="[Flutter] dart 문법 정리" /><published>2021-08-14T00:00:00+09:00</published><updated>2021-08-14T22:06:00+09:00</updated><id>https://y00njaekim.github.io/flutter/dart-%EB%AC%B8%EB%B2%95</id><content type="html" xml:base="https://y00njaekim.github.io/flutter/dart-%EB%AC%B8%EB%B2%95/">&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://brunch.co.kr/@mystoryg/134&quot;&gt;https://brunch.co.kr/@mystoryg/134&lt;/a&gt;&lt;/p&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="flutter" /><category term="flutter" /><category term="dart" /><summary type="html">비동기란?</summary></entry><entry><title type="html">[Flutter] dart 문법 정리</title><link href="https://y00njaekim.github.io/flutter/dart-%EB%AC%B8%EB%B2%95/" rel="alternate" type="text/html" title="[Flutter] dart 문법 정리" /><published>2021-08-14T00:00:00+09:00</published><updated>2021-08-14T22:06:00+09:00</updated><id>https://y00njaekim.github.io/flutter/dart-%EB%AC%B8%EB%B2%95</id><content type="html" xml:base="https://y00njaekim.github.io/flutter/dart-%EB%AC%B8%EB%B2%95/">&lt;blockquote&gt;
   &lt;p&gt;최근 처음으로 해커톤에 참가하였다. 오아시스 해커톤이라고, 2021.08.09 ~ 2021.08.20 동안 열리는 호남지역 해커톤이다!&lt;/p&gt;
 
   &lt;p&gt;나는 팀원들과 상의하여 flutter 를 이용한 택시 매칭 앱을 만들기로 하였고, 지금 flutter 의 사용 언어인 dart 를 훑어보고 있다.&lt;/p&gt;

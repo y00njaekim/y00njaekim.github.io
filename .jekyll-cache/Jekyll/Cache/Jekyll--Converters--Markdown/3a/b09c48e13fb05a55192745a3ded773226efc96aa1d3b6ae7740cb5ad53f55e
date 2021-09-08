@@ -1,0 +1,66 @@
+I"<h3 id="웹-브라우저-웹-서버">웹 브라우저, 웹 서버</h3>
+
+<p><br />
+<img src="https://user-images.githubusercontent.com/56385667/132447069-123206b7-bc2a-469f-862f-89813aedebe3.png" alt="fig1" style="zoom:30%;" /></p>
+
+<p><br />
+식당에 가면 직원과 손님이 있다. 손님은 직원에게 음식을 <strong>요청</strong> 하고 직원은 손님에게 음식을 <strong>제공</strong> 한다.</p>
+
+<p>웹브라우저와 웹서버도 이와 같은 관계이다. 웹브라우저는 웹서버에게 특정 컨텐츠를 <strong>요청</strong>하고 웹서버는 웹브라우저에게 해당 컨텐츠를 <strong>제공, 응답</strong>한다.</p>
+
+<p>어떤 컨텐츠들이 요청, 응답에서 오가는 지를 보려면 특정 웹페이지에 접속한 후 <strong>[개발자도구-네트워크]</strong> 를 열어보면 된다.</p>
+
+<p>그러면 다음과 같은 모습을 확인할 수 있다. <del>보이지 않는다면 네트워크 창을 연 후 새로고침을 해보자.</del></p>
+
+<p><img src="https://user-images.githubusercontent.com/56385667/132447634-0da84e02-1825-4fc3-9112-92b34616a0ff.png" alt="fig2" /></p>
+
+<p>오른쪽에 나열되어 있는 모든 요소들이 웹브라우저와 웹서버 사이에서 전송된 컨텐츠들이다.</p>
+
+<p>오른쪽 창 아래를 보면 <strong>356 requests</strong> 라고 써져있는 걸 볼 수 있는데, 웹브라우저가 웹서버에게 총 356 번의 요청 주문을 하였다는 의미이다.</p>
+
+<p><br /></p>
+
+<h3 id="http-란-무엇인가">HTTP 란 무엇인가</h3>
+
+<p>웹브라우저와 웹서버 사이의 통신이 발생할 때 우리는 그 통신이 좀 더 원활하게 진행될 수 있도록 규칙을 만들어 놓았다.</p>
+
+<p>그 규칙(프로토콜) 이 바로 HTTP(HyperText Transer Protocol) 이다.</p>
+
+<p>원래는 HTTP 의 규칙을 따라 컨텐츠를 전송할 때, 그 컨텐츠의 타입이 HyperText 에 국한되었다.</p>
+
+<p>하지만 HTTP의 발전에 따라 현재는 이미지, 동영상 등의 다양한 미디어 컨텐츠를 전송할 수 있다.</p>
+
+<p><strong>[개발자도구-네트워크]</strong> 를 열어서 아무 컨텐츠나 한 개를 클릭해보자.</p>
+
+<p>그러면 다음과 같은 화면을 볼 수 있다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56385667/132448034-58935063-738c-445f-812b-373d2a3a6a38.png" alt="fig3" /></p>
+
+<p>오른쪽 창에 보면 Response Headers, Request Headers 에 적혀있는 내용을 볼 수 있는데, 이 형식이 HTTP 가 정해놓은 통신 규칙이다.</p>
+
+<p>Response Headers 는 요청의 규칭이며 Request Headers 는 응답의 규칙이다.</p>
+
+<p>우리가 보는 모든 웹 화면은 웹브라우저가 웹서버에게 요청하여 응답받은 것을 보여주는 것이다.</p>
+
+<h3 id="웹의-네가지-요소">웹의 네가지 요소</h3>
+
+<p>마지막으로 간단하게 웹의 네가지 요소를 살펴보고 끝내자.</p>
+
+<p>모든 웹은 다음과 같은 네가지 요소로 이루어져있다.</p>
+
+<ul>
+  <li>html : 웹페이지를 만드는 컴퓨터 언어</li>
+  <li>url : 특정 웹페이지에 방문할 수 있도록 도와주는 주소 체계</li>
+  <li>web browser : 웹서버와의 통신을 통해 웹페이지를 주고받는 소프트웨어</li>
+  <li>http (HyperText Transfer Protocol) : 웹브라우저와 웹서버가 통신할 때 사용하는 통신 규칙</li>
+</ul>
+
+<hr />
+
+<h3 id="reference">Reference</h3>
+
+<ol>
+  <li><a href="https://www.youtube.com/watch?v=vHhWcTyJoS0">https://www.youtube.com/watch?v=vHhWcTyJoS0</a></li>
+</ol>
+
+:ET
