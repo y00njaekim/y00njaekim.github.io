@@ -1,0 +1,68 @@
+I"
+<h3 id="request-message">Request Message</h3>
+<p><br /></p>
+
+<p><strong>[개발자도구-네트워크]</strong> 를 열어 아무 컨텐츠나 클릭해보자.</p>
+
+<p>그러면 다음과 같이 request header 를 볼 수 있다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56385667/132466288-de2a885e-e1fc-4a9e-b99b-d79f02d2bd2c.png" alt="fig1" /></p>
+
+<p><br />
+이 Request Header 는 다음과 같이</p>
+
+<ul>
+  <li>Request Message Header
+    <ul>
+      <li>Request Line</li>
+      <li>Request Header</li>
+    </ul>
+  </li>
+  <li>Request Message Body</li>
+</ul>
+
+<p><br />
+로 나누어진다.</p>
+
+<p><br />
+<img src="https://user-images.githubusercontent.com/56385667/132465786-445bd145-b1b8-4d3e-95ca-516728593b33.png" alt="fig1" /></p>
+
+<p><br />
+이 때 Request Line 이 의미하는 바는,</p>
+
+<p>웹브라우저와 웹서버가 <code class="language-plaintext highlighter-rouge">Get Method</code> 방식을 통해 통신한며,</p>
+
+<p>웹브라우저가 웹서버에게 <code class="language-plaintext highlighter-rouge">doc/test.html</code> 정보를 요청하며,</p>
+
+<p>웹브라우저는 현재 <code class="language-plaintext highlighter-rouge">HTTP/1.1</code> 의 버젼 사용할 수 있다는 뜻이다.</p>
+
+<hr />
+
+<p><br />
+간단하게 Request Header 몇몇 행의 역할을 살펴보자.</p>
+
+<p><br />
+<strong>Host</strong> : 웹서버의 주소를 알려준다.</p>
+
+<p><strong>User-Agent</strong> : 컴퓨터 OS 정보 및 브라우저 프로그램 정보를 알려준다.</p>
+
+<p><strong>Accept-Encoding</strong> : 웹브라우저와 웹서버가 통신하는 과정에서 응답하는 데이터 양이 많을 때, 웹브라우저가 지원하는 압축 방식을 알려준다.</p>
+
+<hr />
+
+<h3 id="response-message">Response Message</h3>
+
+<p>웹서버가 웹브라우저에게 응답하는 메세지는 다음과 같은 구조로 되어있다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56385667/132474355-25917d92-5087-41ff-8a51-d90dc30cccdf.jpg" alt="fig3" /></p>
+
+<p><strong>status 행의 version</strong> 은 request message 에서 <strong>request line 의 세번째 요소</strong>와 같은 의미이다.</p>
+
+<p><strong>status 행의 status code</strong> 는 특정 의미를 담고 있다. 위 사진에서 볼 수 있듯이 1xx, 2xx, 3xx, … 에 따라 의미가 달라진다. 세부적인 사항은 <a href="https://developer.mozilla.org/ko/docs/Web/HTTP/Status">다음페이지</a> 를 참고하자.</p>
+
+<h3 id="reference">Reference</h3>
+
+<ol>
+  <li>[https://www.youtube.com/watch?v=yIm0BfUvKH4](</li>
+</ol>
+:ET
