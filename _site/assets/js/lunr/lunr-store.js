@@ -41,9 +41,15 @@ var store = [{
         "url": "/react/state/",
         "teaser": "/assets/images/react.png"
       },{
-        "title": "[HTTP] 생활코딩 HTTP-2.소개",
+        "title": "[Http] 생활코딩 HTTP-2: 소개",
         "excerpt":"웹 브라우저, 웹 서버 식당에 가면 직원과 손님이 있다. 손님은 직원에게 음식을 요청 하고 직원은 손님에게 음식을 제공 한다. 웹브라우저와 웹서버도 이와 같은 관계이다. 웹브라우저는 웹서버에게 특정 컨텐츠를 요청하고 웹서버는 웹브라우저에게 해당 컨텐츠를 제공, 응답한다. 어떤 컨텐츠들이 요청, 응답에서 오가는 지를 보려면 특정 웹페이지에 접속한 후 [개발자도구-네트워크] 를 열어보면 된다....","categories": ["cs"],
         "tags": ["생활코딩","cs","http"],
         "url": "/cs/http-2/",
+        "teaser": ""
+      },{
+        "title": "[Http] 생활코딩 HTTP-3,4: request/response message",
+        "excerpt":"Request Message [개발자도구-네트워크] 를 열어 아무 컨텐츠나 클릭해보자. 그러면 다음과 같이 request header 를 볼 수 있다. 이 Request Header 는 다음과 같이 Request Message Header Request Line Request Header Request Message Body 로 나누어진다. 이 때 Request Line 이 의미하는 바는, 웹브라우저와 웹서버가 Get Method 방식을 통해 통신한며, 웹브라우저가...","categories": ["cs"],
+        "tags": ["생활코딩","cs","http"],
+        "url": "/cs/http-3/",
         "teaser": ""
       }]
