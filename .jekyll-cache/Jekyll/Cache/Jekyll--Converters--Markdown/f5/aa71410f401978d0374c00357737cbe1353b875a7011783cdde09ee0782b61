@@ -1,0 +1,223 @@
+I"�0<h2 id="git-flow란">Git Flow란?</h2>
+
+<p><strong>Git Flow</strong> 란 어떤 기능이 아니라 Vincent Drissen이 시작한 Git 사용 방법론이다!</p>
+
+<p><br />
+Git Flow 는 총 5가지의 브랜치를 사용해서 Git 을 사용 하는 운영 방법이다.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">master</code>: 기준이 되는 브랜치로 제품을 배포하는 브랜치이다.</li>
+  <li><code class="language-plaintext highlighter-rouge">develop</code> : 개발 브랜치로 개발자들이 이 브랜치를 기준으로 각자 작업한 기능들을 병합(merge)한다.</li>
+  <li><code class="language-plaintext highlighter-rouge">feature</code> : 단위 기능을 개발하는 브랜치로 기능 개발이 완료되면 develop 브랜치에 합친다.
+    <ul>
+      <li>브랜치 나오는 곳: <code class="language-plaintext highlighter-rouge">develop</code></li>
+      <li>브랜치 들어가는 곳: <code class="language-plaintext highlighter-rouge">develop</code></li>
+      <li><code class="language-plaintext highlighter-rouge">feature</code> 브랜치는 <code class="language-plaintext highlighter-rouge">origin</code> 에는 반영하지 않고, 개발자의 repo에만 존재하도록 한다.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">release</code> : 배포를 위해 master 브랜치로 보내기 전에 먼저 QA(Quality Assurance, 품질검사) 를 하기 위한 브랜치이다.
+    <ul>
+      <li>브랜치 나오는 곳: <code class="language-plaintext highlighter-rouge">develop</code></li>
+      <li>브랜치 들어가는 곳: <code class="language-plaintext highlighter-rouge">develop</code>, <code class="language-plaintext highlighter-rouge">master</code></li>
+      <li><code class="language-plaintext highlighter-rouge">develop</code> 브랜치에서 <code class="language-plaintext highlighter-rouge">release</code> 브랜치를 따내고, 이와 별개로 <code class="language-plaintext highlighter-rouge">develop</code> 브랜치에서는 다음번 릴리즈에서 사용할 기능을 추가해 나간다.
+<code class="language-plaintext highlighter-rouge">release</code> 브랜치에서는 버그 픽스에 대한 부분만 커밋하고, 릴리즈가 준비되었다고 생각하면 <code class="language-plaintext highlighter-rouge">master</code> 로 병합을 진행한다.
+그런 뒤 <code class="language-plaintext highlighter-rouge">develop</code> 브랜치로 병합하여, <code class="language-plaintext highlighter-rouge">release</code> 브랜치에서 수정된 내용이 <code class="language-plaintext highlighter-rouge">develop</code> 에 반영되도록 만든다.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">hotfix</code> : master 브랜치로 배포를 했는데 버그가 생겼을 때 긴급 수정하는 브랜치이다.
+    <ul>
+      <li>브랜치 나오는 곳: <code class="language-plaintext highlighter-rouge">master</code></li>
+      <li>브랜치 들어가는 곳: <code class="language-plaintext highlighter-rouge">develop</code>, <code class="language-plaintext highlighter-rouge">master</code></li>
+    </ul>
+  </li>
+</ul>
+
+<p><br />
+<code class="language-plaintext highlighter-rouge">feature &gt; develop &gt; release &gt; hotfix &gt; master</code> 브랜치가 존재하며, 병합(merge)는 앞에서 뒤로만 진행한다. 즉, <code class="language-plaintext highlighter-rouge">release</code> 브랜치와 <code class="language-plaintext highlighter-rouge">hotfix</code> 브랜치의 경우, <code class="language-plaintext highlighter-rouge">develop</code> 브랜치의 오른쪽에 위치하기에 <code class="language-plaintext highlighter-rouge">develop</code> 브랜치 병합이 허용된다.</p>
+
+<p><br />
+<img src="https://user-images.githubusercontent.com/56385667/132284868-5ed3a4fe-a991-4322-849e-446ade67d5d6.png" alt="Fig1" /></p>
+
+<p><br /></p>
+
+<h2 id="rebase-란">Rebase 란?</h2>
+
+<p>rebase 에 관련하여 <a href="https://velog.io/@godori/Git-Rebase">다음 블로그</a> 에서 너무 설명을 잘 해놓았다. 이를 바탕으로 간단하게 정리만 해보자.</p>
+
+<p>다음과 같은 커밋 기록이 있다고 하자.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56385667/132624995-7cb62d09-9669-4416-8514-125576b4e7f0.png" alt="fig1" style="zoom:150%" /></p>
+
+<p><br /></p>
+
+<p>이 때 <code class="language-plaintext highlighter-rouge">feature</code> 브랜치와 <code class="language-plaintext highlighter-rouge">master</code> 브랜치의 공통 조상 <code class="language-plaintext highlighter-rouge">b</code> 를 <code class="language-plaintext highlighter-rouge">base</code> 라고 부른다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56385667/132624998-0ad841c0-603b-4cfa-ad9a-f66067124a58.png" alt="fig1" style="zoom:150%" /></p>
+
+<p><br /></p>
+
+<p>이 base 를 다른 커밋 지점으로 바꾸는 것을 <strong>Rebase</strong> 라고 한다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56385667/132624999-6873bd31-020e-4f30-84fa-7a4cdb24eaab.png" alt="fig1" style="zoom:150%" /></p>
+
+<p><br />
+자세한 원리와 명령어는 <a href="https://velog.io/@godori/Git-Rebase">다음 블로그</a> 를 참조하고 간단하게 표현만 짚고 마무리하자.</p>
+
+<p><strong>feature 브랜치를 master 브랜치에 rebase 한다</strong></p>
+
+<p><strong>= feature 브랜치의 master 브랜치와의 공통조상 base 를 master 로 변경한다</strong></p>
+
+<p><br /></p>
+<h2 id="스테이징커밋-실수-대처-방법">스테이징/커밋 실수 대처 방법</h2>
+
+<p><br /></p>
+<h3 id="staging">staging</h3>
+
+<p>스테이지에 파일을 실수로 올렸을 때,</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git reset HEAD <span class="s2">"빼고싶은 파일명"</span>
+</code></pre></div></div>
+
+<p>을 이용하여 해당 파일을 untracked 로 만들 수 있다.</p>
+
+<p><br /></p>
+<h3 id="commit">commit</h3>
+
+<p><br /></p>
+<ol>
+  <li>아직 푸시되지 않은 커밋 메세지 고치기</li>
+  <li>이미 작성한 커밋에 파일 추가하기
+    <ol>
+      <li>이미 커밋을 해버렸는데 이 커밋에 포함되면 좋을 것 같은 작업이 추가되었을 때, 일단 수정사항을 <code class="language-plaintext highlighter-rouge">git add -A</code>  스테이지에 올리고, <code class="language-plaintext highlighter-rouge">git commit --amend -m "새로운 작업을 포함한 커밋 메세지"</code> 의 명령어를 이용하여 다시 커밋한다.</li>
+    </ol>
+  </li>
+</ol>
+
+<p>등의 작업을 하고 싶을 때,</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit <span class="nt">--amend</span> <span class="nt">-m</span> <span class="s2">"새로운 메세지"</span>
+</code></pre></div></div>
+
+<p><strong>현재 브랜치에 있는 최종 커밋을 취소하고 새로운 커밋메세지와 함께 다시 커밋할 수 있는 명령어를 이용하면 된다.</strong></p>
+
+<hr />
+
+<p><strong>푸시하기 전에 커밋을 취소</strong>하고 싶다면,</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git reset HEAD~1
+</code></pre></div></div>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git reset <span class="s2">"커밋 해시"</span>
+</code></pre></div></div>
+
+<p>의 명령어를 이용할 수 있다.</p>
+
+<p>이 명령어와 함께 사용할 수 있는 옵션이 총 세가지가 있다.</p>
+
+<p>1 . <code class="language-plaintext highlighter-rouge">--hard</code> <code class="language-plaintext highlighter-rouge">git reset --hard "커밋 해시"</code></p>
+
+<ul>
+  <li>커밋 기록을 삭제하는 동시에 로컬에서의 변동조차 삭제하는 명령어이다.</li>
+  <li>가령, readme.md 에 ‘안녕하세요’ 라는 내용을 추가한 뒤 커밋을 했다고 가정하자. 이 때 위 명령어로 커밋 기록을 삭제하면 커밋 기록이 삭제되는 것은 물론이고, 로컬의 readme.md 내부의 ‘안녕하세요’ 라는 내용 또한 삭제된다.</li>
+</ul>
+
+<p>2 . <code class="language-plaintext highlighter-rouge">--soft</code> <code class="language-plaintext highlighter-rouge">git reset --soft "커밋 해시"</code></p>
+
+<ul>
+  <li>커밋 기록을 삭제하나, 스테이징 상태는 보존된다.</li>
+  <li>1번의 예시와 마찬가지의 상황에서 위 명령어를 사용하면, 커밋 기록은 삭제되나 readme.md 파일의 변동 사항은 유지되며 해당 파일은 여전히 staging 되어있다.</li>
+</ul>
+
+<p>3 . <code class="language-plaintext highlighter-rouge">--mixed</code> <code class="language-plaintext highlighter-rouge">git reset --mixed "커밋 해시"</code></p>
+
+<ul>
+  <li>커밋 기록을 삭제하고 해당 파일은 untracked 상태로 변화하지만, 로컬에서의 변동 기록은 보존된다.</li>
+</ul>
+
+<h2 id="git-stash-란">git stash 란?</h2>
+
+<p>어떤 작업을 하고 있을 때 잠깐 다른 업무를 처리하려 브랜치를 변경하는 경우를 생각해보자. 아직 완료되지 않은 작업을 커밋하기에는 뭔가 껄끄럽다. 이럴 때 사용할 수 있는 것이 바로 git stash 이다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">git stash</code> 란 아직 마무리하지 않은 작업을 스택에 잠시 저장하는 명령어이다. 아직 완료하지 않은 작업을 커밋하지 않고 임시 저장하여 나중에 다시 꺼내 쓸 수 있다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">git stash</code> 는</p>
+
+<ol>
+  <li>스테이지에 올라온 파일 (커밋 바로 직전 단계에 있는 파일)</li>
+  <li>Tracked 상태인 파일 중 Modified 되었으나 스테이지에 올라가지 않은 파일 (수정된 사항을 <code class="language-plaintext highlighter-rouge">git add</code> 하지 않은 파일)</li>
+</ol>
+
+<p>만을 임시저장할 수 있다.</p>
+
+<p>명령어는 다음과 같다.</p>
+
+<p><br /></p>
+<ul>
+  <li>하던 작업 임시로 저장하기</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git stash
+</code></pre></div></div>
+
+<p><br /></p>
+<ul>
+  <li>stash 목록 확인하기</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git stash list
+</code></pre></div></div>
+
+<p><br /></p>
+<ul>
+  <li>stash 적용하기 (했던 작업을 다시 가져오기)</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 가장 최근의 stash를 가져와 적용한다.
+git stash apply
+
+// stash 이름에 해당하는 stash를 적용한다.
+git stash apply <span class="o">[</span>stash 이름]
+
+// staged 상태였던 파일을 자동으로 다시 staged 상태로 만들어 준다.
+git stash apply <span class="nt">--index</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<ul>
+  <li>stash 제거하기</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 가장 최근의 stash를 삭제한다.
+git stash drop
+
+// stash 이름에 해당하는 stash를 제거한다.
+git stash drop <span class="o">[</span>stash 이름]
+</code></pre></div></div>
+
+<p><br /></p>
+<ul>
+  <li>stash 적용 + 제거</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git stash pop
+</code></pre></div></div>
+
+<p><br /></p>
+<h2 id="reference">Reference</h2>
+
+<ol>
+  <li>
+    <p><a href="https://velog.io/@jacoblee19/%EB%A9%B4%EC%A0%91-%EC%A4%80%EB%B9%84-Git-GitHub">https://velog.io/@jacoblee19/%EB%A9%B4%EC%A0%91-%EC%A4%80%EB%B9%84-Git-GitHub</a></p>
+  </li>
+  <li>
+    <p><a href="https://velog.io/@godori/Git-Rebase">https://velog.io/@godori/Git-Rebase</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.hamadevelop.me/gitCommonMistakes/?fbclid=IwAR2cR7H8PgesxgErwEOa93PxMthTdY0J4e1xMP18pTtaLrC-KqgalJsERQs">https://www.hamadevelop.me/gitCommonMistakes/?fbclid=IwAR2cR7H8PgesxgErwEOa93PxMthTdY0J4e1xMP18pTtaLrC-KqgalJsERQs</a></p>
+  </li>
+  <li>
+    <p><a href="https://gmlwjd9405.github.io/2018/05/18/git-stash.html">https://gmlwjd9405.github.io/2018/05/18/git-stash.html</a></p>
+  </li>
+</ol>
+
+:ET

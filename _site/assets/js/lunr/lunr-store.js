@@ -52,4 +52,10 @@ var store = [{
         "tags": ["생활코딩","cs","http"],
         "url": "/cs/http-3/",
         "teaser": ""
+      },{
+        "title": "[Github] 나에게 부족한 Git/ Github 지식",
+        "excerpt":"Git Flow란? Git Flow 란 어떤 기능이 아니라 Vincent Drissen이 시작한 Git 사용 방법론이다! Git Flow 는 총 5가지의 브랜치를 사용해서 Git 을 사용 하는 운영 방법이다. master: 기준이 되는 브랜치로 제품을 배포하는 브랜치이다. develop : 개발 브랜치로 개발자들이 이 브랜치를 기준으로 각자 작업한 기능들을 병합(merge)한다. feature : 단위 기능을...","categories": ["git"],
+        "tags": ["github","git"],
+        "url": "/git/git%EC%82%AC%EC%9A%A9%EB%B2%95/",
+        "teaser": ""
       }]

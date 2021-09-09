@@ -1,69 +1,226 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://y00njaekim.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://y00njaekim.github.io/" rel="alternate" type="text/html" /><updated>2021-09-08T17:44:14+09:00</updated><id>https://y00njaekim.github.io/feed.xml</id><title type="html">YoonJae’s DevLog</title><subtitle>Computer Engineering and Science, 기록을 통한 기억</subtitle><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><entry><title type="html">[Http] 생활코딩 HTTP-3,4: request/response message</title><link href="https://y00njaekim.github.io/cs/http-3/" rel="alternate" type="text/html" title="[Http] 생활코딩 HTTP-3,4: request/response message" /><published>2021-09-08T00:00:00+09:00</published><updated>2021-09-08T22:06:00+09:00</updated><id>https://y00njaekim.github.io/cs/http-3</id><content type="html" xml:base="https://y00njaekim.github.io/cs/http-3/">&lt;h2 id=&quot;request-message&quot;&gt;Request Message&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://y00njaekim.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://y00njaekim.github.io/" rel="alternate" type="text/html" /><updated>2021-09-09T20:05:29+09:00</updated><id>https://y00njaekim.github.io/feed.xml</id><title type="html">YoonJae’s DevLog</title><subtitle>Computer Engineering and Science, 기록을 통한 기억</subtitle><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><entry><title type="html">[Github] 나에게 부족한 Git/ Github 지식</title><link href="https://y00njaekim.github.io/git/git%EC%82%AC%EC%9A%A9%EB%B2%95/" rel="alternate" type="text/html" title="[Github] 나에게 부족한 Git/ Github 지식" /><published>2021-09-09T00:00:00+09:00</published><updated>2021-09-09T22:06:00+09:00</updated><id>https://y00njaekim.github.io/git/git%EC%82%AC%EC%9A%A9%EB%B2%95</id><content type="html" xml:base="https://y00njaekim.github.io/git/git%EC%82%AC%EC%9A%A9%EB%B2%95/">&lt;h2 id=&quot;git-flow란&quot;&gt;Git Flow란?&lt;/h2&gt;
 
-&lt;p&gt;&lt;strong&gt;[개발자도구-네트워크]&lt;/strong&gt; 를 열어 아무 컨텐츠나 클릭해보자.&lt;/p&gt;
-
-&lt;p&gt;그러면 다음과 같이 request header 를 볼 수 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/132466288-de2a885e-e1fc-4a9e-b99b-d79f02d2bd2c.png&quot; alt=&quot;fig1&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Git Flow&lt;/strong&gt; 란 어떤 기능이 아니라 Vincent Drissen이 시작한 Git 사용 방법론이다!&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;
-이 Request Header 는 다음과 같이&lt;/p&gt;
+Git Flow 는 총 5가지의 브랜치를 사용해서 Git 을 사용 하는 운영 방법이다.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Request Message Header
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;master&lt;/code&gt;: 기준이 되는 브랜치로 제품을 배포하는 브랜치이다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;develop&lt;/code&gt; : 개발 브랜치로 개발자들이 이 브랜치를 기준으로 각자 작업한 기능들을 병합(merge)한다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;feature&lt;/code&gt; : 단위 기능을 개발하는 브랜치로 기능 개발이 완료되면 develop 브랜치에 합친다.
     &lt;ul&gt;
-      &lt;li&gt;Request Line&lt;/li&gt;
-      &lt;li&gt;Request Header&lt;/li&gt;
+      &lt;li&gt;브랜치 나오는 곳: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;develop&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;브랜치 들어가는 곳: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;develop&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;feature&lt;/code&gt; 브랜치는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;origin&lt;/code&gt; 에는 반영하지 않고, 개발자의 repo에만 존재하도록 한다.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;Request Message Body&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;release&lt;/code&gt; : 배포를 위해 master 브랜치로 보내기 전에 먼저 QA(Quality Assurance, 품질검사) 를 하기 위한 브랜치이다.
+    &lt;ul&gt;
+      &lt;li&gt;브랜치 나오는 곳: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;develop&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;브랜치 들어가는 곳: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;develop&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;master&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;develop&lt;/code&gt; 브랜치에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;release&lt;/code&gt; 브랜치를 따내고, 이와 별개로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;develop&lt;/code&gt; 브랜치에서는 다음번 릴리즈에서 사용할 기능을 추가해 나간다.
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;release&lt;/code&gt; 브랜치에서는 버그 픽스에 대한 부분만 커밋하고, 릴리즈가 준비되었다고 생각하면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;master&lt;/code&gt; 로 병합을 진행한다.
+그런 뒤 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;develop&lt;/code&gt; 브랜치로 병합하여, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;release&lt;/code&gt; 브랜치에서 수정된 내용이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;develop&lt;/code&gt; 에 반영되도록 만든다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hotfix&lt;/code&gt; : master 브랜치로 배포를 했는데 버그가 생겼을 때 긴급 수정하는 브랜치이다.
+    &lt;ul&gt;
+      &lt;li&gt;브랜치 나오는 곳: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;master&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;브랜치 들어가는 곳: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;develop&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;master&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;
-로 나누어진다.&lt;/p&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;feature &amp;gt; develop &amp;gt; release &amp;gt; hotfix &amp;gt; master&lt;/code&gt; 브랜치가 존재하며, 병합(merge)는 앞에서 뒤로만 진행한다. 즉, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;release&lt;/code&gt; 브랜치와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hotfix&lt;/code&gt; 브랜치의 경우, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;develop&lt;/code&gt; 브랜치의 오른쪽에 위치하기에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;develop&lt;/code&gt; 브랜치 병합이 허용된다.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;
-&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/132465786-445bd145-b1b8-4d3e-95ca-516728593b33.png&quot; alt=&quot;fig1&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/132284868-5ed3a4fe-a991-4322-849e-446ade67d5d6.png&quot; alt=&quot;Fig1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;rebase-란&quot;&gt;Rebase 란?&lt;/h2&gt;
+
+&lt;p&gt;rebase 에 관련하여 &lt;a href=&quot;https://velog.io/@godori/Git-Rebase&quot;&gt;다음 블로그&lt;/a&gt; 에서 너무 설명을 잘 해놓았다. 이를 바탕으로 간단하게 정리만 해보자.&lt;/p&gt;
+
+&lt;p&gt;다음과 같은 커밋 기록이 있다고 하자.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/132624995-7cb62d09-9669-4416-8514-125576b4e7f0.png&quot; alt=&quot;fig1&quot; style=&quot;zoom:150%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이 때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;feature&lt;/code&gt; 브랜치와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;master&lt;/code&gt; 브랜치의 공통 조상 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;b&lt;/code&gt; 를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;base&lt;/code&gt; 라고 부른다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/132624998-0ad841c0-603b-4cfa-ad9a-f66067124a58.png&quot; alt=&quot;fig1&quot; style=&quot;zoom:150%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이 base 를 다른 커밋 지점으로 바꾸는 것을 &lt;strong&gt;Rebase&lt;/strong&gt; 라고 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/132624999-6873bd31-020e-4f30-84fa-7a4cdb24eaab.png&quot; alt=&quot;fig1&quot; style=&quot;zoom:150%&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;
-이 때 Request Line 이 의미하는 바는,&lt;/p&gt;
+자세한 원리와 명령어는 &lt;a href=&quot;https://velog.io/@godori/Git-Rebase&quot;&gt;다음 블로그&lt;/a&gt; 를 참조하고 간단하게 표현만 짚고 마무리하자.&lt;/p&gt;
 
-&lt;p&gt;웹브라우저와 웹서버가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Get Method&lt;/code&gt; 방식을 통해 통신한며,&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;feature 브랜치를 master 브랜치에 rebase 한다&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;웹브라우저가 웹서버에게 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;doc/test.html&lt;/code&gt; 정보를 요청하며,&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;= feature 브랜치의 master 브랜치와의 공통조상 base 를 master 로 변경한다&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;웹브라우저는 현재 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HTTP/1.1&lt;/code&gt; 의 버젼 사용할 수 있다는 뜻이다.&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;스테이징커밋-실수-대처-방법&quot;&gt;스테이징/커밋 실수 대처 방법&lt;/h2&gt;
+
+&lt;h3 id=&quot;staging&quot;&gt;staging&lt;/h3&gt;
+
+&lt;p&gt;스테이지에 파일을 실수로 올렸을 때,&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git reset HEAD &lt;span class=&quot;s2&quot;&gt;&quot;빼고싶은 파일명&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;을 이용하여 해당 파일을 untracked 로 만들 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;commit&quot;&gt;commit&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;아직 푸시되지 않은 커밋 메세지 고치기&lt;/li&gt;
+  &lt;li&gt;이미 작성한 커밋에 파일 추가하기
+    &lt;ol&gt;
+      &lt;li&gt;이미 커밋을 해버렸는데 이 커밋에 포함되면 좋을 것 같은 작업이 추가되었을 때, 일단 수정사항을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git add -A&lt;/code&gt;  스테이지에 올리고, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git commit --amend -m &quot;새로운 작업을 포함한 커밋 메세지&quot;&lt;/code&gt; 의 명령어를 이용하여 다시 커밋한다.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;등의 작업을 하고 싶을 때,&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git commit &lt;span class=&quot;nt&quot;&gt;--amend&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;새로운 메세지&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;현재 브랜치에 있는 최종 커밋을 취소하고 새로운 커밋메세지와 함께 다시 커밋할 수 있는 명령어를 이용하면 된다.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
 &lt;p&gt;&lt;br /&gt;
-간단하게 Request Header 몇몇 행의 역할을 살펴보자.&lt;/p&gt;
+&lt;strong&gt;푸시하기 전에 커밋을 취소&lt;/strong&gt;하고 싶다면,&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git reset HEAD~1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git reset &lt;span class=&quot;s2&quot;&gt;&quot;커밋 해시&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;의 명령어를 이용할 수 있다.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;
-&lt;strong&gt;Host&lt;/strong&gt; : 웹서버의 주소를 알려준다.&lt;/p&gt;
+이 명령어와 함께 사용할 수 있는 옵션이 총 세가지가 있다.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;User-Agent&lt;/strong&gt; : 컴퓨터 OS 정보 및 브라우저 프로그램 정보를 알려준다.&lt;/p&gt;
+&lt;p&gt;1 . &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--hard&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git reset --hard &quot;커밋 해시&quot;&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Accept-Encoding&lt;/strong&gt; : 웹브라우저와 웹서버가 통신하는 과정에서 응답하는 데이터 양이 많을 때, 웹브라우저가 지원하는 압축 방식을 알려준다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;커밋 기록을 삭제하는 동시에 로컬에서의 변동조차 삭제하는 명령어이다.&lt;/li&gt;
+  &lt;li&gt;가령, readme.md 에 ‘안녕하세요’ 라는 내용을 추가한 뒤 커밋을 했다고 가정하자. 이 때 위 명령어로 커밋 기록을 삭제하면 커밋 기록이 삭제되는 것은 물론이고, 로컬의 readme.md 내부의 ‘안녕하세요’ 라는 내용 또한 삭제된다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;2 . &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--soft&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git reset --soft &quot;커밋 해시&quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;커밋 기록을 삭제하나, 스테이징 상태는 보존된다.&lt;/li&gt;
+  &lt;li&gt;1번의 예시와 마찬가지의 상황에서 위 명령어를 사용하면, 커밋 기록은 삭제되나 readme.md 파일의 변동 사항은 유지되며 해당 파일은 여전히 staging 되어있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;3 . &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--mixed&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git reset --mixed &quot;커밋 해시&quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;커밋 기록을 삭제하고 해당 파일은 untracked 상태로 변화하지만, 로컬에서의 변동 기록은 보존된다.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;response-message&quot;&gt;Response Message&lt;/h2&gt;
+&lt;h2 id=&quot;git-stash-란&quot;&gt;git stash 란?&lt;/h2&gt;
 
-&lt;p&gt;&lt;br /&gt;
-웹서버가 웹브라우저에게 응답하는 메세지는 다음과 같은 구조로 되어있다.&lt;/p&gt;
+&lt;p&gt;어떤 작업을 하고 있을 때 잠깐 다른 업무를 처리하려 브랜치를 변경하는 경우를 생각해보자. 아직 완료되지 않은 작업을 커밋하기에는 뭔가 껄끄럽다. 이럴 때 사용할 수 있는 것이 바로 git stash 이다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/132474355-25917d92-5087-41ff-8a51-d90dc30cccdf.jpg&quot; alt=&quot;fig3&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git stash&lt;/code&gt; 란 아직 마무리하지 않은 작업을 스택에 잠시 저장하는 명령어이다. 아직 완료하지 않은 작업을 커밋하지 않고 임시 저장하여 나중에 다시 꺼내 쓸 수 있다.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;status 행의 version&lt;/strong&gt; 은 request message 에서 &lt;strong&gt;request line 의 세번째 요소&lt;/strong&gt;와 같은 의미이다.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git stash&lt;/code&gt; 는&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;status 행의 status code&lt;/strong&gt; 는 특정 의미를 담고 있다. 위 사진에서 볼 수 있듯이 1xx, 2xx, 3xx, … 에 따라 의미가 달라진다. 세부적인 사항은 &lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/HTTP/Status&quot;&gt;다음페이지&lt;/a&gt; 를 참고하자.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;스테이지에 올라온 파일 (커밋 바로 직전 단계에 있는 파일)&lt;/li&gt;
+  &lt;li&gt;Tracked 상태인 파일 중 Modified 되었으나 스테이지에 올라가지 않은 파일 (수정된 사항을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git add&lt;/code&gt; 하지 않은 파일)&lt;/li&gt;
+&lt;/ol&gt;
 
+&lt;p&gt;만을 임시저장할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;명령어는 다음과 같다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;하던 작업 임시로 저장하기&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git stash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;stash 목록 확인하기&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git stash list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;stash 적용하기 (했던 작업을 다시 가져오기)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 가장 최근의 stash를 가져와 적용한다.
+git stash apply
+
+// stash 이름에 해당하는 stash를 적용한다.
+git stash apply &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;stash 이름]
+
+// staged 상태였던 파일을 자동으로 다시 staged 상태로 만들어 준다.
+git stash apply &lt;span class=&quot;nt&quot;&gt;--index&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;stash 제거하기&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 가장 최근의 stash를 삭제한다.
+git stash drop
+
+// stash 이름에 해당하는 stash를 제거한다.
+git stash drop &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;stash 이름]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;stash 적용 + 제거&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git stash pop
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;[https://www.youtube.com/watch?v=yIm0BfUvKH4](&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="cs" /><category term="생활코딩" /><category term="cs" /><category term="http" /><summary type="html">Http 란 무엇인가</summary></entry><entry><title type="html">[Http] 생활코딩 HTTP-2: 소개</title><link href="https://y00njaekim.github.io/cs/http-2/" rel="alternate" type="text/html" title="[Http] 생활코딩 HTTP-2: 소개" /><published>2021-09-08T00:00:00+09:00</published><updated>2021-09-08T22:06:00+09:00</updated><id>https://y00njaekim.github.io/cs/http-2</id><content type="html" xml:base="https://y00njaekim.github.io/cs/http-2/">&lt;h3 id=&quot;웹-브라우저-웹-서버&quot;&gt;웹 브라우저, 웹 서버&lt;/h3&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://velog.io/@jacoblee19/%EB%A9%B4%EC%A0%91-%EC%A4%80%EB%B9%84-Git-GitHub&quot;&gt;https://velog.io/@jacoblee19/%EB%A9%B4%EC%A0%91-%EC%A4%80%EB%B9%84-Git-GitHub&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://velog.io/@godori/Git-Rebase&quot;&gt;https://velog.io/@godori/Git-Rebase&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.hamadevelop.me/gitCommonMistakes/?fbclid=IwAR2cR7H8PgesxgErwEOa93PxMthTdY0J4e1xMP18pTtaLrC-KqgalJsERQs&quot;&gt;https://www.hamadevelop.me/gitCommonMistakes/?fbclid=IwAR2cR7H8PgesxgErwEOa93PxMthTdY0J4e1xMP18pTtaLrC-KqgalJsERQs&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://gmlwjd9405.github.io/2018/05/18/git-stash.html&quot;&gt;https://gmlwjd9405.github.io/2018/05/18/git-stash.html&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="git" /><category term="github" /><category term="git" /><summary type="html">github 사용법</summary></entry><entry><title type="html">[Http] 생활코딩 HTTP-2: 소개</title><link href="https://y00njaekim.github.io/cs/http-2/" rel="alternate" type="text/html" title="[Http] 생활코딩 HTTP-2: 소개" /><published>2021-09-08T00:00:00+09:00</published><updated>2021-09-08T22:06:00+09:00</updated><id>https://y00njaekim.github.io/cs/http-2</id><content type="html" xml:base="https://y00njaekim.github.io/cs/http-2/">&lt;h3 id=&quot;웹-브라우저-웹-서버&quot;&gt;웹 브라우저, 웹 서버&lt;/h3&gt;
 
 &lt;p&gt;&lt;br /&gt;
 &lt;img src=&quot;https://user-images.githubusercontent.com/56385667/132447069-123206b7-bc2a-469f-862f-89813aedebe3.png&quot; alt=&quot;fig1&quot; style=&quot;zoom:30%;&quot; /&gt;&lt;/p&gt;
@@ -132,6 +289,71 @@
 
 &lt;ol&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=vHhWcTyJoS0&quot;&gt;https://www.youtube.com/watch?v=vHhWcTyJoS0&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="cs" /><category term="생활코딩" /><category term="cs" /><category term="http" /><summary type="html">Http 란 무엇인가</summary></entry><entry><title type="html">[Http] 생활코딩 HTTP-3,4: request/response message</title><link href="https://y00njaekim.github.io/cs/http-3/" rel="alternate" type="text/html" title="[Http] 생활코딩 HTTP-3,4: request/response message" /><published>2021-09-08T00:00:00+09:00</published><updated>2021-09-08T22:06:00+09:00</updated><id>https://y00njaekim.github.io/cs/http-3</id><content type="html" xml:base="https://y00njaekim.github.io/cs/http-3/">&lt;h2 id=&quot;request-message&quot;&gt;Request Message&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;[개발자도구-네트워크]&lt;/strong&gt; 를 열어 아무 컨텐츠나 클릭해보자.&lt;/p&gt;
+
+&lt;p&gt;그러면 다음과 같이 request header 를 볼 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/132466288-de2a885e-e1fc-4a9e-b99b-d79f02d2bd2c.png&quot; alt=&quot;fig1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+이 Request Header 는 다음과 같이&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Request Message Header
+    &lt;ul&gt;
+      &lt;li&gt;Request Line&lt;/li&gt;
+      &lt;li&gt;Request Header&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Request Message Body&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+로 나누어진다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/132465786-445bd145-b1b8-4d3e-95ca-516728593b33.png&quot; alt=&quot;fig1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+이 때 Request Line 이 의미하는 바는,&lt;/p&gt;
+
+&lt;p&gt;웹브라우저와 웹서버가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Get Method&lt;/code&gt; 방식을 통해 통신한며,&lt;/p&gt;
+
+&lt;p&gt;웹브라우저가 웹서버에게 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;doc/test.html&lt;/code&gt; 정보를 요청하며,&lt;/p&gt;
+
+&lt;p&gt;웹브라우저는 현재 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HTTP/1.1&lt;/code&gt; 의 버젼 사용할 수 있다는 뜻이다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;
+간단하게 Request Header 몇몇 행의 역할을 살펴보자.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;strong&gt;Host&lt;/strong&gt; : 웹서버의 주소를 알려준다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;User-Agent&lt;/strong&gt; : 컴퓨터 OS 정보 및 브라우저 프로그램 정보를 알려준다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Accept-Encoding&lt;/strong&gt; : 웹브라우저와 웹서버가 통신하는 과정에서 응답하는 데이터 양이 많을 때, 웹브라우저가 지원하는 압축 방식을 알려준다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;response-message&quot;&gt;Response Message&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;
+웹서버가 웹브라우저에게 응답하는 메세지는 다음과 같은 구조로 되어있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/132474355-25917d92-5087-41ff-8a51-d90dc30cccdf.jpg&quot; alt=&quot;fig3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;status 행의 version&lt;/strong&gt; 은 request message 에서 &lt;strong&gt;request line 의 세번째 요소&lt;/strong&gt;와 같은 의미이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;status 행의 status code&lt;/strong&gt; 는 특정 의미를 담고 있다. 위 사진에서 볼 수 있듯이 1xx, 2xx, 3xx, … 에 따라 의미가 달라진다. 세부적인 사항은 &lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/HTTP/Status&quot;&gt;다음페이지&lt;/a&gt; 를 참고하자.&lt;/p&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;[https://www.youtube.com/watch?v=yIm0BfUvKH4](&lt;/li&gt;
 &lt;/ol&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="cs" /><category term="생활코딩" /><category term="cs" /><category term="http" /><summary type="html">Http 란 무엇인가</summary></entry><entry><title type="html">[React] 리액트 state 사용법</title><link href="https://y00njaekim.github.io/react/state/" rel="alternate" type="text/html" title="[React] 리액트 state 사용법" /><published>2021-09-01T00:00:00+09:00</published><updated>2021-09-01T22:06:00+09:00</updated><id>https://y00njaekim.github.io/react/state</id><content type="html" xml:base="https://y00njaekim.github.io/react/state/">&lt;h3 id=&quot;what-is-state&quot;&gt;What is ‘state’&lt;/h3&gt;
 
 &lt;hr /&gt;
