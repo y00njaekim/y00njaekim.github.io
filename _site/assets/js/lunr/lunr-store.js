@@ -1,10 +1,4 @@
 var store = [{
-        "title": "블로그 계획",
-        "excerpt":"GitHub Pages의 github.io 블로그 시작하기로 하였다. 블로그 계획을 한번 세워보았다. h2 태그로 제목을 쓰면 TOC 테이블로 오른쪽 사이드바에 보여줄 수 있다. 1. 최신 기술 공부하기 최신 기술에 대해 공부하고 블로그 글로 게시하자. 2. 최신 뉴스 게시하기 관심있는 뉴스가 나오면 사람들과 공유하고 의견을 나눠보자. 3. 토이 프로젝트 소개하기 개인적으로 진행하는 토이...","categories": ["Blog"],
-        "tags": ["Blog"],
-        "url": "/blog/blog-plan/",
-        "teaser": "/assets/images/default.jpeg"
-      },{
         "title": "[React] 리액트 입문",
         "excerpt":"리액트에 입문하다  ","categories": ["react"],
         "tags": ["코딩애플_리액트","react"],
@@ -45,17 +39,23 @@ var store = [{
         "excerpt":"웹 브라우저, 웹 서버 식당에 가면 직원과 손님이 있다. 손님은 직원에게 음식을 요청 하고 직원은 손님에게 음식을 제공 한다. 웹브라우저와 웹서버도 이와 같은 관계이다. 웹브라우저는 웹서버에게 특정 컨텐츠를 요청하고 웹서버는 웹브라우저에게 해당 컨텐츠를 제공, 응답한다. 어떤 컨텐츠들이 요청, 응답에서 오가는 지를 보려면 특정 웹페이지에 접속한 후 [개발자도구-네트워크] 를 열어보면 된다....","categories": ["cs"],
         "tags": ["생활코딩","cs","http"],
         "url": "/cs/http-2/",
-        "teaser": ""
+        "teaser": "/assets/images/default.jpeg"
       },{
         "title": "[Http] 생활코딩 HTTP-3,4: request/response message",
         "excerpt":"Request Message [개발자도구-네트워크] 를 열어 아무 컨텐츠나 클릭해보자. 그러면 다음과 같이 request header 를 볼 수 있다. 이 Request Header 는 다음과 같이 Request Message Header Request Line Request Header Request Message Body 로 나누어진다. 이 때 Request Line 이 의미하는 바는, 웹브라우저와 웹서버가 Get Method 방식을 통해 통신한며, 웹브라우저가...","categories": ["cs"],
         "tags": ["생활코딩","cs","http"],
         "url": "/cs/http-3/",
-        "teaser": ""
+        "teaser": "/assets/images/default.jpeg"
       },{
         "title": "[Github] 나에게 부족한 Git/ Github 지식",
         "excerpt":"Git Flow란? Git Flow 란 어떤 기능이 아니라 Vincent Drissen이 시작한 Git 사용 방법론이다! Git Flow 는 총 5가지의 브랜치를 사용해서 Git 을 사용 하는 운영 방법이다. master: 기준이 되는 브랜치로 제품을 배포하는 브랜치이다. develop : 개발 브랜치로 개발자들이 이 브랜치를 기준으로 각자 작업한 기능들을 병합(merge)한다. feature : 단위 기능을...","categories": ["git"],
         "tags": ["github","git"],
         "url": "/git/git%EC%82%AC%EC%9A%A9%EB%B2%95/",
-        "teaser": ""
+        "teaser": "/assets/images/default.jpeg"
+      },{
+        "title": "[Algorithm] 다익스트라 알고리즘",
+        "excerpt":"다익스트라 알고리즘이란 다익스트라 알고리즘은 그리디 알고리즘의 한 유형으로서, 특정한 노드에서 출발하여 다른 노드로 가는 각각의 최단 경로를 구하는 알고리즘이다. 음의 값을 가지는 간선이 없을 때만 적용 가능하다. 다익스트라 알고리즘을 이해하기 위해서 먼저 힙 자료구조에 대해 알고있어야 한다. 힙 자료구조란 힙 자료구조는 완전 이진 트리의 일종으로 우선순위 큐를 위하여 만들어진 자료구조이다....","categories": ["algorithm"],
+        "tags": ["algorithm","ps"],
+        "url": "/algorithm/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/",
+        "teaser": "/assets/images/default.jpeg"
       }]
