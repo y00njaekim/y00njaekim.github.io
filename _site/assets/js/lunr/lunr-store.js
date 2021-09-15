@@ -58,4 +58,10 @@ var store = [{
         "tags": ["algorithm","ps"],
         "url": "/algorithm/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/",
         "teaser": "/assets/images/default.jpeg"
+      },{
+        "title": "[JavaScript] java script 입문 문법",
+        "excerpt":"javascript 의 기본적인 문법을 배워보려 한다. codecademy 의 튜토리얼을 따라해보며 알아두어면 좋을 것들을 간단하게 적어본다. ☝🏻 Variables js 에서 변수를 선언하는 방법은 총 세가지가 있다. var let const 세 방법의 핵심적인 차이는 undefined 형태로 선언할 수 있는지, 변수 값 재할당이 가능한지 이다. 코드를 보며 살펴보자. var var myName = 'Arya';...","categories": ["js"],
+        "tags": ["js","java script","react"],
+        "url": "/js/js-%EC%9E%85%EB%AC%B8-%EB%AC%B8%EB%B2%95/",
+        "teaser": "/assets/images/default.jpeg"
       }]

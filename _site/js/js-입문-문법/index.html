@@ -1,0 +1,1289 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[JavaScript] java script 입문 문법 - YoonJae’s DevLog</title>
+<meta name="description" content="js 문법을 알아보자">
+
+
+  <meta name="author" content="YoonJae Kim">
+  
+  <meta property="article:author" content="YoonJae Kim">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="YoonJae's DevLog">
+<meta property="og:title" content="[JavaScript] java script 입문 문법">
+<meta property="og:url" content="https://y00njaekim.github.io/js/js-%EC%9E%85%EB%AC%B8-%EB%AC%B8%EB%B2%95/">
+
+
+  <meta property="og:description" content="js 문법을 알아보자">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-09-16T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2021-09-16T22:06:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://y00njaekim.github.io/js/js-%EC%9E%85%EB%AC%B8-%EB%AC%B8%EB%B2%95/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "YoonJae Kim",
+      "url": "https://y00njaekim.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="YoonJae's DevLog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          YoonJae's DevLog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/react/">React</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/algorithm/">Algorithm</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://y00njaekim.github.io/">
+        <img src="/assets/images/bio-photo.jpg" alt="YoonJae Kim" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://y00njaekim.github.io/" itemprop="url">YoonJae Kim</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>GIST undergraduate stud.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">South Korea</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+            <li><a href="https://github.com/y00njaekim/" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:keymy00njae@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="keymy00njae@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[JavaScript] java script 입문 문법">
+    <meta itemprop="description" content="js 문법을 알아보자">
+    <meta itemprop="datePublished" content="2021-09-16T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-09-16T22:06:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://y00njaekim.github.io/js/js-%EC%9E%85%EB%AC%B8-%EB%AC%B8%EB%B2%95/" class="u-url" itemprop="url">[JavaScript] java script 입문 문법
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          8 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+        
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#-variables">☝🏻 Variables</a><ul><li><a href="#var">var</a></li><li><a href="#let">let</a></li><li><a href="#const">const</a></li></ul></li><li><a href="#-introduction">☝🏻 Introduction</a><ul><li><a href="#template-literal">Template literal</a></li><li><a href="#typeof-operator">typeof operator</a></li><li><a href="#comparison-operators">Comparison Operators</a></li><li><a href="#short-circuit-evaluation">short-circuit evaluation</a></li><li><a href="#ternary-operator">Ternary Operator</a></li></ul></li><li><a href="#-function">☝🏻 Function</a></li><li><a href="#-array">☝🏻 Array</a></li><li><a href="#-loops">☝🏻 Loops</a></li><li><a href="#-iterators">☝🏻 Iterators</a><ul><li><a href="#higher-order-functions">higher-order functions</a></li><li><a href="#foreach">forEach()</a></li><li><a href="#map">map()</a></li><li><a href="#filter">filter()</a></li><li><a href="#findindex">findIndex()</a></li></ul></li><li><a href="#-objects">☝🏻 Objects</a><ul><li><a href="#access-operator">Access Operator</a></li><li><a href="#method">Method</a></li><li><a href="#looping-through-objects">Looping Through Objects</a></li><li><a href="#getters">Getters</a></li><li><a href="#setters">Setters</a></li><li><a href="#factory-functions">Factory functions</a></li><li><a href="#destructued-assignment">Destructued Assignment</a></li><li><a href="#built-in-object-methods">Built-in Object Methods</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <blockquote>
+  <p>javascript 의 기본적인 문법을 배워보려 한다. <a href="https://www.codecademy.com/learn/introduction-to-javascript">codecademy</a> 의 튜토리얼을 따라해보며 알아두어면 좋을 것들을 간단하게 적어본다.</p>
+</blockquote>
+
+<h2 id="-variables">☝🏻 Variables</h2>
+
+<p>js 에서 변수를 선언하는 방법은 총 세가지가 있다.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">var</code></li>
+  <li><code class="language-plaintext highlighter-rouge">let</code></li>
+  <li><code class="language-plaintext highlighter-rouge">const</code></li>
+</ul>
+
+<p>세 방법의 핵심적인 차이는 undefined 형태로 선언할 수 있는지, 변수 값 재할당이 가능한지 이다.</p>
+
+<p>코드를 보며 살펴보자.</p>
+<h3 id="var">var</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">myName</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Arya</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myName</span><span class="p">);</span>
+<span class="c1">// Output: Arya</span>
+</code></pre></div></div>
+
+<hr />
+<h3 id="let">let</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">meal</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Enchiladas</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">meal</span><span class="p">);</span> <span class="c1">// Output: Enchiladas</span>
+<span class="nx">meal</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Burrito</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">meal</span><span class="p">);</span> <span class="c1">// Output: Burrito</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>변수를 선언한 이후에 재할당이 가능하다</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">price</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">price</span><span class="p">);</span> <span class="c1">// Output: undefined</span>
+<span class="nx">price</span> <span class="o">=</span> <span class="mi">350</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">price</span><span class="p">);</span> <span class="c1">// Output: 350</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>변수를 선언할 때 아무런 값을 할당하지 않은 채 <code class="language-plaintext highlighter-rouge">undefined</code> 형태로 선언할 수 있다</p>
+</blockquote>
+
+<hr />
+<h3 id="const">const</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myName</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Gilberto</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myName</span><span class="p">);</span> <span class="c1">// Output: Gilberto</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>변수를 선언한 이후 재할당이 <strong>불가능</strong>하다</p>
+
+  <p>변수를 선언할 때 아무런 값을 할당하지 않은 채 <code class="language-plaintext highlighter-rouge">undefined</code> 형태로 선언하는 것이 <strong>불가능</strong>하다</p>
+</blockquote>
+
+<p><br /></p>
+<h2 id="-introduction">☝🏻 Introduction</h2>
+
+<blockquote>
+  <p>js 에서 사용하는 여러 잡다한 문법에 대해 살펴보자</p>
+</blockquote>
+
+<h3 id="template-literal">Template literal</h3>
+
+<blockquote>
+  <p>string 값을 사용할 때 따옴표(‘’) 혹은 백틱(`)을 이용할 수 있다. 이 때 백틱을 이용하면 string 안에 특정 변수 값을 삽입(interpolation) 할 수 있다</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myPet</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">armadillo</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`I own a pet </span><span class="p">${</span><span class="nx">myPet</span><span class="p">}</span><span class="s2">.`</span><span class="p">);</span>
+<span class="c1">// Output: I own a pet armadillo.</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="typeof-operator">typeof operator</h3>
+
+<blockquote>
+  <p>typeof operator 를 사용하면 특정 변수의 데이터형을 받아볼 수 있다</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">unknown1</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">foo</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">unknown1</span><span class="p">);</span> <span class="c1">// Output: string</span>
+ 
+<span class="kd">const</span> <span class="nx">unknown2</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">unknown2</span><span class="p">);</span> <span class="c1">// Output: number</span>
+ 
+<span class="kd">const</span> <span class="nx">unknown3</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> 
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">unknown3</span><span class="p">);</span> <span class="c1">// Output: boolean</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="comparison-operators">Comparison Operators</h3>
+
+<blockquote>
+  <p>C, Java, Python 등 과는 달리 javascipt 에서 equal 을 체크하는 operator 의 경우 = 기호를 세개 연달아 써야 한다.</p>
+</blockquote>
+
+<ul>
+  <li>Is equal to: <code class="language-plaintext highlighter-rouge">===</code></li>
+  <li>Is not equal to: <code class="language-plaintext highlighter-rouge">!==</code></li>
+</ul>
+
+<hr />
+
+<h3 id="short-circuit-evaluation">short-circuit evaluation</h3>
+
+<blockquote>
+  <p>변수를 할당할 때 다음과 같은 신기한 문법도 사용한다.</p>
+
+  <p><code class="language-plaintext highlighter-rouge">tool</code> 이 참이면 <code class="language-plaintext highlighter-rouge">writingUtensil</code> 에 <code class="language-plaintext highlighter-rouge">tool</code> 에 저장되어 있는 값을 할당하고, <code class="language-plaintext highlighter-rouge">tool</code> 이 거짓이면 <code class="language-plaintext highlighter-rouge">'pen'</code> 을 할당하는 표현이다.</p>
+
+  <p>이 때, <code class="language-plaintext highlighter-rouge">tool</code> 이라는 string 변수의 참/거짓 여부는 값 할당 여부에 따라 나누어진다. 만약 <code class="language-plaintext highlighter-rouge">let tool = ''</code> 과 같이 아무런 값도 할당하지 않을 경우, <code class="language-plaintext highlighter-rouge">tool</code> 은 <code class="language-plaintext highlighter-rouge">false</code> 값을 갖는다고 간주한다.</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">tool</span> <span class="o">=</span> <span class="dl">''</span>
+<span class="kd">let</span> <span class="nx">writingUtensil</span> <span class="o">=</span> <span class="nx">tool</span> <span class="o">||</span> <span class="dl">'</span><span class="s1">pen</span><span class="dl">'</span><span class="p">;</span> 
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">writingUtensil</span><span class="p">)</span> <span class="c1">// Output: 'pen'</span>
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">tool</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">note</span><span class="dl">'</span>
+<span class="kd">let</span> <span class="nx">writingUtensil</span> <span class="o">=</span> <span class="nx">tool</span> <span class="o">||</span> <span class="dl">'</span><span class="s1">pen</span><span class="dl">'</span><span class="p">;</span> 
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">writingUtensil</span><span class="p">)</span> <span class="c1">// Output: 'note'</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="ternary-operator">Ternary Operator</h3>
+
+<blockquote>
+  <p>if/else 구문으로 표현 가능한 문법들을 <code class="language-plaintext highlighter-rouge">Ternary Operator</code> 를 이용해서도 표현할 수 있다. 아래 두 코드는 같은 기능을 수행한다.</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">isNightTime</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+ 
+<span class="k">if</span> <span class="p">(</span><span class="nx">isNightTime</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Turn on the lights!</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Turn off the lights!</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이를 <code class="language-plaintext highlighter-rouge">Ternary Operator</code> 를 이용해서 표현하면 다음과 같다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">isNightTime</span> <span class="p">?</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Turn on the lights!</span><span class="dl">'</span><span class="p">)</span> <span class="p">:</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Turn off the lights!</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<h2 id="-function">☝🏻 Function</h2>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">variable</code> 과 마찬가지로 <code class="language-plaintext highlighter-rouge">function</code> 을 선언하는 방법도 다음과 같이 총 세가지가 있다.</p>
+
+  <p>특이하게도 js 에서는 함수를 변수 자체에 할당할 수 있는데, 이에 관하여 2, 3 번 코드를 유의깊게 살펴보자.</p>
+</blockquote>
+
+<p><br />
+✔️ <strong>1번</strong> <code class="language-plaintext highlighter-rouge">function</code> keyword 를 사용</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">greetWorld</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello, World!</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br />
+✔️ <strong>2번</strong> <code class="language-plaintext highlighter-rouge">function</code> keyword 를 사용하여 <code class="language-plaintext highlighter-rouge">var</code> 에 할당</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">calculateArea</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">area</span> <span class="o">=</span> <span class="nx">width</span> <span class="o">*</span> <span class="nx">height</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">area</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br />
+✔️ <strong>3번</strong> <code class="language-plaintext highlighter-rouge">const</code> keyword 와 <code class="language-plaintext highlighter-rouge">arrow function</code> 을 이용</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">rectangleArea</span> <span class="o">=</span> <span class="p">(</span><span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">area</span> <span class="o">=</span> <span class="nx">width</span> <span class="o">*</span> <span class="nx">height</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">area</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<h2 id="-array">☝🏻 Array</h2>
+
+<blockquote>
+  <p>Array 의 선언 및 기본 사용 방법은 넘어가도록 하자</p>
+
+  <p>주목할 내용은 Array 자료형의 다양한 method 이다.</p>
+
+  <p>특히 calling Array (method 를 call 하는 array 를 지칭) 를 수정/ 변화시키는 method 들이 있는 한편, calling Array 를 보존한 채 특정 기능을 수행하는 method 들이 있다.</p>
+
+  <p>자세한 내용은 다음 링크를 참고하도록 하자.</p>
+</blockquote>
+
+<p>❗ <a href="https://lorenstewart.me/2017/01/22/javascript-array-methods-mutating-vs-non-mutating/">mutating vs non-mutating</a> ❗</p>
+
+<p><br /></p>
+<h2 id="-loops">☝🏻 Loops</h2>
+
+<blockquote>
+  <p>C, C++, java 와 비슷하게 사용하는 듯 하다</p>
+
+  <p>다음 코드는 그 예시이다</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">counter</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">;</span> <span class="nx">counter</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">counter</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<h2 id="-iterators">☝🏻 Iterators</h2>
+
+<h3 id="higher-order-functions">higher-order functions</h3>
+
+<blockquote>
+  <p>함수의 argument 로 함수를 전달할 수 있다</p>
+
+  <p>다음은 그 예시 코드이다</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">timeFuncRuntime</span> <span class="o">=</span> <span class="nx">funcParameter</span> <span class="o">=&gt;</span> <span class="p">{</span>
+   <span class="kd">let</span> <span class="nx">t1</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">();</span>
+   <span class="nx">funcParameter</span><span class="p">();</span>
+   <span class="kd">let</span> <span class="nx">t2</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">();</span>
+   <span class="k">return</span> <span class="nx">t2</span> <span class="o">-</span> <span class="nx">t1</span><span class="p">;</span>
+<span class="p">}</span>
+ 
+<span class="kd">const</span> <span class="nx">addOneToOne</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+ 
+<span class="nx">timeFuncRuntime</span><span class="p">(</span><span class="nx">addOneToOne</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>이를 이용하여 다음과 같이 특정 함수의 수행 시간을 측정할 수 있다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">checkThatTwoPlusTwoEqualsFourAMillionTimes</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="mi">1000000</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Something has gone very wrong :( </span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">timeFuncRuntime</span> <span class="o">=</span> <span class="nx">funcParameter</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">t1</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">();</span>
+  <span class="nx">funcParameter</span><span class="p">();</span>
+  <span class="kd">let</span> <span class="nx">t2</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">();</span>
+  <span class="k">return</span> <span class="nx">t2</span> <span class="o">-</span> <span class="nx">t1</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">time2p2</span> <span class="o">=</span> <span class="nx">timeFuncRuntime</span><span class="p">(</span><span class="nx">checkThatTwoPlusTwoEqualsFourAMillionTimes</span><span class="p">);</span>
+</code></pre></div></div>
+<hr />
+
+<h3 id="foreach">forEach()</h3>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">.forEach()</code> 는 Array 의 method 로 사용될 수 있다</p>
+
+  <p>Array 의 모든 element 를 순회하며 callback function 을 수행한다.</p>
+
+  <p>callback function 이란 함수의 인자로 전달된 함수를 의미한다.</p>
+
+  <p>특정 함수가 <code class="language-plaintext highlighter-rouge">.forEach()</code> 에 의해 전달되었을 때, Array 의 모든 element 를 순회하며 그 함수를 적용시킨다.</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">groceries</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">brown sugar</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">salt</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">cranberries</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">walnuts</span><span class="dl">'</span><span class="p">];</span>
+
+<span class="nx">groceries</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">groceryItem</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1"> - </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">groceryItem</span><span class="p">);</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>이 때, 위 코드를 다음과 같이 <code class="language-plaintext highlighter-rouge">arrow function</code> 을 이용하여 표현할 수도 있다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">groceries</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">groceryItem</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1"> - </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">groceryItem</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p>또한, 미리 선언한 함수를 인자로 전달할 수도 있다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">printGrocery</span><span class="p">(</span><span class="nx">element</span><span class="p">){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">element</span><span class="p">);</span>
+<span class="p">}</span>
+ 
+<span class="nx">groceries</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">printGrocery</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>이 때 <code class="language-plaintext highlighter-rouge">.forEach()</code> 의 <code class="language-plaintext highlighter-rouge">return</code> 값은 <code class="language-plaintext highlighter-rouge">undefined</code> 이다.</p>
+
+<hr />
+
+<h3 id="map">map()</h3>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">.map()</code> 은 인자로 전달받은 callback function 을 Array 의 element 에 적용함으로써 새로운 Array 를 생성한다</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span> 
+ 
+<span class="kd">const</span> <span class="nx">bigNumbers</span> <span class="o">=</span> <span class="nx">numbers</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">number</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">number</span> <span class="o">*</span> <span class="mi">10</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div></div>
+<hr />
+
+<h3 id="filter">filter()</h3>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">filter()</code> 은 Array 의 element 에 대하여 filtering 을 진행한 후 새로운 Array 를 반환한다. <code class="language-plaintext highlighter-rouge">filter()</code> 의 인자로 전달되는 callback function 은 <code class="language-plaintext highlighter-rouge">true</code> <code class="language-plaintext highlighter-rouge">false</code> 를 return 하는 형태여야 한다.</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">words</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">chair</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">music</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">pillow</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">brick</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">pen</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">door</span><span class="dl">'</span><span class="p">];</span> 
+ 
+<span class="kd">const</span> <span class="nx">shortWords</span> <span class="o">=</span> <span class="nx">words</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">word</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">word</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div></div>
+<hr />
+
+<h3 id="findindex">findIndex()</h3>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">findIndex()</code> 는 callback function 이 <code class="language-plaintext highlighter-rouge">true</code> 값을 반환할 수 있는 Array 의 element 1개를 반환한다.</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">jumbledNums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">123</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">];</span> 
+ 
+<span class="kd">const</span> <span class="nx">lessThanTen</span> <span class="o">=</span> <span class="nx">jumbledNums</span><span class="p">.</span><span class="nx">findIndex</span><span class="p">(</span><span class="nx">num</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">num</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<h2 id="-objects">☝🏻 Objects</h2>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">Objects</code> 는 <code class="language-plaintext highlighter-rouge">{}</code> 로 둘러 쌓여진 형태를 보인다.</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">spaceship</span> <span class="o">=</span> <span class="p">{};</span> <span class="c1">// spaceship is an empty object</span>
+</code></pre></div></div>
+
+<h3 id="access-operator">Access Operator</h3>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">Object</code> 의 <code class="language-plaintext highlighter-rouge">property</code> 에 접근하려 할 때 두가지 방법이 존재한다.</p>
+</blockquote>
+
+<ol>
+  <li>
+    <p>dot access operator</p>
+  </li>
+  <li>
+    <p>bracket access operator</p>
+  </li>
+</ol>
+
+<hr />
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">const</code> 로 선언된 변수에 새로운 <code class="language-plaintext highlighter-rouge">Object</code> 를 재할당 하는 것은 불가능하다. 하지만 특정 <code class="language-plaintext highlighter-rouge">property</code> 의 값은 재할당 할 수 있다.</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">spaceship</span> <span class="o">=</span> <span class="p">{</span><span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">shuttle</span><span class="dl">'</span><span class="p">};</span>
+<span class="nx">spaceship</span> <span class="o">=</span> <span class="p">{</span><span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">alien</span><span class="dl">'</span><span class="p">};</span> <span class="c1">// TypeError: Assignment to constant variable.</span>
+<span class="nx">spaceship</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">alien</span><span class="dl">'</span><span class="p">;</span> <span class="c1">// Changes the value of the type property</span>
+<span class="nx">spaceship</span><span class="p">.</span><span class="nx">speed</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Mach 5</span><span class="dl">'</span><span class="p">;</span> <span class="c1">// Creates a new key of 'speed' with a value of 'Mach 5'</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">const</code> 로 선언된 변수에  특정 <code class="language-plaintext highlighter-rouge">property</code> 를 삭제할 수도 있다.</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">spaceship</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">'</span><span class="s1">Fuel Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Turbo Fuel</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">homePlanet</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Earth</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">mission</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Explore the universe</span><span class="dl">'</span> 
+<span class="p">};</span>
+ 
+<span class="k">delete</span> <span class="nx">spaceship</span><span class="p">.</span><span class="nx">mission</span><span class="p">;</span>  <span class="c1">// Removes the mission property</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="method">Method</h3>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">function</code> 이 <code class="language-plaintext highlighter-rouge">Object</code> 의 <code class="language-plaintext highlighter-rouge">property</code> 로 있는 경우, 우리는 그 <code class="language-plaintext highlighter-rouge">function</code> 을 <strong>method</strong> 라고 부른다</p>
+
+  <p>method 는 다음과 같이 선언할 수 있다.</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">alienShip</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">invade</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> 
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello! We have come to dominate your planet. Instead of Earth, it shall be called New Xaculon.</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>ES6 도입에 따라 우리는 colon 과 <code class="language-plaintext highlighter-rouge">function</code> 키워드를 생략할 수 있다.</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">alienShip</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">invade</span> <span class="p">()</span> <span class="p">{</span> 
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello! We have come to dominate your planet. Instead of Earth, it shall be called New Xaculon.</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="looping-through-objects">Looping Through Objects</h3>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">object</code> 의 <code class="language-plaintext highlighter-rouge">property</code> 를 이용하여  <code class="language-plaintext highlighter-rouge">for</code> 문을 돌릴 수 있다.</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">spaceship</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">crew</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">captain</span><span class="p">:</span> <span class="p">{</span> 
+      <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Lily</span><span class="dl">'</span><span class="p">,</span> 
+      <span class="na">degree</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Computer Engineering</span><span class="dl">'</span><span class="p">,</span> 
+      <span class="nx">cheerTeam</span><span class="p">()</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">You got this!</span><span class="dl">'</span><span class="p">)</span> <span class="p">}</span> 
+    <span class="p">},</span>
+    <span class="dl">'</span><span class="s1">chief officer</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span> 
+      <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Dan</span><span class="dl">'</span><span class="p">,</span> 
+      <span class="na">degree</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Aerospace Engineering</span><span class="dl">'</span><span class="p">,</span> 
+      <span class="nx">agree</span><span class="p">()</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">I agree, captain!</span><span class="dl">'</span><span class="p">)</span> <span class="p">}</span> 
+    <span class="p">},</span>
+    <span class="na">medic</span><span class="p">:</span> <span class="p">{</span> 
+      <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Clementine</span><span class="dl">'</span><span class="p">,</span> 
+      <span class="na">degree</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Physics</span><span class="dl">'</span><span class="p">,</span> 
+      <span class="nx">announce</span><span class="p">()</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Jets on!`</span><span class="p">)</span> <span class="p">}</span> <span class="p">},</span>
+    <span class="na">translator</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Shauna</span><span class="dl">'</span><span class="p">,</span> 
+      <span class="na">degree</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Conservation Science</span><span class="dl">'</span><span class="p">,</span> 
+      <span class="nx">powerFuel</span><span class="p">()</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">The tank is full!</span><span class="dl">'</span><span class="p">)</span> <span class="p">}</span> 
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span> 
+ 
+<span class="c1">// for...in</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">crewMember</span> <span class="k">in</span> <span class="nx">spaceship</span><span class="p">.</span><span class="nx">crew</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">crewMember</span><span class="p">}</span><span class="s2">: </span><span class="p">${</span><span class="nx">spaceship</span><span class="p">.</span><span class="nx">crew</span><span class="p">[</span><span class="nx">crewMember</span><span class="p">].</span><span class="nx">name</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="getters">Getters</h3>
+
+<blockquote>
+  <p>Getters 를 이용하여 특정 <code class="language-plaintext highlighter-rouge">property</code> 의 값을 받아오는 method 를 만들 수 있다.</p>
+
+  <p>underscore 가 앞에 붙은 <code class="language-plaintext highlighter-rouge">property</code> 들은 private 성질이 주어진 것과 같이 사용하는 관습이 있다.</p>
+
+  <p>Getter 를 통해 정의한 <code class="language-plaintext highlighter-rouge">method</code> 는 괄호 없이 사용이 가능하다.</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">_firstName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">John</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">_lastName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Doe</span><span class="dl">'</span><span class="p">,</span>
+  <span class="kd">get</span> <span class="nx">fullName</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_firstName</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="nx">_lastName</span><span class="p">){</span>
+      <span class="k">return</span> <span class="s2">`</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">_firstName</span><span class="p">}</span><span class="s2"> </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">_lastName</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="dl">'</span><span class="s1">Missing a first name or a last name.</span><span class="dl">'</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+ 
+<span class="c1">// To call the getter method: </span>
+<span class="nx">person</span><span class="p">.</span><span class="nx">fullName</span><span class="p">;</span> <span class="c1">// 'John Doe'</span>
+
+<span class="c1">// In general, getter methods do not need to be called with a set of parentheses</span>
+</code></pre></div></div>
+
+<h3 id="setters">Setters</h3>
+
+<blockquote>
+  <p>Setters 를 이용하여 특정 <code class="language-plaintext highlighter-rouge">property</code> 의 값을 수정할 수 있다.</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">_age</span><span class="p">:</span> <span class="mi">37</span><span class="p">,</span>
+  <span class="kd">set</span> <span class="nx">age</span><span class="p">(</span><span class="nx">newAge</span><span class="p">){</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">newAge</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">number</span><span class="dl">'</span><span class="p">){</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">_age</span> <span class="o">=</span> <span class="nx">newAge</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">You must assign a number to age</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="factory-functions">Factory functions</h3>
+
+<blockquote>
+  <p>같은 형태의 <code class="language-plaintext highlighter-rouge">Object</code> 를 여러개 만들어야 하는 경우 <code class="language-plaintext highlighter-rouge">Factory function</code> 을 정의하여 이용할 수 있다.</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">monsterFactory</span> <span class="o">=</span> <span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">energySource</span><span class="p">,</span> <span class="nx">catchPhrase</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span> 
+    <span class="na">name</span><span class="p">:</span> <span class="nx">name</span><span class="p">,</span>
+    <span class="na">age</span><span class="p">:</span> <span class="nx">age</span><span class="p">,</span> 
+    <span class="na">energySource</span><span class="p">:</span> <span class="nx">energySource</span><span class="p">,</span>
+    <span class="nx">scare</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">catchPhrase</span><span class="p">);</span>
+    <span class="p">}</span> 
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="destructued-assignment">Destructued Assignment</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">vampire</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Dracula</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">residence</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Transylvania</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">preferences</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">day</span><span class="p">:</span> <span class="dl">'</span><span class="s1">stay inside</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">night</span><span class="p">:</span> <span class="dl">'</span><span class="s1">satisfy appetite</span><span class="dl">'</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>특정 <code class="language-plaintext highlighter-rouge">property</code> 의 <code class="language-plaintext highlighter-rouge">key - value</code> pair 와 동일하게 <code class="language-plaintext highlighter-rouge">변수명 - 값</code> 을 만들기 위해 다음과 같이 사용할 수 있다.</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">residence</span> <span class="o">=</span> <span class="nx">vampire</span><span class="p">.</span><span class="nx">residence</span><span class="p">;</span> 
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">residence</span><span class="p">);</span> <span class="c1">// Prints 'Transylvania' </span>
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">residence</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">vampire</span><span class="p">;</span> 
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">residence</span><span class="p">);</span> <span class="c1">// Prints 'Transylvania'</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">object</code> 안의 <code class="language-plaintext highlighter-rouge">object </code> 에도 동일하게 적용시킬 수 있다.</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">day</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">vampire</span><span class="p">.</span><span class="nx">preferences</span><span class="p">;</span> 
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">day</span><span class="p">);</span> <span class="c1">// Prints 'stay inside'</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="built-in-object-methods">Built-in Object Methods</h3>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">Object</code> 가 사용할 수 있는 다양한 Built-in Methods 들이 존재한다. 다음은 <code class="language-plaintext highlighter-rouge">.keys()</code> , <code class="language-plaintext highlighter-rouge">.entries()</code> , <code class="language-plaintext highlighter-rouge">.assign()</code> 등을 이용한 코드이다.</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">robot</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="na">model</span><span class="p">:</span> <span class="dl">'</span><span class="s1">SAL-1000</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">mobile</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="na">sentient</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="na">armor</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Steel-plated</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">energyLevel</span><span class="p">:</span> <span class="mi">75</span>
+<span class="p">};</span>
+
+<span class="c1">// What is missing in the following method call?</span>
+<span class="kd">const</span> <span class="nx">robotKeys</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">robot</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">robotKeys</span><span class="p">);</span>
+
+<span class="c1">// Declare robotEntries below this line:</span>
+<span class="kd">const</span> <span class="nx">robotEntries</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">robot</span><span class="p">);</span>
+
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">robotEntries</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">robotEntries</span><span class="p">);</span>
+
+<span class="c1">// Declare newRobot below this line:</span>
+<span class="kd">const</span> <span class="nx">source</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">laserBlaster</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="na">voiceRecognition</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+<span class="kd">const</span> <span class="nx">newRobot</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({},</span> <span class="nx">robot</span><span class="p">,</span> <span class="nx">source</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newRobot</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">source</span><span class="p">);</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>결과는 다음과 같이 나온다</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span> <span class="dl">'</span><span class="s1">model</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">mobile</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">sentient</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">armor</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">energyLevel</span><span class="dl">'</span> <span class="p">]</span>
+<span class="p">[</span> <span class="p">[</span> <span class="dl">'</span><span class="s1">model</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">SAL-1000</span><span class="dl">'</span> <span class="p">],</span>
+  <span class="p">[</span> <span class="dl">'</span><span class="s1">mobile</span><span class="dl">'</span><span class="p">,</span> <span class="kc">true</span> <span class="p">],</span>
+  <span class="p">[</span> <span class="dl">'</span><span class="s1">sentient</span><span class="dl">'</span><span class="p">,</span> <span class="kc">false</span> <span class="p">],</span>
+  <span class="p">[</span> <span class="dl">'</span><span class="s1">armor</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Steel-plated</span><span class="dl">'</span> <span class="p">],</span>
+  <span class="p">[</span> <span class="dl">'</span><span class="s1">energyLevel</span><span class="dl">'</span><span class="p">,</span> <span class="mi">75</span> <span class="p">]</span> <span class="p">]</span>
+<span class="nx">object</span>
+<span class="p">{</span> <span class="nl">model</span><span class="p">:</span> <span class="dl">'</span><span class="s1">SAL-1000</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">mobile</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">sentient</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nx">armor</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Steel-plated</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">energyLevel</span><span class="p">:</span> <span class="mi">75</span><span class="p">,</span>
+  <span class="nx">laserBlaster</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">voiceRecognition</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
+<span class="p">{</span> <span class="na">laserBlaster</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">voiceRecognition</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
+</code></pre></div></div>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#java-script" class="page__taxonomy-item p-category" rel="tag">java script</a><span class="sep">, </span>
+    
+      <a href="/tags/#js" class="page__taxonomy-item p-category" rel="tag">js</a><span class="sep">, </span>
+    
+      <a href="/tags/#react" class="page__taxonomy-item p-category" rel="tag">react</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#js" class="page__taxonomy-item p-category" rel="tag">js</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-09-16">2021.09.16</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5BJavaScript%5D+java+script+%EC%9E%85%EB%AC%B8+%EB%AC%B8%EB%B2%95%20https%3A%2F%2Fy00njaekim.github.io%2Fjs%2Fjs-%25EC%259E%2585%25EB%25AC%25B8-%25EB%25AC%25B8%25EB%25B2%2595%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fy00njaekim.github.io%2Fjs%2Fjs-%25EC%259E%2585%25EB%25AC%25B8-%25EB%25AC%25B8%25EB%25B2%2595%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fy00njaekim.github.io%2Fjs%2Fjs-%25EC%259E%2585%25EB%25AC%25B8-%25EB%25AC%25B8%25EB%25B2%2595%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/algorithm/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/" class="pagination--pager" title="[Algorithm] 다익스트라 알고리즘
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/default.jpeg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/" rel="permalink">[Algorithm] 다익스트라 알고리즘
+</a>
+      
+    </h2>
+    
+      <span class="page__date">
+        <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        2021.09.14
+      </span>
+    
+    <!-- 
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+ -->
+    <p class="archive__item-excerpt" itemprop="description">최단경로 탐색 알고리즘
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/default.jpeg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/git/git%EC%82%AC%EC%9A%A9%EB%B2%95/" rel="permalink">[Github] 나에게 부족한 Git/ Github 지식
+</a>
+      
+    </h2>
+    
+      <span class="page__date">
+        <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        2021.09.09
+      </span>
+    
+    <!-- 
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+ -->
+    <p class="archive__item-excerpt" itemprop="description">github 사용법
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/default.jpeg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/cs/http-3/" rel="permalink">[Http] 생활코딩 HTTP-3,4: request/response message
+</a>
+      
+    </h2>
+    
+      <span class="page__date">
+        <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        2021.09.08
+      </span>
+    
+    <!-- 
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+ -->
+    <p class="archive__item-excerpt" itemprop="description">Http 란 무엇인가
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/default.jpeg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/cs/http-2/" rel="permalink">[Http] 생활코딩 HTTP-2: 소개
+</a>
+      
+    </h2>
+    
+      <span class="page__date">
+        <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        2021.09.08
+      </span>
+    
+    <!-- 
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+ -->
+    <p class="archive__item-excerpt" itemprop="description">Http 란 무엇인가
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 YoonJae Kim. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6RKJX9HDY2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6RKJX9HDY2', { 'anonymize_ip': false});
+</script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
