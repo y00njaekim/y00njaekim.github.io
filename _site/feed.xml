@@ -1,97 +1,76 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://y00njaekim.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://y00njaekim.github.io/" rel="alternate" type="text/html" /><updated>2021-09-16T15:21:17+09:00</updated><id>https://y00njaekim.github.io/feed.xml</id><title type="html">YoonJae’s DevLog</title><subtitle>Computer Engineering and Science, 기록을 통한 기억</subtitle><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><entry><title type="html">[Algorithm] 플로이드 워셜 알고리즘</title><link href="https://y00njaekim.github.io/algorithm/%ED%94%8C%EB%A1%9C%EC%9D%B4%EB%93%9C%EC%9B%8C%EC%85%9C/" rel="alternate" type="text/html" title="[Algorithm] 플로이드 워셜 알고리즘" /><published>2021-09-16T00:00:00+09:00</published><updated>2021-09-17T03:07:00+09:00</updated><id>https://y00njaekim.github.io/algorithm/%ED%94%8C%EB%A1%9C%EC%9D%B4%EB%93%9C%EC%9B%8C%EC%85%9C</id><content type="html" xml:base="https://y00njaekim.github.io/algorithm/%ED%94%8C%EB%A1%9C%EC%9D%B4%EB%93%9C%EC%9B%8C%EC%85%9C/">&lt;h2 id=&quot;플로이드-워셜-알고리즘이란&quot;&gt;플로이드 워셜 알고리즘이란&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://y00njaekim.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://y00njaekim.github.io/" rel="alternate" type="text/html" /><updated>2021-09-16T18:27:33+09:00</updated><id>https://y00njaekim.github.io/feed.xml</id><title type="html">YoonJae’s DevLog</title><subtitle>Computer Engineering and Science, 기록을 통한 기억</subtitle><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><entry><title type="html">[React] 리액트 jsx 안에서 if/else 사용하기</title><link href="https://y00njaekim.github.io/react/jsx-%EC%95%88%EC%97%90%EC%84%9C-js/" rel="alternate" type="text/html" title="[React] 리액트 jsx 안에서 if/else 사용하기" /><published>2021-09-16T00:00:00+09:00</published><updated>2021-09-16T22:06:00+09:00</updated><id>https://y00njaekim.github.io/react/jsx-%EC%95%88%EC%97%90%EC%84%9C-js</id><content type="html" xml:base="https://y00njaekim.github.io/react/jsx-%EC%95%88%EC%97%90%EC%84%9C-js/">&lt;h2 id=&quot;삼항연산자-ternary-operator&quot;&gt;삼항연산자 Ternary Operator&lt;/h2&gt;
 
-&lt;p&gt;&lt;br /&gt;
-플로이드 워셜 알고리즘이란 &lt;strong&gt;최단 경로&lt;/strong&gt;를 구하는 알고리즘으로 &lt;strong&gt;다이나믹 프로그래밍&lt;/strong&gt;의 일종이다.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;if/else 구문으로 표현 가능한 문법들을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ternary Operator&lt;/code&gt; 를 이용해서도 표현할 수 있다. 아래 두 코드는 같은 기능을 수행한다.&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://y00njaekim.github.io/algorithm/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/&quot;&gt;다익스트라 알고리즘과&lt;/a&gt;는 다르게 &lt;strong&gt;모든 지점에서 다른 모든 지점까지&lt;/strong&gt; 이동하는 데 필요한 최단 경로를 구한다.&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;isNightTime&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
 
-&lt;p&gt;플로이드 워셜 알고리즘은 모든 노드를 각각 한번씩 주인공으로 삼는다. 이 말은 그 노드를 기준으로 특정 판단을 수행한다는 것이다.&lt;/p&gt;
-
-&lt;p&gt;이를테면, K 번째 노드를 주인공으로 삼았다고 가정해보자. 이 때 알고리즘은 &lt;strong&gt;K 를 중간에 거쳐 지나가는 모든 경우&lt;/strong&gt;를 고려한다.&lt;/p&gt;
-
-&lt;p&gt;예를들어, 현재 최단 거리 테이블에 A 번째 노드에서 B 번째 노드로 이동하는 비용이 3이라고 저장되어 있다고 해보자.&lt;/p&gt;
-
-&lt;p&gt;이 때 K 를 주인공으로 삼은 상황에서, 알고리즘은 K 를 거치는 모든 이동 경로 경우의 수를 고려하는데, 이 때 A 에서 B 까지 이동하는 경로도 포함되어 있다.&lt;/p&gt;
-
-&lt;p&gt;즉 A 번째 노드에서 K 번째 노드를 거쳐 B 번 노드로 이동하는 경로를 고려한다. 만약 이 경로의 비용이 2 라고 계산되면, 알고리즘은 A에서 B 로 가는 비용을 2로 갱신한다.&lt;/p&gt;
-
-&lt;p&gt;그런데 A 에서 B 로 가는 경로는 K 를 주인공 삼은 단계에서 고려하는 여러 경로 중 하나에 불과하다.&lt;/p&gt;
-
-&lt;p&gt;알고리즘은 지금 확인하고 있는 노드 K를 제외하고 \(N-1\) 개의 노드 중 서로 다른 노드 쌍 (S, E) 을 선택 한 이후 S -&amp;gt; K -&amp;gt; E 의 거리를 확인하는 단계를 거친다.&lt;/p&gt;
-
-&lt;p&gt;즉 \(_{n-1}P_2\) 의 쌍을 매 단계마다 확인해야 한다.이는 \(O(N^2)\) 의 시간 복잡도를 갖는다. 이 과정을 모든 노드에 대하여 수행해야 하니 최종 시간 복잡도는 \(O(N^3)\) 이다.&lt;/p&gt;
-
-&lt;p&gt;매 단계에서 수행하는 구체적인 점화식은 다음과 같다.&lt;/p&gt;
-
-\[D_{ab} = min(D_{ab}, D_{ak} + D_{kb})\]
-
-&lt;p&gt;&lt;br /&gt;
-한편, 플로이드 워셜 알고리즘은 모든 지점에서 다른 모든 지점까지 이동하는 데 필요한 최단 경로를 모두 구하기 때문에 &lt;strong&gt;2차원 리스트&lt;/strong&gt;에 최단 거리 정보를 저장해야 한다.&lt;/p&gt;
-
-&lt;p&gt;코드는 다음과 같다.
-기억해야 할 내용은 서로 연결되지 않은 노드 간 거리를 &lt;strong&gt;무한&lt;/strong&gt; 으로 설정했다는 점이다.&lt;/p&gt;
-
-&lt;p&gt;아래 코드는 &lt;a href=&quot;https://github.com/ndb796/python-for-coding-test/blob/master/9/3.cpp&quot;&gt;나동빈 님의 깃헙&lt;/a&gt;을 참고하였다.&lt;/p&gt;
-
-&lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
-#define INF 1e9 // 무한을 의미하는 값으로 10억을 설정
-&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// 노드의 개수(N), 간선의 개수(M)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// 노드의 개수는 최대 500개라고 가정&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// 2차원 배열(그래프 표현)를 만들기&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;501&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;501&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-
-&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;// 최단 거리 테이블을 모두 무한으로 초기화&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;501&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;fill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;501&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;INF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;// 자기 자신에서 자기 자신으로 가는 비용은 0으로 초기화&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;// 각 간선에 대한 정보를 입력 받아, 그 값으로 초기화&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// A에서 B로 가는 비용은 C라고 설정&lt;/span&gt;
-        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    
-    &lt;span class=&quot;c1&quot;&gt;// 점화식에 따라 플로이드 워셜 알고리즘을 수행&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;// 수행된 결과를 출력&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;c1&quot;&gt;// 도달할 수 없는 경우, 무한(INFINITY)이라고 출력&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;INF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;INFINITY&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;&apos; &apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-            &lt;span class=&quot;c1&quot;&gt;// 도달할 수 있는 경우 거리를 출력&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;&apos; &apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;&apos;\n&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isNightTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Turn on the lights!&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Turn off the lights!&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="algorithm" /><category term="algorithm" /><category term="ps" /><summary type="html">최단경로 탐색 알고리즘</summary></entry><entry><title type="html">[JavaScript] java script 입문 문법</title><link href="https://y00njaekim.github.io/js/js-%EC%9E%85%EB%AC%B8-%EB%AC%B8%EB%B2%95/" rel="alternate" type="text/html" title="[JavaScript] java script 입문 문법" /><published>2021-09-16T00:00:00+09:00</published><updated>2021-09-16T22:06:00+09:00</updated><id>https://y00njaekim.github.io/js/js-%EC%9E%85%EB%AC%B8-%EB%AC%B8%EB%B2%95</id><content type="html" xml:base="https://y00njaekim.github.io/js/js-%EC%9E%85%EB%AC%B8-%EB%AC%B8%EB%B2%95/">&lt;blockquote&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+이를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ternary Oerator&lt;/code&gt; 를 이용해서 표현하면 다음과 같다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;isNightTime&lt;/span&gt; 
+&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Turn on the lights!&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Turn off the lights!&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;htmljsx-안에-java-script-문법-사용하는-방법&quot;&gt;html(jsx) 안에 java script 문법 사용하는 방법&lt;/h2&gt;
+
+&lt;p&gt;html(jsx) 안에 html 태그뿐만 아니라  java script 문법도 사용할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;사용하기 위해서는 java script 표현을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{}&lt;/code&gt; 중괄호로 감싸주어야 한다.&lt;/p&gt;
+
+&lt;p&gt;가령 특정 조건이 성립하는 경우에만 어떤 html(jsx) 태그를 띄울 때, 위의 삼항연산자를 이용할 수 있는데 코드는 다음과 같다.&lt;/p&gt;
+
+&lt;div class=&quot;language-react highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;App&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;3은 1보다 커요&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;3은 1보다 작아요&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;삼항연산자-조건으로-사용하는-state&quot;&gt;삼항연산자 조건으로 사용하는 state&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;삼항연산자를 사용헐 때 조건식이 필요하다. 조건식은 true/false 반환하는데, 리액트에서는 &lt;strong&gt;보통 조건식으로  state 를 많이 이용&lt;/strong&gt;한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;가령 버튼을 클릭했을 때 특정 html(jsx) ui가 보이고 버튼을 다시 클릭하면 그 ui가 사라지는 코드를 작성해보면 다음과 같다.&lt;/p&gt;
+
+&lt;div class=&quot;language-react highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;App&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onUI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setOnUI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;onUI&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;버튼이 클릭되었습니다&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;  
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;setOnUI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onUI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+      버튼
+      &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="react" /><category term="코딩애플_리액트" /><category term="react" /><summary type="html">리액트 jsx 안에서 삼항연산자 사용하기</summary></entry><entry><title type="html">[JavaScript] java script 입문 문법</title><link href="https://y00njaekim.github.io/js/js-%EC%9E%85%EB%AC%B8-%EB%AC%B8%EB%B2%95/" rel="alternate" type="text/html" title="[JavaScript] java script 입문 문법" /><published>2021-09-16T00:00:00+09:00</published><updated>2021-09-16T22:06:00+09:00</updated><id>https://y00njaekim.github.io/js/js-%EC%9E%85%EB%AC%B8-%EB%AC%B8%EB%B2%95</id><content type="html" xml:base="https://y00njaekim.github.io/js/js-%EC%9E%85%EB%AC%B8-%EB%AC%B8%EB%B2%95/">&lt;blockquote&gt;
   &lt;p&gt;javascript 의 기본적인 문법을 배워보려 한다. &lt;a href=&quot;https://www.codecademy.com/learn/introduction-to-javascript&quot;&gt;codecademy&lt;/a&gt; 의 튜토리얼을 따라해보며 알아두어면 좋을 것들을 간단하게 적어본다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -705,7 +684,151 @@
   &lt;span class=&quot;nx&quot;&gt;laserBlaster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;voiceRecognition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;laserBlaster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;voiceRecognition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="js" /><category term="js" /><category term="java script" /><category term="react" /><summary type="html">js 문법을 알아보자</summary></entry><entry><title type="html">[Algorithm] 다익스트라 알고리즘</title><link href="https://y00njaekim.github.io/algorithm/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/" rel="alternate" type="text/html" title="[Algorithm] 다익스트라 알고리즘" /><published>2021-09-14T00:00:00+09:00</published><updated>2021-09-14T22:06:00+09:00</updated><id>https://y00njaekim.github.io/algorithm/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC</id><content type="html" xml:base="https://y00njaekim.github.io/algorithm/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/">&lt;h2 id=&quot;다익스트라-알고리즘이란&quot;&gt;다익스트라 알고리즘이란&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="js" /><category term="js" /><category term="java script" /><category term="react" /><summary type="html">js 문법을 알아보자</summary></entry><entry><title type="html">[Algorithm] 플로이드 워셜 알고리즘</title><link href="https://y00njaekim.github.io/algorithm/%ED%94%8C%EB%A1%9C%EC%9D%B4%EB%93%9C%EC%9B%8C%EC%85%9C/" rel="alternate" type="text/html" title="[Algorithm] 플로이드 워셜 알고리즘" /><published>2021-09-16T00:00:00+09:00</published><updated>2021-09-17T03:07:00+09:00</updated><id>https://y00njaekim.github.io/algorithm/%ED%94%8C%EB%A1%9C%EC%9D%B4%EB%93%9C%EC%9B%8C%EC%85%9C</id><content type="html" xml:base="https://y00njaekim.github.io/algorithm/%ED%94%8C%EB%A1%9C%EC%9D%B4%EB%93%9C%EC%9B%8C%EC%85%9C/">&lt;h2 id=&quot;플로이드-워셜-알고리즘이란&quot;&gt;플로이드 워셜 알고리즘이란&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;
+플로이드 워셜 알고리즘이란 &lt;strong&gt;최단 경로&lt;/strong&gt;를 구하는 알고리즘으로 &lt;strong&gt;다이나믹 프로그래밍&lt;/strong&gt;의 일종이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://y00njaekim.github.io/algorithm/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/&quot;&gt;다익스트라 알고리즘과&lt;/a&gt;는 다르게 &lt;strong&gt;모든 지점에서 다른 모든 지점까지&lt;/strong&gt; 이동하는 데 필요한 최단 경로를 구한다.&lt;/p&gt;
+
+&lt;p&gt;플로이드 워셜 알고리즘은 모든 노드를 각각 한번씩 주인공으로 삼는다. 이 말은 그 노드를 기준으로 특정 판단을 수행한다는 것이다.&lt;/p&gt;
+
+&lt;p&gt;이를테면, K 번째 노드를 주인공으로 삼았다고 가정해보자. 이 때 알고리즘은 &lt;strong&gt;K 를 중간에 거쳐 지나가는 모든 경우&lt;/strong&gt;를 고려한다.&lt;/p&gt;
+
+&lt;p&gt;예를들어, 현재 최단 거리 테이블에 A 번째 노드에서 B 번째 노드로 이동하는 비용이 3이라고 저장되어 있다고 해보자.&lt;/p&gt;
+
+&lt;p&gt;이 때 K 를 주인공으로 삼은 상황에서, 알고리즘은 K 를 거치는 모든 이동 경로 경우의 수를 고려하는데, 이 때 A 에서 B 까지 이동하는 경로도 포함되어 있다.&lt;/p&gt;
+
+&lt;p&gt;즉 A 번째 노드에서 K 번째 노드를 거쳐 B 번 노드로 이동하는 경로를 고려한다. 만약 이 경로의 비용이 2 라고 계산되면, 알고리즘은 A에서 B 로 가는 비용을 2로 갱신한다.&lt;/p&gt;
+
+&lt;p&gt;그런데 A 에서 B 로 가는 경로는 K 를 주인공 삼은 단계에서 고려하는 여러 경로 중 하나에 불과하다.&lt;/p&gt;
+
+&lt;p&gt;알고리즘은 지금 확인하고 있는 노드 K를 제외하고 \(N-1\) 개의 노드 중 서로 다른 노드 쌍 (S, E) 을 선택 한 이후 S -&amp;gt; K -&amp;gt; E 의 거리를 확인하는 단계를 거친다.&lt;/p&gt;
+
+&lt;p&gt;즉 \(_{n-1}P_2\) 의 쌍을 매 단계마다 확인해야 한다.이는 \(O(N^2)\) 의 시간 복잡도를 갖는다. 이 과정을 모든 노드에 대하여 수행해야 하니 최종 시간 복잡도는 \(O(N^3)\) 이다.&lt;/p&gt;
+
+&lt;p&gt;매 단계에서 수행하는 구체적인 점화식은 다음과 같다.&lt;/p&gt;
+
+\[D_{ab} = min(D_{ab}, D_{ak} + D_{kb})\]
+
+&lt;p&gt;&lt;br /&gt;
+한편, 플로이드 워셜 알고리즘은 모든 지점에서 다른 모든 지점까지 이동하는 데 필요한 최단 경로를 모두 구하기 때문에 &lt;strong&gt;2차원 리스트&lt;/strong&gt;에 최단 거리 정보를 저장해야 한다.&lt;/p&gt;
+
+&lt;p&gt;코드는 다음과 같다.
+기억해야 할 내용은 서로 연결되지 않은 노드 간 거리를 &lt;strong&gt;무한&lt;/strong&gt; 으로 설정했다는 점이다.&lt;/p&gt;
+
+&lt;p&gt;아래 코드는 &lt;a href=&quot;https://github.com/ndb796/python-for-coding-test/blob/master/9/3.cpp&quot;&gt;나동빈 님의 깃헙&lt;/a&gt;을 참고하였다.&lt;/p&gt;
+
+&lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+#define INF 1e9 // 무한을 의미하는 값으로 10억을 설정
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 노드의 개수(N), 간선의 개수(M)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 노드의 개수는 최대 500개라고 가정&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 2차원 배열(그래프 표현)를 만들기&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;501&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;501&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// 최단 거리 테이블을 모두 무한으로 초기화&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;501&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;fill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;501&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;INF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// 자기 자신에서 자기 자신으로 가는 비용은 0으로 초기화&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// 각 간선에 대한 정보를 입력 받아, 그 값으로 초기화&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// A에서 B로 가는 비용은 C라고 설정&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    
+    &lt;span class=&quot;c1&quot;&gt;// 점화식에 따라 플로이드 워셜 알고리즘을 수행&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// 수행된 결과를 출력&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;// 도달할 수 없는 경우, 무한(INFINITY)이라고 출력&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;INF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;INFINITY&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;&apos; &apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;// 도달할 수 있는 경우 거리를 출력&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;&apos; &apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;&apos;\n&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="algorithm" /><category term="algorithm" /><category term="ps" /><summary type="html">최단경로 탐색 알고리즘</summary></entry><entry><title type="html">[React] 리액트 Component 사용법</title><link href="https://y00njaekim.github.io/react/Component/" rel="alternate" type="text/html" title="[React] 리액트 Component 사용법" /><published>2021-09-16T00:00:00+09:00</published><updated>2021-09-16T22:06:00+09:00</updated><id>https://y00njaekim.github.io/react/Component</id><content type="html" xml:base="https://y00njaekim.github.io/react/Component/">&lt;h2 id=&quot;what-is-react-component&quot;&gt;What is ‘React Component’&lt;/h2&gt;
+
+&lt;p&gt;html(jsx)를 반환하는 &lt;strong&gt;함수&lt;/strong&gt;로서 html(jsx) 태그와 같이 사용할 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;why-to-use-react-component&quot;&gt;Why to use ‘React Component’&lt;/h2&gt;
+
+&lt;p&gt;많은 html(jsx) 태그들을 한 단어로 줄이고 싶을 때 사용한다.&lt;/p&gt;
+
+&lt;p&gt;특정 구조가 &lt;strong&gt;반복해서 사용&lt;/strong&gt;되는 경우, 그 구조를 Component 로 만들면 관리하기 용이하다.&lt;/p&gt;
+
+&lt;p&gt;또한 &lt;strong&gt;자주 변경되는 HTML UI&lt;/strong&gt; 를 Component 로 만들면 재렌더링 측면에서 성능적인 이점이 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;다른 페이지를 만들 때&lt;/strong&gt; 그 페이지의 그 페이지의 html 내용을 하나의 컴포넌트로 많들기도 하며, 다른 팀원가 &lt;strong&gt;협업할 때&lt;/strong&gt; 페이지를 컴포넌트 단위로 나눠서 작업을 분배하기도 한다.&lt;/p&gt;
+
+&lt;p&gt;하지만, Component 는 결국 함수로서 Component body scope 를 벗어나는 변수나 state 등을 사용할 수 없다. 이 때 scope 를 벗어나는 변수나 state 를 사용하려면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;props&lt;/code&gt; 문법을 이용해야 한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-to-use-react-component&quot;&gt;How to use ‘React Component’&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;function Modal ()&lt;/code&gt; 을 이용하여 Component 를 만들었다. 만들어진 Component 는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;App ()&lt;/code&gt; 안에서 html tag 와 같이 사용된다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;App&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;HTML&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;잔뜩있는&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;곳&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Modal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/Modal&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/div&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Modal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;className&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;modal&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;h2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;제목&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/h2&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;날짜&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/p&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;상세내용&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/p&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/div&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;규칙&quot;&gt;규칙&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;컴포넌트를 만드는 규칙과 관습을 소개한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;우선, 컴포넌트의 첫 글자는 대문자로 시작하자. 관습이다.&lt;/p&gt;
+
+&lt;p&gt;다음으로, return() 안에 있는 html(jsx) 는 하나의 태그로 묶어야 한다.&lt;/p&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="react" /><category term="코딩애플_리액트" /><category term="react" /><summary type="html">리액트 component</summary></entry><entry><title type="html">[Algorithm] 다익스트라 알고리즘</title><link href="https://y00njaekim.github.io/algorithm/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/" rel="alternate" type="text/html" title="[Algorithm] 다익스트라 알고리즘" /><published>2021-09-14T00:00:00+09:00</published><updated>2021-09-14T22:06:00+09:00</updated><id>https://y00njaekim.github.io/algorithm/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC</id><content type="html" xml:base="https://y00njaekim.github.io/algorithm/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/">&lt;h2 id=&quot;다익스트라-알고리즘이란&quot;&gt;다익스트라 알고리즘이란&lt;/h2&gt;
 
 &lt;p&gt;다익스트라 알고리즘은 &lt;strong&gt;그리디 알고리즘&lt;/strong&gt;의 한 유형으로서,&lt;/p&gt;
 
@@ -1164,72 +1287,7 @@ git stash drop &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;stash 이름]
   &lt;li&gt;
     &lt;p&gt;&lt;a href=&quot;https://gmlwjd9405.github.io/2018/05/18/git-stash.html&quot;&gt;https://gmlwjd9405.github.io/2018/05/18/git-stash.html&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="git" /><category term="github" /><category term="git" /><summary type="html">github 사용법</summary></entry><entry><title type="html">[Http] 생활코딩 HTTP-3,4: request/response message</title><link href="https://y00njaekim.github.io/cs/http-3/" rel="alternate" type="text/html" title="[Http] 생활코딩 HTTP-3,4: request/response message" /><published>2021-09-08T00:00:00+09:00</published><updated>2021-09-08T22:06:00+09:00</updated><id>https://y00njaekim.github.io/cs/http-3</id><content type="html" xml:base="https://y00njaekim.github.io/cs/http-3/">&lt;h2 id=&quot;request-message&quot;&gt;Request Message&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[개발자도구-네트워크]&lt;/strong&gt; 를 열어 아무 컨텐츠나 클릭해보자.&lt;/p&gt;
-
-&lt;p&gt;그러면 다음과 같이 request header 를 볼 수 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/132466288-de2a885e-e1fc-4a9e-b99b-d79f02d2bd2c.png&quot; alt=&quot;fig1&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;
-이 Request Header 는 다음과 같이&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Request Message Header
-    &lt;ul&gt;
-      &lt;li&gt;Request Line&lt;/li&gt;
-      &lt;li&gt;Request Header&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Request Message Body&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;
-로 나누어진다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/132465786-445bd145-b1b8-4d3e-95ca-516728593b33.png&quot; alt=&quot;fig1&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;
-이 때 Request Line 이 의미하는 바는,&lt;/p&gt;
-
-&lt;p&gt;웹브라우저와 웹서버가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Get Method&lt;/code&gt; 방식을 통해 통신한며,&lt;/p&gt;
-
-&lt;p&gt;웹브라우저가 웹서버에게 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;doc/test.html&lt;/code&gt; 정보를 요청하며,&lt;/p&gt;
-
-&lt;p&gt;웹브라우저는 현재 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HTTP/1.1&lt;/code&gt; 의 버젼 사용할 수 있다는 뜻이다.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br /&gt;
-간단하게 Request Header 몇몇 행의 역할을 살펴보자.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;strong&gt;Host&lt;/strong&gt; : 웹서버의 주소를 알려준다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;User-Agent&lt;/strong&gt; : 컴퓨터 OS 정보 및 브라우저 프로그램 정보를 알려준다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Accept-Encoding&lt;/strong&gt; : 웹브라우저와 웹서버가 통신하는 과정에서 응답하는 데이터 양이 많을 때, 웹브라우저가 지원하는 압축 방식을 알려준다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;response-message&quot;&gt;Response Message&lt;/h2&gt;
-
-&lt;p&gt;&lt;br /&gt;
-웹서버가 웹브라우저에게 응답하는 메세지는 다음과 같은 구조로 되어있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/132474355-25917d92-5087-41ff-8a51-d90dc30cccdf.jpg&quot; alt=&quot;fig3&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;status 행의 version&lt;/strong&gt; 은 request message 에서 &lt;strong&gt;request line 의 세번째 요소&lt;/strong&gt;와 같은 의미이다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;status 행의 status code&lt;/strong&gt; 는 특정 의미를 담고 있다. 위 사진에서 볼 수 있듯이 1xx, 2xx, 3xx, … 에 따라 의미가 달라진다. 세부적인 사항은 &lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/HTTP/Status&quot;&gt;다음페이지&lt;/a&gt; 를 참고하자.&lt;/p&gt;
-
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;[https://www.youtube.com/watch?v=yIm0BfUvKH4](&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="cs" /><category term="생활코딩" /><category term="cs" /><category term="http" /><summary type="html">Http 란 무엇인가</summary></entry><entry><title type="html">[Http] 생활코딩 HTTP-2: 소개</title><link href="https://y00njaekim.github.io/cs/http-2/" rel="alternate" type="text/html" title="[Http] 생활코딩 HTTP-2: 소개" /><published>2021-09-08T00:00:00+09:00</published><updated>2021-09-08T22:06:00+09:00</updated><id>https://y00njaekim.github.io/cs/http-2</id><content type="html" xml:base="https://y00njaekim.github.io/cs/http-2/">&lt;h3 id=&quot;웹-브라우저-웹-서버&quot;&gt;웹 브라우저, 웹 서버&lt;/h3&gt;
+&lt;/ol&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="git" /><category term="github" /><category term="git" /><summary type="html">github 사용법</summary></entry><entry><title type="html">[Http] 생활코딩 HTTP-2: 소개</title><link href="https://y00njaekim.github.io/cs/http-2/" rel="alternate" type="text/html" title="[Http] 생활코딩 HTTP-2: 소개" /><published>2021-09-08T00:00:00+09:00</published><updated>2021-09-08T22:06:00+09:00</updated><id>https://y00njaekim.github.io/cs/http-2</id><content type="html" xml:base="https://y00njaekim.github.io/cs/http-2/">&lt;h3 id=&quot;웹-브라우저-웹-서버&quot;&gt;웹 브라우저, 웹 서버&lt;/h3&gt;
 
 &lt;p&gt;&lt;br /&gt;
 &lt;img src=&quot;https://user-images.githubusercontent.com/56385667/132447069-123206b7-bc2a-469f-862f-89813aedebe3.png&quot; alt=&quot;fig1&quot; style=&quot;zoom:30%;&quot; /&gt;&lt;/p&gt;
@@ -1298,6 +1356,71 @@ git stash drop &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;stash 이름]
 
 &lt;ol&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=vHhWcTyJoS0&quot;&gt;https://www.youtube.com/watch?v=vHhWcTyJoS0&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="cs" /><category term="생활코딩" /><category term="cs" /><category term="http" /><summary type="html">Http 란 무엇인가</summary></entry><entry><title type="html">[Http] 생활코딩 HTTP-3,4: request/response message</title><link href="https://y00njaekim.github.io/cs/http-3/" rel="alternate" type="text/html" title="[Http] 생활코딩 HTTP-3,4: request/response message" /><published>2021-09-08T00:00:00+09:00</published><updated>2021-09-08T22:06:00+09:00</updated><id>https://y00njaekim.github.io/cs/http-3</id><content type="html" xml:base="https://y00njaekim.github.io/cs/http-3/">&lt;h2 id=&quot;request-message&quot;&gt;Request Message&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;[개발자도구-네트워크]&lt;/strong&gt; 를 열어 아무 컨텐츠나 클릭해보자.&lt;/p&gt;
+
+&lt;p&gt;그러면 다음과 같이 request header 를 볼 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/132466288-de2a885e-e1fc-4a9e-b99b-d79f02d2bd2c.png&quot; alt=&quot;fig1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+이 Request Header 는 다음과 같이&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Request Message Header
+    &lt;ul&gt;
+      &lt;li&gt;Request Line&lt;/li&gt;
+      &lt;li&gt;Request Header&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Request Message Body&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+로 나누어진다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/132465786-445bd145-b1b8-4d3e-95ca-516728593b33.png&quot; alt=&quot;fig1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+이 때 Request Line 이 의미하는 바는,&lt;/p&gt;
+
+&lt;p&gt;웹브라우저와 웹서버가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Get Method&lt;/code&gt; 방식을 통해 통신한며,&lt;/p&gt;
+
+&lt;p&gt;웹브라우저가 웹서버에게 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;doc/test.html&lt;/code&gt; 정보를 요청하며,&lt;/p&gt;
+
+&lt;p&gt;웹브라우저는 현재 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HTTP/1.1&lt;/code&gt; 의 버젼 사용할 수 있다는 뜻이다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;
+간단하게 Request Header 몇몇 행의 역할을 살펴보자.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;strong&gt;Host&lt;/strong&gt; : 웹서버의 주소를 알려준다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;User-Agent&lt;/strong&gt; : 컴퓨터 OS 정보 및 브라우저 프로그램 정보를 알려준다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Accept-Encoding&lt;/strong&gt; : 웹브라우저와 웹서버가 통신하는 과정에서 응답하는 데이터 양이 많을 때, 웹브라우저가 지원하는 압축 방식을 알려준다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;response-message&quot;&gt;Response Message&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;
+웹서버가 웹브라우저에게 응답하는 메세지는 다음과 같은 구조로 되어있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/132474355-25917d92-5087-41ff-8a51-d90dc30cccdf.jpg&quot; alt=&quot;fig3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;status 행의 version&lt;/strong&gt; 은 request message 에서 &lt;strong&gt;request line 의 세번째 요소&lt;/strong&gt;와 같은 의미이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;status 행의 status code&lt;/strong&gt; 는 특정 의미를 담고 있다. 위 사진에서 볼 수 있듯이 1xx, 2xx, 3xx, … 에 따라 의미가 달라진다. 세부적인 사항은 &lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/HTTP/Status&quot;&gt;다음페이지&lt;/a&gt; 를 참고하자.&lt;/p&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;[https://www.youtube.com/watch?v=yIm0BfUvKH4](&lt;/li&gt;
 &lt;/ol&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="cs" /><category term="생활코딩" /><category term="cs" /><category term="http" /><summary type="html">Http 란 무엇인가</summary></entry><entry><title type="html">[React] 리액트 state 사용법</title><link href="https://y00njaekim.github.io/react/state/" rel="alternate" type="text/html" title="[React] 리액트 state 사용법" /><published>2021-09-01T00:00:00+09:00</published><updated>2021-09-01T22:06:00+09:00</updated><id>https://y00njaekim.github.io/react/state</id><content type="html" xml:base="https://y00njaekim.github.io/react/state/">&lt;h3 id=&quot;what-is-state&quot;&gt;What is ‘state’&lt;/h3&gt;
 
 &lt;hr /&gt;
@@ -1348,7 +1471,7 @@ git stash drop &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;stash 이름]
 &lt;p&gt;&lt;br /&gt;
 3 . html(jsx) 의 필요한 부분에 데이터 바인딩을 한다.&lt;/p&gt;
 
-&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;div class=&quot;language-react highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;h3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;}{&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;span&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;👍&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;span&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;si&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;thumbCount&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;}&lt;/span&gt; 
@@ -1359,14 +1482,12 @@ git stash drop &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;stash 이름]
 &lt;p&gt;&lt;br /&gt;
 4 . 데이터 값을 변경하고 싶을 때 함수를 사용한다.&lt;/p&gt;
 
-&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;div class=&quot;language-react highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;h3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;}{&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;span&lt;/span&gt;
       &lt;span class=&quot;na&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;nx&quot;&gt;setThumbCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;thumbCount&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&amp;gt;&lt;/span&gt;
       👍
     &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;span&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;si&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;thumbCount&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;}&lt;/span&gt; 
@@ -1492,94 +1613,4 @@ ms word 혹은 ms ppt 에서 새로운 서체를 이용하던 순간을 생각�
 &lt;ol&gt;
   &lt;li&gt;&lt;a href=&quot;https://webclub.tistory.com/261&quot;&gt;https://webclub.tistory.com/261&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://oilmlio.com/blog/Change-the-GitHub-Blog-Font-RIDIBatang/&quot;&gt;https://oilmlio.com/blog/Change-the-GitHub-Blog-Font-RIDIBatang/&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="Jekyll" /><category term="Jekyll" /></entry><entry><title type="html">[Flutter] stateful 위젯이란?</title><link href="https://y00njaekim.github.io/flutter/stateful-stateless/" rel="alternate" type="text/html" title="[Flutter] stateful 위젯이란?" /><published>2021-08-15T00:00:00+09:00</published><updated>2021-08-16T22:06:00+09:00</updated><id>https://y00njaekim.github.io/flutter/stateful-stateless</id><content type="html" xml:base="https://y00njaekim.github.io/flutter/stateful-stateless/">&lt;h4 id=&quot;stateful-위젯&quot;&gt;stateful 위젯&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;사용자와 상호작용 존재&lt;/li&gt;
-  &lt;li&gt;재렌더링 가능, 동적 화면 구현&lt;/li&gt;
-  &lt;li&gt;LifeCycle 이 길고 build가 1회 이상 발생&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;stateless-위젯&quot;&gt;stateless 위젯&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;사용자와 상호작용 없음&lt;/li&gt;
-  &lt;li&gt;재렌더링 없음, 정적 화면 구현&lt;/li&gt;
-  &lt;li&gt;LifeCycle이 짧고 build가 1회만 발생. 성능이 좋음&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;React 의 state 를 생각하면 될 듯!&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="flutter" /><category term="flutter" /><category term="dart" /><summary type="html">stateful, stateless 위젯 차이점</summary></entry><entry><title type="html">[Flutter] future, async, await 개념 정리</title><link href="https://y00njaekim.github.io/flutter/future-async-await/" rel="alternate" type="text/html" title="[Flutter] future, async, await 개념 정리" /><published>2021-08-15T00:00:00+09:00</published><updated>2021-08-16T22:06:00+09:00</updated><id>https://y00njaekim.github.io/flutter/future-async-await</id><content type="html" xml:base="https://y00njaekim.github.io/flutter/future-async-await/">&lt;h3 id=&quot;future&quot;&gt;Future&lt;/h3&gt;
-
-&lt;p&gt;future 의 값으로 세가지의 상태가 가능하다.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Uncompleted&lt;/li&gt;
-  &lt;li&gt;Completed, data return&lt;/li&gt;
-  &lt;li&gt;Completed, error return&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;처음 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Future&lt;/code&gt; 를 사용해서 data 를 만들면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Uncompleted future&lt;/code&gt; 가 들어간다.&lt;/p&gt;
-
-&lt;p&gt;이후 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Future&lt;/code&gt; 가 작업을 끝내면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Completed future&lt;/code&gt; 가 들어간다.&lt;/p&gt;
-
-&lt;h3 id=&quot;async-await&quot;&gt;async, await&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;await&lt;/code&gt; 는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;async&lt;/code&gt; 함수 내에서만 사용 가능하다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;async&lt;/code&gt; 함수 내에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;await&lt;/code&gt; 가 붙은 작업은 해당 작업이 끝날 때까지 다음 작업으로 넘어가지 않고 기다린다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-dart highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;start main()&apos;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myFuture&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getData&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;result : &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$myFuture&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-  &lt;span class=&quot;n&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;end main()&apos;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;Future&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getData&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Future&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000000000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;I got a lot of data! Tehre are 1000000000&apos;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; 
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;이 경우, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;var myFuture = getData();&lt;/code&gt; 에 의해 호출된 getData() 의 for 문이 다 돌아가기 전에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;print(&apos;result : $myFuture&apos;)&lt;/code&gt; 이 실행된다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getDtata() &lt;/code&gt; 의 작업이 완료되지 않은 상태에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Future&lt;/code&gt;은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Uncomplete instance &lt;/code&gt; 값이 들어가 있기에 결과는 다음과 같이 출력된다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/129482763-94447960-5e0b-4d58-af4b-beed9046f984.png&quot; alt=&quot;fig1&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-dart highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;start main()&apos;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myFuture&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getData&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;result : &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$myFuture&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-  &lt;span class=&quot;n&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;end main()&apos;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;Future&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getData&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Future&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000000000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;I got a lot of data! Tehre are 1000000000&apos;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; 
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;반면 이 경우에는, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;var myFuture = await getData();&lt;/code&gt; 에 의해 호출된 getData() 의 for 문이 다 돌아갈 때까지 event queue가 멈춰있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getDtata() &lt;/code&gt; 의 작업이 완료된 후 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;var myFuture&lt;/code&gt; 에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Completed data&lt;/code&gt; 값이 들어가므로 다음과 같이 출력된다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/129482797-ff015288-7c3d-455c-98c3-1069da7183e8.png&quot; alt=&quot;fig2&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://brunch.co.kr/@mystoryg/134&quot;&gt;https://brunch.co.kr/@mystoryg/134&lt;/a&gt;&lt;/p&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="flutter" /><category term="flutter" /><category term="dart" /><summary type="html">비동기란?</summary></entry></feed>
+&lt;/ol&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="Jekyll" /><category term="Jekyll" /></entry></feed>

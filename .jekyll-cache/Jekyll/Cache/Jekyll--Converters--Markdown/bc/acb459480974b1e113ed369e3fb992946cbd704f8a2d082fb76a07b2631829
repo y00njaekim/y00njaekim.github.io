@@ -1,0 +1,77 @@
+I"A<h2 id="삼항연산자-ternary-operator">삼항연산자 Ternary Operator</h2>
+
+<blockquote>
+  <p>if/else 구문으로 표현 가능한 문법들을 <code class="language-plaintext highlighter-rouge">Ternary Operator</code> 를 이용해서도 표현할 수 있다. 아래 두 코드는 같은 기능을 수행한다.</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">isNightTime</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> 
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">isNightTime</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Turn on the lights!</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Turn off the lights!</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span>
+
+
+</code></pre></div></div>
+
+<p><br />
+이를 <code class="language-plaintext highlighter-rouge">Ternary Oerator</code> 를 이용해서 표현하면 다음과 같다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">isNightTime</span> 
+<span class="p">?</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Turn on the lights!</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">:</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Turn off the lights!</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<h2 id="htmljsx-안에-java-script-문법-사용하는-방법">html(jsx) 안에 java script 문법 사용하는 방법</h2>
+
+<p>html(jsx) 안에 html 태그뿐만 아니라  java script 문법도 사용할 수 있다.</p>
+
+<p>사용하기 위해서는 java script 표현을 <code class="language-plaintext highlighter-rouge">{}</code> 중괄호로 감싸주어야 한다.</p>
+
+<p>가령 특정 조건이 성립하는 경우에만 어떤 html(jsx) 태그를 띄울 때, 위의 삼항연산자를 이용할 수 있는데 코드는 다음과 같다.</p>
+
+<div class="language-react highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">{</span>
+      <span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">3</span>
+      <span class="p">?</span> <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>3은 1보다 커요<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">:</span> <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>3은 1보다 작아요<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">}</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="삼항연산자-조건으로-사용하는-state">삼항연산자 조건으로 사용하는 state</h3>
+
+<blockquote>
+  <p>삼항연산자를 사용헐 땨 조건식이 필요하다. 조건식은 true/false 반환하는데 리액트에서는 <strong>보통 조건식으로  state 를 많이 이용</strong>한다.</p>
+</blockquote>
+
+<p>가령 버튼을 클릭했을 때 특정 html(jsx) ui가 보이고 버튼을 다시 클릭하면 그 ui가 사라지는 코드를 작성해보면 다음과 같다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="p">[</span><span class="nx">onUI</span><span class="p">,</span> <span class="nx">setOnUI</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+  
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="p">{</span>
+        <span class="nx">onUI</span> <span class="o">===</span> <span class="kc">true</span>
+        <span class="p">?</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">버튼이</span> <span class="nx">클릭되었습니다</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>        <span class="p">:</span> <span class="kc">null</span>  
+      <span class="p">}</span>
+
+      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">setOnUI</span><span class="p">(</span><span class="o">!</span><span class="nx">onUI</span><span class="p">);</span>
+      <span class="p">}}</span><span class="o">&gt;</span>
+      <span class="nx">버튼</span>
+      <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>		<span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+:ET

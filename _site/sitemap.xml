@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://y00njaekim.github.io/react/%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%9E%85%EB%AC%B8/</loc>
-<lastmod>2021-08-16T22:06:00+09:00</lastmod>
-</url>
-<url>
 <loc>https://y00njaekim.github.io/flutter/dart-%EB%AC%B8%EB%B2%95/</loc>
 <lastmod>2021-08-14T22:06:00+09:00</lastmod>
 </url>
@@ -46,6 +42,14 @@
 </url>
 <url>
 <loc>https://y00njaekim.github.io/js/js-%EC%9E%85%EB%AC%B8-%EB%AC%B8%EB%B2%95/</loc>
+<lastmod>2021-09-16T22:06:00+09:00</lastmod>
+</url>
+<url>
+<loc>https://y00njaekim.github.io/react/Component/</loc>
+<lastmod>2021-09-16T22:06:00+09:00</lastmod>
+</url>
+<url>
+<loc>https://y00njaekim.github.io/react/jsx-%EC%95%88%EC%97%90%EC%84%9C-js/</loc>
 <lastmod>2021-09-16T22:06:00+09:00</lastmod>
 </url>
 <url>

@@ -1,10 +1,4 @@
 var store = [{
-        "title": "[React] 리액트 입문",
-        "excerpt":"리액트에 입문하다  ","categories": ["react"],
-        "tags": ["코딩애플_리액트","react"],
-        "url": "/react/%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%9E%85%EB%AC%B8/",
-        "teaser": "/assets/images/react.png"
-      },{
         "title": "[Flutter] dart 문법 정리",
         "excerpt":"최근 처음으로 해커톤에 참가하였다. 오아시스 해커톤이라고, 2021.08.09 ~ 2021.08.20 동안 열리는 호남지역 해커톤이다! 나는 팀원들과 상의하여 flutter 를 이용한 택시 매칭 앱을 만들기로 하였고, 지금 flutter 의 사용 언어인 dart 를 훑어보고 있다. dart 문법 class class constructor 에 관하여. 일반적인 class constructor 사용 class Person { int age; String...","categories": ["flutter"],
         "tags": ["flutter","dart"],
@@ -70,4 +64,16 @@ var store = [{
         "tags": ["js","java script","react"],
         "url": "/js/js-%EC%9E%85%EB%AC%B8-%EB%AC%B8%EB%B2%95/",
         "teaser": "/assets/images/default.jpeg"
+      },{
+        "title": "[React] 리액트 Component 사용법",
+        "excerpt":"What is ‘React Component’ html(jsx)를 반환하는 함수로서 html(jsx) 태그와 같이 사용할 수 있다. Why to use ‘React Component’ 많은 html(jsx) 태그들을 한 단어로 줄이고 싶을 때 사용한다. 특정 구조가 반복해서 사용되는 경우, 그 구조를 Component 로 만들면 관리하기 용이하다. 또한 자주 변경되는 HTML UI 를 Component 로 만들면 재렌더링 측면에서...","categories": ["react"],
+        "tags": ["코딩애플_리액트","react"],
+        "url": "/react/Component/",
+        "teaser": "/assets/images/react.png"
+      },{
+        "title": "[React] 리액트 jsx 안에서 if/else 사용하기",
+        "excerpt":"삼항연산자 Ternary Operator if/else 구문으로 표현 가능한 문법들을 Ternary Operator 를 이용해서도 표현할 수 있다. 아래 두 코드는 같은 기능을 수행한다. let isNightTime = true; if (isNightTime) { console.log('Turn on the lights!'); } else { console.log('Turn off the lights!'); } 이를 Ternary Oerator 를 이용해서 표현하면 다음과 같다. isNightTime ?...","categories": ["react"],
+        "tags": ["코딩애플_리액트","react"],
+        "url": "/react/jsx-%EC%95%88%EC%97%90%EC%84%9C-js/",
+        "teaser": "/assets/images/react.png"
       }]
