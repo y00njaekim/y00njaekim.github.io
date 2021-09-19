@@ -1,0 +1,97 @@
+I"/<p>🔥 <a href="https://y00njaekim.github.io/react/Component/">컴포넌트</a>에 대해 기초적인 지식이 없다면 해당 포스팅을 참고하자.</p>
+
+<h2 id="why-to-use-props">Why to use ‘props’</h2>
+
+<p>컴포넌트는 결국 <strong>함수</strong>로서 컴포넌트 바디 scope 를 벗어나는 변수나 <code class="language-plaintext highlighter-rouge">state</code> 를 사용하지 못한다.</p>
+
+<p>부모 컴포넌트에서 정의한 <code class="language-plaintext highlighter-rouge">state</code> 를 자식 컴포넌트에서 사용하기 위해서는 <code class="language-plaintext highlighter-rouge">props</code> 문법을 이용해야 한다.</p>
+
+<h2 id="what-is-props">What is ‘props’</h2>
+
+<p>부모 컴포넌트에서 자식 컴포넌트로 전달하는 <strong>변수</strong> 혹은 <strong>인자</strong>를 <code class="language-plaintext highlighter-rouge">props</code> 라고 한다.</p>
+
+<h2 id="how-to-use-props">How to use ‘props’</h2>
+
+<p>부모 컴포넌트에서 자식 컴포넌트를 사용할 때 html(jsx) 태그 안에 전달하고 싶은 변수를 입력한다.</p>
+
+<p>형식은 다음과 같다. <code class="language-plaintext highlighter-rouge">&lt;태그 임의의props명=(전달할 변수명)&gt;</code> , 예를 들면 <code class="language-plaintext highlighter-rouge">&lt;div name=(name)</code>&gt; 등과 같이 말이다.</p>
+
+<p>이 때, 자식 컴포넌트로서 사용되는 함수를 정의할 때 <code class="language-plaintext highlighter-rouge">props</code> 파라미터를 <code class="language-plaintext highlighter-rouge">argument</code> 로서 입력해야한다.</p>
+
+<p>예제 코드는 다음과 같다.</p>
+
+<div class="language-react highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="p">[</span><span class="nx">title</span><span class="p">,</span> <span class="nx">setTitle</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([</span><span class="dl">'</span><span class="s1">나이키</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">아디다스</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">퓨마</span><span class="dl">'</span><span class="p">]);</span>
+	<span class="k">return</span><span class="p">(</span>
+  	<span class="p">&lt;</span><span class="nc">Modal</span> <span class="na">title</span><span class="p">=</span><span class="si">{</span><span class="nx">title</span><span class="si">}</span><span class="p">&gt;&lt;/</span><span class="nc">Modal</span><span class="p">&gt;</span> <span class="c1">// &lt;Modal 임의의props명={전달할 변수명}&gt;</span>
+  <span class="p">)</span>  
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">Modal</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+  	<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+    	<span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span> 제목 <span class="si">{</span> <span class="nx">props</span><span class="p">.</span><span class="nx">title</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="si">}</span> <span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="ex-글-제목을-누르면-모달창이-뜨게-해보자">Ex. 글 제목을 누르면 모달창이 뜨게 해보자</h2>
+
+<p>특정 글 제목을 누르면 그 글에 해당하는 상세 내용이 뜨는 모달창을 만들어 보자.</p>
+
+<p>결과 화면은 다음과 같다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56385667/133927003-bde10c32-1a55-4219-a0f2-6c9778f44408.png" /></p>
+
+<p>코드는 다음과 같다.</p>
+
+<div class="language-react highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span><span class="nx">useState</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">./App.css</span><span class="dl">'</span>
+
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="p">[</span><span class="nx">title</span><span class="p">,</span> <span class="nx">setTitle</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([</span><span class="dl">'</span><span class="s1">나이키</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">아디다스</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">퓨마</span><span class="dl">'</span><span class="p">]);</span>
+  <span class="kd">let</span> <span class="p">[</span><span class="nx">date</span><span class="p">,</span> <span class="nx">setDate</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([</span><span class="dl">'</span><span class="s1">2월 2일</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">3월 5일</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">4월 6일</span><span class="dl">'</span><span class="p">])</span>
+  <span class="kd">let</span> <span class="p">[</span><span class="nx">modalNum</span><span class="p">,</span> <span class="nx">setModalNum</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">();</span>
+  <span class="kd">let</span> <span class="p">[</span><span class="nx">modal</span><span class="p">,</span> <span class="nx">setModal</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"App"</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"black-nav"</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>개발 BLOG<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="si">{</span> <span class="nx">title</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">e</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span>
+          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"list"</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">h3</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+              <span class="nx">setModalNum</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+              <span class="nx">modal</span> <span class="o">===</span> <span class="kc">false</span> <span class="p">?</span> <span class="nx">setModal</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">:</span> <span class="nx">setModal</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+            <span class="p">}</span><span class="si">}</span><span class="p">&gt;</span>
+              <span class="si">{</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="si">}{</span> <span class="nx">e</span> <span class="si">}{</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="si">}</span>
+            <span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="si">{</span> <span class="nx">date</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="si">}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">hr</span> <span class="p">/&gt;</span>
+          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">);</span>  
+      <span class="p">})</span><span class="si">}</span>
+      <span class="si">{</span>
+        <span class="nx">modal</span> <span class="o">===</span> <span class="kc">true</span> 
+        <span class="p">?</span> <span class="p">&lt;</span><span class="nc">Modal</span> <span class="na">title</span><span class="p">=</span><span class="si">{</span><span class="nx">title</span><span class="si">}</span> <span class="na">date</span><span class="p">=</span><span class="si">{</span><span class="nx">date</span><span class="si">}</span> <span class="na">modalNum</span><span class="p">=</span><span class="si">{</span><span class="nx">modalNum</span><span class="si">}</span><span class="p">&gt;&lt;/</span><span class="nc">Modal</span><span class="p">&gt;</span> 
+        <span class="p">:</span> <span class="kc">null</span>
+      <span class="si">}</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">Modal</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"modal"</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">title</span><span class="p">[</span><span class="nx">props</span><span class="p">.</span><span class="nx">modalNum</span><span class="p">]</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">date</span><span class="p">[</span><span class="nx">props</span><span class="p">.</span><span class="nx">modalNum</span><span class="p">]</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span>
+</code></pre></div></div>
+
+:ET

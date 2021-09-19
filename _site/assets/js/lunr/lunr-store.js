@@ -77,6 +77,12 @@ var store = [{
         "url": "/react/jsx-%EC%95%88%EC%97%90%EC%84%9C-js/",
         "teaser": "/assets/images/react.png"
       },{
+        "title": "[React] 리액트 props 사용법",
+        "excerpt":"🔥 컴포넌트에 대해 기초적인 지식이 없다면 해당 포스팅을 참고하자. 🔥 Why to use ‘props’ 컴포넌트는 결국 함수로서 컴포넌트 바디 scope 를 벗어나는 변수나 state 를 사용하지 못한다. 부모 컴포넌트에서 정의한 state 를 자식 컴포넌트에서 사용하기 위해서는 props 문법을 이용해야 한다. What is ‘props’ 부모 컴포넌트에서 자식 컴포넌트로 전달하는 변수 혹은...","categories": ["react"],
+        "tags": ["코딩애플_리액트","react"],
+        "url": "/react/props/",
+        "teaser": "/assets/images/react.png"
+      },{
         "title": "[React] 반복문을 이용한 UI 생성",
         "excerpt":"같은 구조를 가진 UI 를 만들려 할 때 두가지 방법을 사용할 수 있다. for 을 이용한 반복문 .map() 을 이용한 반복문 두 방법의 공통점은 결국 return 값이 Array 라는 것이다. 위 사항을 유념하고 다음 내용을 살펴보자. for 을 이용한 반복문 for 을 이용한 반복문은 다음과 같은 특징을 갖고 있다. ​...","categories": ["react"],
         "tags": ["코딩애플_리액트","react"],

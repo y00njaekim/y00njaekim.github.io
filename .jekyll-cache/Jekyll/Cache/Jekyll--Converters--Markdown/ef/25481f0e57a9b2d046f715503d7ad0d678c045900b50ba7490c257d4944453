@@ -1,4 +1,4 @@
-I"�<p>같은 구조를 가진 UI 를 만들려 할 때 두가지 방법을 사용할 수 있다.</p>
+I"�<p>같은 구조를 가진 UI 를 만들려 할 때 두가지 방법을 사용할 수 있다.</p>
 
 <ol>
   <li><code class="language-plaintext highlighter-rouge">for</code> 을 이용한 반복문</li>
@@ -51,8 +51,8 @@
   <span class="k">return</span> <span class="p">(</span>
     <span class="p">{</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
         <span class="nx">title</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
-			  	<span class="k">return</span> <span class="p">(</span>
-          	<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+          <span class="k">return</span> <span class="p">(</span>
+            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
               <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span> <span class="si">{</span> <span class="nx">e</span> <span class="si">}</span>
                 <span class="p">&lt;</span><span class="nt">span</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
                   <span class="kd">var</span> <span class="nx">temp</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">thumb</span><span class="p">];</span>
@@ -61,8 +61,8 @@
                 <span class="p">}</span><span class="si">}</span><span class="p">&gt;</span>👍<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> <span class="si">{</span> <span class="nx">thumb</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="si">}</span>
               <span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
             <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-          <span class="p">)</span>    
-  		  <span class="p">})</span>
+          <span class="p">)</span>
+        <span class="p">})</span>
      <span class="o">&lt;</span><span class="sr">/div&gt; </span><span class="err">}
 </span>  <span class="p">)</span>
 <span class="p">}</span>
