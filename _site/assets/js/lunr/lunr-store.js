@@ -76,4 +76,10 @@ var store = [{
         "tags": ["코딩애플_리액트","react"],
         "url": "/react/jsx-%EC%95%88%EC%97%90%EC%84%9C-js/",
         "teaser": "/assets/images/react.png"
+      },{
+        "title": "[React] 반복문을 이용한 UI 생성",
+        "excerpt":"같은 구조를 가진 UI 를 만들려 할 때 두가지 방법을 사용할 수 있다. for 을 이용한 반복문 .map() 을 이용한 반복문 두 방법의 공통점은 결국 return 값이 Array 라는 것이다. 위 사항을 유념하고 다음 내용을 살펴보자. for 을 이용한 반복문 for 을 이용한 반복문은 다음과 같은 특징을 갖고 있다. ​...","categories": ["react"],
+        "tags": ["코딩애플_리액트","react"],
+        "url": "/react/%EB%B0%98%EB%B3%B5%EB%AC%B8/",
+        "teaser": "/assets/images/react.png"
       }]

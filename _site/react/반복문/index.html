@@ -12,8 +12,8 @@
 
 <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[React] 리액트 Component 사용법 - YoonJae’s DevLog</title>
-<meta name="description" content="리액트 component">
+<!-- begin _includes/seo.html --><title>[React] 반복문을 이용한 UI 생성 - YoonJae’s DevLog</title>
+<meta name="description" content="React 에서 for, map() 사용하기">
 
 
   <meta name="author" content="YoonJae Kim">
@@ -25,11 +25,11 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="YoonJae's DevLog">
-<meta property="og:title" content="[React] 리액트 Component 사용법">
-<meta property="og:url" content="https://y00njaekim.github.io/react/Component/">
+<meta property="og:title" content="[React] 반복문을 이용한 UI 생성">
+<meta property="og:url" content="https://y00njaekim.github.io/react/%EB%B0%98%EB%B3%B5%EB%AC%B8/">
 
 
-  <meta property="og:description" content="리액트 component">
+  <meta property="og:description" content="React 에서 for, map() 사용하기">
 
 
 
@@ -39,11 +39,11 @@
 
 
 
-  <meta property="article:published_time" content="2021-09-16T00:00:00+09:00">
+  <meta property="article:published_time" content="2021-09-19T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2021-09-16T22:06:00+09:00">
+  <meta property="article:modified_time" content="2021-09-19T22:06:00+09:00">
 
 
 
@@ -52,7 +52,7 @@
   
 
 
-<link rel="canonical" href="https://y00njaekim.github.io/react/Component/">
+<link rel="canonical" href="https://y00njaekim.github.io/react/%EB%B0%98%EB%B3%B5%EB%AC%B8/">
 
 
 
@@ -269,16 +269,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[React] 리액트 Component 사용법">
-    <meta itemprop="description" content="리액트 component">
-    <meta itemprop="datePublished" content="2021-09-16T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2021-09-16T22:06:00+09:00">
+    <meta itemprop="headline" content="[React] 반복문을 이용한 UI 생성">
+    <meta itemprop="description" content="React 에서 for, map() 사용하기">
+    <meta itemprop="datePublished" content="2021-09-19T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-09-19T22:06:00+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="https://y00njaekim.github.io/react/Component/" class="u-url" itemprop="url">[React] 리액트 Component 사용법
+            <a href="https://y00njaekim.github.io/react/%EB%B0%98%EB%B3%B5%EB%AC%B8/" class="u-url" itemprop="url">[React] 반복문을 이용한 UI 생성
 </a>
           </h1>
           
@@ -295,7 +295,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          less than 1 minute read
+          1 minute read
         
       </span>
     
@@ -311,63 +311,83 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#what-is-react-component">What is ‘React Component’</a></li><li><a href="#why-to-use-react-component">Why to use ‘React Component’</a></li><li><a href="#how-to-use-react-component">How to use ‘React Component’</a><ul><li><a href="#규칙">규칙</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#for-을-이용한-반복문">for 을 이용한 반복문</a></li><li><a href="#map-을-이용한-반복문">.map() 을 이용한 반복문</a></li></ul>
 
             </nav>
           </aside>
         
-        <h2 id="what-is-react-component">What is ‘React Component’</h2>
+        <p>같은 구조를 가진 UI 를 만들려 할 때 두가지 방법을 사용할 수 있다.</p>
 
-<p>html(jsx)를 반환하는 <strong>함수</strong>로서 html(jsx) 태그와 같이 사용할 수 있다.</p>
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">for</code> 을 이용한 반복문</li>
+  <li><code class="language-plaintext highlighter-rouge">.map()</code> 을 이용한 반복문</li>
+</ol>
 
-<h2 id="why-to-use-react-component">Why to use ‘React Component’</h2>
+<p>두 방법의 공통점은 <strong>결국 return 값이 Array</strong> 라는 것이다.</p>
 
-<p>많은 html(jsx) 태그들을 한 단어로 줄이고 싶을 때 사용한다.</p>
+<p>위 사항을 유념하고 다음 내용을 살펴보자.</p>
 
-<p>특정 구조가 <strong>반복해서 사용</strong>되는 경우, 그 구조를 Component 로 만들면 관리하기 용이하다.</p>
+<h2 id="for-을-이용한-반복문">for 을 이용한 반복문</h2>
 
-<p>또한 <strong>자주 변경되는 HTML UI</strong> 를 Component 로 만들면 재렌더링 측면에서 성능적인 이점이 있다.</p>
+<p><code class="language-plaintext highlighter-rouge">for</code> 을 이용한 반복문은 다음과 같은 특징을 갖고 있다.</p>
 
-<p><strong>다른 페이지를 만들 때</strong> 그 페이지의 그 페이지의 html 내용을 하나의 컴포넌트로 많들기도 하며, 다른 팀원가 <strong>협업할 때</strong> 페이지를 컴포넌트 단위로 나눠서 작업을 분배하기도 한다.</p>
+<p>​	📌 <code class="language-plaintext highlighter-rouge">array</code> 를 만든 이후 <code class="language-plaintext highlighter-rouge">array</code> 에 html (jsx) 태그를 <code class="language-plaintext highlighter-rouge">push</code> 한다.</p>
 
-<p>하지만, Component 는 결국 함수로서 Component body scope 를 벗어나는 변수나 state 등을 사용할 수 없다. 이 때 scope 를 벗어나는 변수나 state 를 사용하려면 <code class="language-plaintext highlighter-rouge">props</code> 문법을 이용해야 한다.</p>
+<p>​	📌 <code class="language-plaintext highlighter-rouge">array</code> 를 return 한다.</p>
 
-<h2 id="how-to-use-react-component">How to use ‘React Component’</h2>
+<p>예제 코드는 다음과 같다.</p>
 
-<blockquote>
-  <p><code class="language-plaintext highlighter-rouge">function Modal ()</code> 을 이용하여 Component 를 만들었다. 만들어진 Component 는 <code class="language-plaintext highlighter-rouge">App ()</code> 안에서 html tag 와 같이 사용된다. 이 때 <code class="language-plaintext highlighter-rouge">App()</code> 을 <strong>부모 컴포넌트</strong>, <code class="language-plaintext highlighter-rouge">Modal()</code> 을 <strong>자식 컴포넌트</strong> 라고 한다.</p>
-</blockquote>
-
-<div class="language-react highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">function</span> <span class="nx">App</span> <span class="p">(){</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-      HTML 잔뜩있는 곳
-      ...
-      <span class="p">&lt;</span><span class="nc">Modal</span><span class="p">&gt;&lt;/</span><span class="nc">Modal</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">)</span>
-<span class="p">}</span>
-
-<span class="kd">function</span> <span class="nx">Modal</span><span class="p">(){</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"modal"</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>제목<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>날짜<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>상세내용<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<div class="language-react highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  
+  <span class="kd">function</span> <span class="nx">repeatedUI</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">arr</span><span class="p">.</span><span class="nx">push</span><span class="p">(&lt;</span><span class="nt">div</span><span class="p">&gt;</span>안녕<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;)</span>
+    <span class="p">}</span>    
+    <span class="k">return</span> <span class="nx">arr</span><span class="p">;</span>
+  <span class="p">}</span>
+  
+  <span class="k">return</span><span class="p">(</span>
+  	<span class="p">{</span> <span class="nx">repeatedUI</span><span class="p">()</span> <span class="p">}</span>
   <span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<h3 id="규칙">규칙</h3>
+<h2 id="map-을-이용한-반복문">.map() 을 이용한 반복문</h2>
 
-<blockquote>
-  <p>컴포넌트를 만드는 규칙과 관습을 소개한다.</p>
-</blockquote>
+<p><code class="language-plaintext highlighter-rouge">.map()</code> 에 대하여 잘 모르는 분들은 <a href="https://y00njaekim.github.io/js/js-%EC%9E%85%EB%AC%B8-%EB%AC%B8%EB%B2%95/">다음</a> 글에서 관련 내용만 빠르게 살펴보고 오면 좋을 것 같다.</p>
 
-<p>우선, 컴포넌트의 첫 글자는 대문자로 시작하자. 관습이다.</p>
+<p>위 글을 읽어보면 <code class="language-plaintext highlighter-rouge">.map()</code> 은 <strong>결국 새로운 array 를 return</strong> 한다는 사실을 알 수 있다.</p>
 
-<p>다음으로, return() 안에 있는 html(jsx) 는 하나의 태그로 묶어야 한다.</p>
+<p><code class="language-plaintext highlighter-rouge">.map()</code> 을 이용한 반복문은 최종적으로 array 를 return 하게 되고 그 array 안의 모든 요소들이 html (jsx) 로서 렌더링 된다.</p>
+
+<p>예제 코드는 다음과 같다.</p>
+
+<div class="language-react highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="p">[</span><span class="nx">title</span><span class="p">,</span> <span class="nx">setTitle</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([</span><span class="dl">'</span><span class="s1">나이키</span><span class="dl">'</span><span class="p">.</span> <span class="dl">'</span><span class="s1">아디다스</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">퓨마</span><span class="dl">'</span><span class="p">]);</span>
+  <span class="kd">let</span> <span class="p">[</span><span class="nx">thumb</span><span class="p">,</span> <span class="nx">setThumb</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]);</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">{</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="nx">title</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+			  	<span class="k">return</span> <span class="p">(</span>
+          	<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span> <span class="si">{</span> <span class="nx">e</span> <span class="si">}</span>
+                <span class="p">&lt;</span><span class="nt">span</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                  <span class="kd">var</span> <span class="nx">temp</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">thumb</span><span class="p">];</span>
+                  <span class="nx">temp</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">temp</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+                  <span class="nx">setThumb</span><span class="p">(</span><span class="nx">temp</span><span class="p">);</span>
+                <span class="p">}</span><span class="si">}</span><span class="p">&gt;</span>👍<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> <span class="si">{</span> <span class="nx">thumb</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="si">}</span>
+              <span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+          <span class="p">)</span>    
+  		  <span class="p">})</span>
+     <span class="o">&lt;</span><span class="sr">/div&gt; </span><span class="err">}
+</span>  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><img src="https://user-images.githubusercontent.com/56385667/133751226-bc600ec1-5b3b-45f2-a15d-bb4b53644895.png" /></p>
+
 
         
       </section>
@@ -411,7 +431,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-09-16">2021.09.16</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-09-19">2021.09.19</time></p>
 
       </footer>
 
@@ -420,23 +440,22 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%5BReact%5D+%EB%A6%AC%EC%95%A1%ED%8A%B8+Component+%EC%82%AC%EC%9A%A9%EB%B2%95%20https%3A%2F%2Fy00njaekim.github.io%2Freact%2FComponent%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5BReact%5D+%EB%B0%98%EB%B3%B5%EB%AC%B8%EC%9D%84+%EC%9D%B4%EC%9A%A9%ED%95%9C+UI+%EC%83%9D%EC%84%B1%20https%3A%2F%2Fy00njaekim.github.io%2Freact%2F%25EB%25B0%2598%25EB%25B3%25B5%25EB%25AC%25B8%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fy00njaekim.github.io%2Freact%2FComponent%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fy00njaekim.github.io%2Freact%2F%25EB%25B0%2598%25EB%25B3%25B5%25EB%25AC%25B8%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fy00njaekim.github.io%2Freact%2FComponent%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fy00njaekim.github.io%2Freact%2F%25EB%25B0%2598%25EB%25B3%25B5%25EB%25AC%25B8%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/js/js-%EC%9E%85%EB%AC%B8-%EB%AC%B8%EB%B2%95/" class="pagination--pager" title="[JavaScript] java script 입문 문법
+      <a href="/react/jsx-%EC%95%88%EC%97%90%EC%84%9C-js/" class="pagination--pager" title="[React] 리액트 jsx 안에서 if/else 사용하기
 ">Previous</a>
     
     
-      <a href="/react/jsx-%EC%95%88%EC%97%90%EC%84%9C-js/" class="pagination--pager" title="[React] 리액트 jsx 안에서 if/else 사용하기
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -450,56 +469,6 @@
     <div class="page__related">
       <h2 class="page__related-title">You may also enjoy</h2>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/images/react.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/react/%EB%B0%98%EB%B3%B5%EB%AC%B8/" rel="permalink">[React] 반복문을 이용한 UI 생성
-</a>
-      
-    </h2>
-    
-      <span class="page__date">
-        <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        2021.09.19
-      </span>
-    
-    <!-- 
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          1 minute read
-        
-      </span>
-    
-  </p>
-
- -->
-    <p class="archive__item-excerpt" itemprop="description">React 에서 for, map() 사용하기
-</p>
-  </article>
-</div>
-
         
           
 
@@ -546,6 +515,56 @@
 
  -->
     <p class="archive__item-excerpt" itemprop="description">리액트 jsx 안에서 삼항연산자 사용하기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/react.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/react/Component/" rel="permalink">[React] 리액트 Component 사용법
+</a>
+      
+    </h2>
+    
+      <span class="page__date">
+        <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        2021.09.16
+      </span>
+    
+    <!-- 
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+ -->
+    <p class="archive__item-excerpt" itemprop="description">리액트 component
 </p>
   </article>
 </div>

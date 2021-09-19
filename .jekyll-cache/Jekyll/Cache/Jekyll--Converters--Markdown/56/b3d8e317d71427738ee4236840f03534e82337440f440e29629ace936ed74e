@@ -1,0 +1,74 @@
+I"�<p>같은 구조를 가진 UI 를 만들려 할 때 두가지 방법을 사용할 수 있다.</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">for</code> 을 이용한 반복문</li>
+  <li><code class="language-plaintext highlighter-rouge">.map()</code> 을 이용한 반복문</li>
+</ol>
+
+<p>두 방법의 공통점은 <strong>결국 return 값이 Array</strong> 라는 것이다.</p>
+
+<p>위 사항을 유념하고 다음 내용을 살펴보자.</p>
+
+<h2 id="for-을-이용한-반복문">for 을 이용한 반복문</h2>
+
+<p><code class="language-plaintext highlighter-rouge">for</code> 을 이용한 반복문은 다음과 같은 특징을 갖고 있다.</p>
+
+<p>​	📌 <code class="language-plaintext highlighter-rouge">array</code> 를 만든 이후 <code class="language-plaintext highlighter-rouge">array</code> 에 html (jsx) 태그를 <code class="language-plaintext highlighter-rouge">push</code> 한다.</p>
+
+<p>​	📌 <code class="language-plaintext highlighter-rouge">array</code> 를 return 한다.</p>
+
+<p>예제 코드는 다음과 같다.</p>
+
+<div class="language-react highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  
+  <span class="kd">function</span> <span class="nx">repeatedUI</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">arr</span><span class="p">.</span><span class="nx">push</span><span class="p">(&lt;</span><span class="nt">div</span><span class="p">&gt;</span>안녕<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;)</span>
+    <span class="p">}</span>    
+    <span class="k">return</span> <span class="nx">arr</span><span class="p">;</span>
+  <span class="p">}</span>
+  
+  <span class="k">return</span><span class="p">(</span>
+  	<span class="p">{</span> <span class="nx">repeatedUI</span><span class="p">()</span> <span class="p">}</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="map-을-이용한-반복문">.map() 을 이용한 반복문</h2>
+
+<p><code class="language-plaintext highlighter-rouge">.map()</code> 에 대하여 잘 모르는 분들은 <a href="https://y00njaekim.github.io/js/js-%EC%9E%85%EB%AC%B8-%EB%AC%B8%EB%B2%95/">다음</a> 글에서 관련 내용만 빠르게 살펴보고 오면 좋을 것 같다.</p>
+
+<p>위 글을 읽어보면 <code class="language-plaintext highlighter-rouge">.map()</code> 은 <strong>결국 새로운 array 를 return</strong> 한다는 사실을 알 수 있다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">.map()</code> 을 이용한 반복문은 최종적으로 array 를 return 하게 되고 그 array 안의 모든 요소들이 html (jsx) 로서 렌더링 된다.</p>
+
+<p>예제 코드는 다음과 같다.</p>
+
+<div class="language-react highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="p">[</span><span class="nx">title</span><span class="p">,</span> <span class="nx">setTitle</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([</span><span class="dl">'</span><span class="s1">나이키</span><span class="dl">'</span><span class="p">.</span> <span class="dl">'</span><span class="s1">아디다스</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">퓨마</span><span class="dl">'</span><span class="p">]);</span>
+  <span class="kd">let</span> <span class="p">[</span><span class="nx">thumb</span><span class="p">,</span> <span class="nx">setThumb</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]);</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">{</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="nx">title</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+				<span class="k">return</span> <span class="p">(</span>
+        	<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span> <span class="si">{</span> <span class="nx">e</span> <span class="si">}</span>
+              <span class="p">&lt;</span><span class="nt">span</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                  <span class="kd">var</span> <span class="nx">temp</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">thumb</span><span class="p">];</span>
+                  <span class="nx">temp</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">temp</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+                  <span class="nx">setThumb</span><span class="p">(</span><span class="nx">temp</span><span class="p">);</span>
+                <span class="p">}</span><span class="si">}</span><span class="p">&gt;</span>👍<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> <span class="si">{</span> <span class="nx">thumb</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="si">}</span>
+            <span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">)</span>    
+  		<span class="p">})</span>
+    <span class="p">}</span>
+     <span class="p">&lt;</span><span class="err">/</span><span class="na">div</span><span class="p">&gt;</span>
+  )
+}
+</code></pre></div></div>
+
+<p><img src="https://user-images.githubusercontent.com/56385667/133751226-bc600ec1-5b3b-45f2-a15d-bb4b53644895.png" /></p>
+
+:ET

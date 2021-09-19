@@ -38,11 +38,11 @@ html(jsx)를 반환하는 **함수**로서 html(jsx) 태그와 같이 사용할 
 
 ## How to use 'React Component'
 
-> `function Modal ()` 을 이용하여 Component 를 만들었다. 만들어진 Component 는 `App ()` 안에서 html tag 와 같이 사용된다.
+> `function Modal ()` 을 이용하여 Component 를 만들었다. 만들어진 Component 는 `App ()` 안에서 html tag 와 같이 사용된다. 이 때 `App()` 을 **부모 컴포넌트**, `Modal()` 을 **자식 컴포넌트** 라고 한다.
 
 
 
-```js
+```react
  function App (){
   return (
     <div>
