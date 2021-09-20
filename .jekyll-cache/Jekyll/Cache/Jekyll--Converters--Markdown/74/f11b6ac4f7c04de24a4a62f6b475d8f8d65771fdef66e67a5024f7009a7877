@@ -1,4 +1,4 @@
-I"�<p>같은 구조를 가진 UI 를 만들려 할 때 두가지 방법을 사용할 수 있다.</p>
+I"�<p>같은 구조를 가진 UI 를 만들려 할 때 두가지 방법을 사용할 수 있다.</p>
 
 <ol>
   <li><code class="language-plaintext highlighter-rouge">for</code> 을 이용한 반복문</li>
@@ -45,14 +45,19 @@
 
 <p>예제 코드는 다음과 같다.</p>
 
-<div class="language-react highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="p">[</span><span class="nx">title</span><span class="p">,</span> <span class="nx">setTitle</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([</span><span class="dl">'</span><span class="s1">나이키</span><span class="dl">'</span><span class="p">.</span> <span class="dl">'</span><span class="s1">아디다스</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">퓨마</span><span class="dl">'</span><span class="p">]);</span>
+<div class="language-react highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span><span class="nx">useState</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">logo</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./logo.svg</span><span class="dl">'</span>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">./App.css</span><span class="dl">'</span>
+
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="p">[</span><span class="nx">title</span><span class="p">,</span> <span class="nx">setTitle</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([</span><span class="dl">'</span><span class="s1">나이키</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">아디다스</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">퓨마</span><span class="dl">'</span><span class="p">]);</span>
   <span class="kd">let</span> <span class="p">[</span><span class="nx">thumb</span><span class="p">,</span> <span class="nx">setThumb</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]);</span>
   <span class="k">return</span> <span class="p">(</span>
-    <span class="p">{</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="si">{</span>
         <span class="nx">title</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
           <span class="k">return</span> <span class="p">(</span>
-            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">key</span><span class="p">=</span><span class="si">{</span><span class="nx">i</span><span class="si">}</span><span class="p">&gt;</span>
               <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span> <span class="si">{</span> <span class="nx">e</span> <span class="si">}</span>
                 <span class="p">&lt;</span><span class="nt">span</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
                   <span class="kd">var</span> <span class="nx">temp</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">thumb</span><span class="p">];</span>
@@ -63,10 +68,17 @@
             <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
           <span class="p">)</span>
         <span class="p">})</span>
-     <span class="o">&lt;</span><span class="sr">/div&gt; </span><span class="err">}
-</span>  <span class="p">)</span>
+      <span class="si">}</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span> 
+  <span class="p">)</span>
 <span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p>한편, <code class="language-plaintext highlighter-rouge">.map()</code> 을 이용하여 생성한 html (jsx) 요소에 <code class="language-plaintext highlighter-rouge">key={}</code> 속성을 부여하지 않으면 warning 이 나타난다.</p>
+</blockquote>
 
 <p><img src="https://user-images.githubusercontent.com/56385667/133751226-bc600ec1-5b3b-45f2-a15d-bb4b53644895.png" /></p>
 

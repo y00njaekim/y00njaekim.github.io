@@ -1,4 +1,4 @@
-I"�<h2 id="what-is-react-component">What is ‘React Component’</h2>
+I"�<h2 id="what-is-react-component">What is ‘React Component’</h2>
 
 <p>html(jsx)를 반환하는 <strong>함수</strong>로서 html(jsx) 태그와 같이 사용할 수 있다.</p>
 
@@ -10,7 +10,7 @@
 
 <p>또한 <strong>자주 변경되는 HTML UI</strong> 를 Component 로 만들면 재렌더링 측면에서 성능적인 이점이 있다.</p>
 
-<p><strong>다른 페이지를 만들 때</strong> 그 페이지의 그 페이지의 html 내용을 하나의 컴포넌트로 많들기도 하며, 다른 팀원가 <strong>협업할 때</strong> 페이지를 컴포넌트 단위로 나눠서 작업을 분배하기도 한다.</p>
+<p><strong>다른 페이지를 만들 때</strong> 그 페이지의 html 내용을 하나의 컴포넌트로 만들기도 하며, 다른 팀원과 <strong>협업할 때</strong> 페이지를 컴포넌트 단위로 나눠서 작업을 분배하기도 한다.</p>
 
 <p>하지만, Component 는 결국 함수로서 Component body scope 를 벗어나는 변수나 state 등을 사용할 수 없다. 이 때 scope 를 벗어나는 변수나 state 를 사용하려면 <code class="language-plaintext highlighter-rouge">props</code> 문법을 이용해야 한다.</p>
 

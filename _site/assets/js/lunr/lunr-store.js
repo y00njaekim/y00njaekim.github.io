@@ -88,4 +88,10 @@ var store = [{
         "tags": ["코딩애플_리액트","react"],
         "url": "/react/%EB%B0%98%EB%B3%B5%EB%AC%B8/",
         "teaser": "/assets/images/react.png"
+      },{
+        "title": "[React] 사용자 입력을 통한 새로운 글 포스팅",
+        "excerpt":"이번 포스팅에서는 사용자의 입력을 받아 새로운 글을 업로드 하는 과정을 살펴보겠다. input 태그 코드를 먼저 살펴보자. function App() { let[inVal, setInVal] = useState(''); return ( &lt;div&gt; &lt;input onChange={ (e) =&gt; { setInVal(e.target.value); }} /&gt; &lt;/div&gt; ) } 하나하나 살펴보면 다음과 같은 정보들을 얻을 수 있다. 🎯 e.target 은 input 을...","categories": ["react"],
+        "tags": ["코딩애플_리액트","react"],
+        "url": "/react/input/",
+        "teaser": "/assets/images/react.png"
       }]

@@ -1,4 +1,4 @@
-I"/<p>🔥 <a href="https://y00njaekim.github.io/react/Component/">컴포넌트</a>에 대해 기초적인 지식이 없다면 해당 포스팅을 참고하자. 🔥</p>
+I"�0<p>🔥 <a href="https://y00njaekim.github.io/react/Component/">컴포넌트</a>에 대해 기초적인 지식이 없다면 해당 포스팅을 참고하자. 🔥</p>
 
 <h2 id="why-to-use-props">Why to use ‘props’</h2>
 
@@ -14,7 +14,7 @@
 
 <p>부모 컴포넌트에서 자식 컴포넌트를 사용할 때 html(jsx) 태그 안에 전달하고 싶은 변수를 입력한다.</p>
 
-<p>형식은 다음과 같다. <code class="language-plaintext highlighter-rouge">&lt;태그 임의의props명=(전달할 변수명)&gt;</code> , 예를 들면 <code class="language-plaintext highlighter-rouge">&lt;div name=(name)</code>&gt; 등과 같이 말이다.</p>
+<p>형식은 다음과 같다. <code class="language-plaintext highlighter-rouge">&lt;태그 임의의props명={전달할 변수명}&gt;</code> , 예를 들면 <code class="language-plaintext highlighter-rouge">&lt;div name={name}</code>&gt; 등과 같이 말이다.</p>
 
 <p>이 때, 자식 컴포넌트로서 사용되는 함수를 정의할 때 <code class="language-plaintext highlighter-rouge">props</code> 파라미터를 <code class="language-plaintext highlighter-rouge">argument</code> 로서 입력해야한다.</p>
 
@@ -22,15 +22,16 @@
 
 <div class="language-react highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">let</span> <span class="p">[</span><span class="nx">title</span><span class="p">,</span> <span class="nx">setTitle</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([</span><span class="dl">'</span><span class="s1">나이키</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">아디다스</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">퓨마</span><span class="dl">'</span><span class="p">]);</span>
-	<span class="k">return</span><span class="p">(</span>
-  	<span class="p">&lt;</span><span class="nc">Modal</span> <span class="na">title</span><span class="p">=</span><span class="si">{</span><span class="nx">title</span><span class="si">}</span><span class="p">&gt;&lt;/</span><span class="nc">Modal</span><span class="p">&gt;</span> <span class="c1">// &lt;Modal 임의의props명={전달할 변수명}&gt;</span>
+  <span class="k">return</span>
+  <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nc">Modal</span> <span class="na">title</span><span class="p">=</span><span class="si">{</span><span class="nx">title</span><span class="si">}</span><span class="p">&gt;&lt;/</span><span class="nc">Modal</span><span class="p">&gt;</span> <span class="c1">// &lt;Modal 임의의props명={전달할 변수명}&gt;</span>
   <span class="p">)</span>  
 <span class="p">}</span>
 
 <span class="kd">function</span> <span class="nx">Modal</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">return</span> <span class="p">(</span>
-  	<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-    	<span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span> 제목 <span class="si">{</span> <span class="nx">props</span><span class="p">.</span><span class="nx">title</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="si">}</span> <span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span> 제목 <span class="si">{</span> <span class="nx">props</span><span class="p">.</span><span class="nx">title</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="si">}</span> <span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
   <span class="p">)</span>
 <span class="p">}</span>
@@ -44,7 +45,8 @@
 
 <p><img src="https://user-images.githubusercontent.com/56385667/133927003-bde10c32-1a55-4219-a0f2-6c9778f44408.png" /></p>
 
-<p>코드는 다음과 같다.</p>
+<p>코드는 다음과 같다.
+<code class="language-plaintext highlighter-rouge">.map()</code> 함수에 익숙하지 않은 사람들은 <a href="https://y00njaekim.github.io/react/%EB%B0%98%EB%B3%B5%EB%AC%B8/">다음</a> 을 참고하자.</p>
 
 <div class="language-react highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span><span class="nx">useState</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span>
 <span class="k">import</span> <span class="dl">'</span><span class="s1">./App.css</span><span class="dl">'</span>
@@ -93,5 +95,9 @@
 
 <span class="k">export</span> <span class="k">default</span> <span class="nx">App</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p>❗ 기억해야 할 것은 몇 번째 제목을 눌렀는지에 관한 상태 정보를 <code class="language-plaintext highlighter-rouge">state</code> 를 이용해서 저장한다는 점이다 ❗</p>
+</blockquote>
 
 :ET
