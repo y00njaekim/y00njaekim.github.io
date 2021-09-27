@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://y00njaekim.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://y00njaekim.github.io/" rel="alternate" type="text/html" /><updated>2021-09-20T18:21:05+09:00</updated><id>https://y00njaekim.github.io/feed.xml</id><title type="html">YoonJae’s DevLog</title><subtitle>Computer Engineering and Science, 기록을 통한 기억</subtitle><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><entry><title type="html">[React] 사용자 입력을 통한 새로운 글 포스팅</title><link href="https://y00njaekim.github.io/react/input/" rel="alternate" type="text/html" title="[React] 사용자 입력을 통한 새로운 글 포스팅" /><published>2021-09-20T00:00:00+09:00</published><updated>2021-09-20T22:06:00+09:00</updated><id>https://y00njaekim.github.io/react/input</id><content type="html" xml:base="https://y00njaekim.github.io/react/input/">&lt;p&gt;이번 포스팅에서는 사용자의 입력을 받아 새로운 글을 업로드 하는 과정을 살펴보겠다.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://y00njaekim.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://y00njaekim.github.io/" rel="alternate" type="text/html" /><updated>2021-09-27T12:01:17+09:00</updated><id>https://y00njaekim.github.io/feed.xml</id><title type="html">YoonJae’s DevLog</title><subtitle>Computer Engineering and Science, 기록을 통한 기억</subtitle><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><entry><title type="html">[React] 사용자 입력을 통한 새로운 글 포스팅</title><link href="https://y00njaekim.github.io/react/input/" rel="alternate" type="text/html" title="[React] 사용자 입력을 통한 새로운 글 포스팅" /><published>2021-09-20T00:00:00+09:00</published><updated>2021-09-20T22:06:00+09:00</updated><id>https://y00njaekim.github.io/react/input</id><content type="html" xml:base="https://y00njaekim.github.io/react/input/">&lt;p&gt;이번 포스팅에서는 사용자의 입력을 받아 새로운 글을 업로드 하는 과정을 살펴보겠다.&lt;/p&gt;
 
 &lt;h2 id=&quot;input-태그&quot;&gt;input 태그&lt;/h2&gt;
 
 &lt;p&gt;코드를 먼저 살펴보자.&lt;/p&gt;
 
 &lt;div class=&quot;language-react highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;App&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;inVal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setInVal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;inVal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setInVal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
   	&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
     	&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onChange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setInVal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;/&amp;gt;&lt;/span&gt;
@@ -932,11 +932,11 @@
 
 &lt;p&gt;플로이드 워셜 알고리즘은 모든 노드를 각각 한번씩 주인공으로 삼는다. 이 말은 그 노드를 기준으로 특정 판단을 수행한다는 것이다.&lt;/p&gt;
 
-&lt;p&gt;이를테면, K 번째 노드를 주인공으로 삼았다고 가정해보자. 이 때 알고리즘은 &lt;strong&gt;K 를 중간에 거쳐 지나가는 모든 경우&lt;/strong&gt;를 고려한다.&lt;/p&gt;
+&lt;p&gt;이를테면, &lt;strong&gt;K 번째 노드를 주인공&lt;/strong&gt;으로 삼았다고 가정해보자. 이 때 알고리즘은 &lt;strong&gt;K 를 중간에 거쳐 지나가는 모든 경우&lt;/strong&gt;를 고려한다.&lt;/p&gt;
 
 &lt;p&gt;예를들어, 현재 최단 거리 테이블에 A 번째 노드에서 B 번째 노드로 이동하는 비용이 3이라고 저장되어 있다고 해보자.&lt;/p&gt;
 
-&lt;p&gt;이 때 K 를 주인공으로 삼은 상황에서, 알고리즘은 K 를 거치는 모든 이동 경로 경우의 수를 고려하는데, 이 때 A 에서 B 까지 이동하는 경로도 포함되어 있다.&lt;/p&gt;
+&lt;p&gt;이 때 K 를 주인공으로 삼은 상황에서, 알고리즘은 &lt;strong&gt;K 를 거치는&lt;/strong&gt; 모든 이동 경로 경우의 수를 고려하는데, 이 때 A 에서 B 까지 이동하는 경로도 포함되어 있다.&lt;/p&gt;
 
 &lt;p&gt;즉 A 번째 노드에서 K 번째 노드를 거쳐 B 번 노드로 이동하는 경로를 고려한다. 만약 이 경로의 비용이 2 라고 계산되면, 알고리즘은 A에서 B 로 가는 비용을 2로 갱신한다.&lt;/p&gt;
 
@@ -1120,14 +1120,14 @@
 
 &lt;ol&gt;
   &lt;li&gt;출발 노드를 설정한다.&lt;/li&gt;
-  &lt;li&gt;최단 거리 테이블을 초기화한다.&lt;/li&gt;
+  &lt;li&gt;최단 거리 테이블을 초기화한다. 모든 노드에 대하여 최단 거리 판단이 완료되기 이전이니 무한대(1e9)로 초기화 한다.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;방문하지 않은&lt;/strong&gt; 노드 중에서 최단 거리가 가장 짧은 노드를 &lt;strong&gt;선택&lt;/strong&gt;한다. 이 과정을 거치며 &lt;strong&gt;선택된 하나의 노드 (A)&lt;/strong&gt;는 최단 거리 판단이 완료된다.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;선택된 노드 (A)&lt;/strong&gt;를 거쳐 &lt;strong&gt;다른 노드 (B)&lt;/strong&gt;로 가는 비용을 계산하여 최단 거리 테이블을 갱신한다. 이 때 &lt;strong&gt;다른 노드 (B)&lt;/strong&gt;로 가는 비용을 계산하기 위한 시도는 &lt;strong&gt;노드 (B)&lt;/strong&gt;를 방문한 것으로 간주하지 않는다.&lt;/li&gt;
   &lt;li&gt;위 과정에서 3 번 4 번 스텝을 반복한다.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;다익스트라 알고리즘은 음의 간선이 없을 때만 적용 가능하다. 그 이유는 3번 스텝의 과정때문이다. 3번 스텝에서 가장 짧은 노드가 선택되었을 때 이를 번복하는 과정이 없다.  만약 음의 간선이 있는 그래프라면 추후에 판단이 완료된 특정 노드까지의 최단거리가 더 짧아져 새로이 갱신이 필요하기 때문에 위 순서로 다익스트라 알고리즘을 구현하였을 때 오류가 발생한다.그렇기 때문에 다익스트라 알고리즘은 음의 간선이 없는 경우에만 이용할 수 있다.&lt;/p&gt;
+  &lt;p&gt;다익스트라 알고리즘은 음의 간선이 없을 때만 적용 가능하다. 그 이유는 3번 스텝의 과정때문이다. 3번 스텝에서 가장 짧은 노드가 선택되었을 때 이후 이를 번복하는 과정이 없다.  만약 음의 간선이 있는 그래프라면 추후에 판단이 완료된 특정 노드까지의 최단거리가 더 짧아져 새로이 갱신이 필요하기 때문에 위 순서로 다익스트라 알고리즘을 구현하였을 때 오류가 발생한다.그렇기 때문에 다익스트라 알고리즘은 음의 간선이 없는 경우에만 이용할 수 있다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;구현 방법은 두가지가 있다.&lt;/p&gt;

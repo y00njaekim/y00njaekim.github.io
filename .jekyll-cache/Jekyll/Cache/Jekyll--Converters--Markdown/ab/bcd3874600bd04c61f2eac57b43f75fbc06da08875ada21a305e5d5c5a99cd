@@ -1,11 +1,11 @@
-I"%'<p>이번 포스팅에서는 사용자의 입력을 받아 새로운 글을 업로드 하는 과정을 살펴보겠다.</p>
+I"&'<p>이번 포스팅에서는 사용자의 입력을 받아 새로운 글을 업로드 하는 과정을 살펴보겠다.</p>
 
 <h2 id="input-태그">input 태그</h2>
 
 <p>코드를 먼저 살펴보자.</p>
 
 <div class="language-react highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">let</span><span class="p">[</span><span class="nx">inVal</span><span class="p">,</span> <span class="nx">setInVal</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="p">[</span><span class="nx">inVal</span><span class="p">,</span> <span class="nx">setInVal</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
   <span class="k">return</span> <span class="p">(</span>
   	<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
     	<span class="p">&lt;</span><span class="nt">input</span> <span class="na">onChange</span><span class="p">=</span><span class="si">{</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">setInVal</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span> <span class="p">}</span><span class="si">}</span> <span class="p">/&gt;</span>
