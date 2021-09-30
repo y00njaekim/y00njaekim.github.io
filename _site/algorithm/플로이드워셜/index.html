@@ -7,10 +7,7 @@
 -->
 <html lang="en" class="no-js">
   <head>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
-<meta charset="utf-8">
+    <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>[Algorithm] 플로이드 워셜 알고리즘 - YoonJae’s DevLog</title>
 <meta name="description" content="최단경로 탐색 알고리즘">
@@ -101,28 +98,29 @@
 
     
       <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-      TeX: {
-        equationNumbers: {
-          autoNumber: "AMS"
-        }
-      },
-      tex2jax: {
-      inlineMath: [ ['$', '$'] ],
-      displayMath: [ ['$$', '$$'] ],
-      processEscapes: true,
-    }
-  });
-  MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
-      alert("Math Processing Error: "+message[1]);
-    });
-  MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
-      alert("Math Processing Error: "+message[1]);
-    });
-  </script>
-  <script type="text/javascript" async
-    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-  </script>
+	MathJax.Hub.Config({
+	TeX: {
+		equationNumbers: {
+		autoNumber: "AMS"
+		}
+	},
+	tex2jax: {
+		inlineMath: [ ['$', '$'] ],
+		displayMath: [ ['$$', '$$'] ],
+		processEscapes: true,
+		}
+	});
+	MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+		alert("Math Processing Error: "+message[1]);
+	});
+	MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+		alert("Math Processing Error: "+message[1]);
+	});
+</script>
+
+<script type="text/javascript" async
+	src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
     
   </head>
 
@@ -789,6 +787,23 @@
 
 
 
+
+<script type="text/javascript" async
+	src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+	MathJax.Hub.Config({
+	extensions: ["tex2jax.js"],
+	jax: ["input/TeX", "output/HTML-CSS"],
+	tex2jax: {
+		inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+		displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+		processEscapes: true
+	},
+	"HTML-CSS": { availableFonts: ["TeX"] }
+});
+</script>
 
 
   </body>
