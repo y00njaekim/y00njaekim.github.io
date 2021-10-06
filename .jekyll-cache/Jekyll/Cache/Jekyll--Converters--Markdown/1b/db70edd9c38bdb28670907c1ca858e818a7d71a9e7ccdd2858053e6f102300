@@ -1,4 +1,4 @@
-I"�<p>같은 구조를 가진 UI 를 만들려 할 때 두가지 방법을 사용할 수 있다.</p>
+I"�<p>같은 구조를 가진 UI 를 만들려 할 때 두가지 방법을 사용할 수 있다.</p>
 
 <ol>
   <li><code class="language-plaintext highlighter-rouge">for</code> 을 이용한 반복문</li>
@@ -30,7 +30,7 @@
   <span class="p">}</span>
   
   <span class="k">return</span><span class="p">(</span>
-  	<span class="p">{</span> <span class="nx">repeatedUI</span><span class="p">()</span> <span class="p">}</span>
+    <span class="p">{</span> <span class="nx">repeatedUI</span><span class="p">()</span> <span class="p">}</span>
   <span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div></div>

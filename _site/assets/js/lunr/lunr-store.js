@@ -94,4 +94,10 @@ var store = [{
         "tags": ["코딩애플_리액트","react"],
         "url": "/react/input/",
         "teaser": "/assets/images/react.png"
+      },{
+        "title": "[CSS] CSS 선택자 종류",
+        "excerpt":"이 글은 생활코딩 CSS 수업을 정리하는 목적으로 작성하였다. 강의와 더불어 참고하길 바란다. 선택자 (selector) css 파일을 열어보면 다음과 같은 문법을 볼 수 있었을 거다. 이 때 이 안의 다음과 같은 명칭의 표현들이 존재함을 알아야 한다. 🎯 selector: style sheet 을 적용시킬 대상을 지칭한다. 🎯 property: style sheet 을 작성할 때...","categories": ["css"],
+        "tags": ["css","react"],
+        "url": "/css/css-%EC%84%A0%ED%83%9D%EC%9E%90/",
+        "teaser": "/assets/images/default.jpeg"
       }]

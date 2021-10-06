@@ -1,4 +1,183 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://y00njaekim.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://y00njaekim.github.io/" rel="alternate" type="text/html" /><updated>2021-09-30T19:20:34+09:00</updated><id>https://y00njaekim.github.io/feed.xml</id><title type="html">YoonJae’s DevLog</title><subtitle>Computer Engineering and Science, 기록을 통한 기억</subtitle><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><entry><title type="html">[React] 사용자 입력을 통한 새로운 글 포스팅</title><link href="https://y00njaekim.github.io/react/input/" rel="alternate" type="text/html" title="[React] 사용자 입력을 통한 새로운 글 포스팅" /><published>2021-09-20T00:00:00+09:00</published><updated>2021-09-20T22:06:00+09:00</updated><id>https://y00njaekim.github.io/react/input</id><content type="html" xml:base="https://y00njaekim.github.io/react/input/">&lt;p&gt;이번 포스팅에서는 사용자의 입력을 받아 새로운 글을 업로드 하는 과정을 살펴보겠다.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://y00njaekim.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://y00njaekim.github.io/" rel="alternate" type="text/html" /><updated>2021-10-06T20:36:18+09:00</updated><id>https://y00njaekim.github.io/feed.xml</id><title type="html">YoonJae’s DevLog</title><subtitle>Computer Engineering and Science, 기록을 통한 기억</subtitle><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><entry><title type="html">[CSS] CSS 선택자 종류</title><link href="https://y00njaekim.github.io/css/css-%EC%84%A0%ED%83%9D%EC%9E%90/" rel="alternate" type="text/html" title="[CSS] CSS 선택자 종류" /><published>2021-10-06T00:00:00+09:00</published><updated>2021-10-06T22:06:00+09:00</updated><id>https://y00njaekim.github.io/css/css-%EC%84%A0%ED%83%9D%EC%9E%90</id><content type="html" xml:base="https://y00njaekim.github.io/css/css-%EC%84%A0%ED%83%9D%EC%9E%90/">&lt;p&gt;이 글은 생활코딩 &lt;a href=&quot;https://opentutorials.org/course/2418/13339&quot;&gt;CSS 수업&lt;/a&gt;을 정리하는 목적으로 작성하였다. 강의와 더불어 참고하길 바란다.&lt;/p&gt;
+
+&lt;h2 id=&quot;선택자-selector&quot;&gt;선택자 (selector)&lt;/h2&gt;
+
+&lt;p&gt;css 파일을 열어보면 다음과 같은 문법을 볼 수 있었을 거다. 이 때 이 안의 다음과 같은 명칭의 표현들이 존재함을 알아야 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/136027915-fa6172a4-fbac-4900-947e-785661eff634.png&quot; alt=&quot;2z4a3yh4&quot; style=&quot;zoom:30%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;🎯 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;selector&lt;/code&gt;: &lt;strong&gt;style sheet 을 적용시킬 대상&lt;/strong&gt;을 지칭한다.&lt;/p&gt;
+
+&lt;p&gt;🎯 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;property&lt;/code&gt;: style sheet 을 작성할 때 그 목적이 되는 구체적 style 을 의미한다.&lt;/p&gt;
+
+&lt;p&gt;🎯 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;value&lt;/code&gt;: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;property&lt;/code&gt; 에 넣을 값을 의미한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;선택자의-종류&quot;&gt;선택자의 종류&lt;/h3&gt;
+
+&lt;p&gt;선택자(selector) 는 여러가지 종류가 있다. 즉 style sheet 을 적용시킬 대상을 지칭할 때 그 표현의 방법이 여러가지 있다는 뜻이다. 다음은 그 종류이다.&lt;/p&gt;
+
+&lt;p&gt;🎯 태그 선택자 (tag selector, type selector)&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;/* html 태그를 지칭하여 style sheet 을 적용한다 */&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;h1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;🎯 클래스 선택자 (class selector)&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;/* class 를 지칭하여 style sheet 을 적용한다 */&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.title&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;🎯 아이디 선택자 (id selector)&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;/* id 를 지칭하여 style sheet 을 적용한다 */&lt;/span&gt;
+
+&lt;span class=&quot;nf&quot;&gt;#title&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이 때 기억해야할 점은 &lt;strong&gt;선택자는 분명하게 지칭될 수록 우선순위가 높게 작용한다&lt;/strong&gt;는 것이다.&lt;/p&gt;
+
+&lt;p&gt;예를들어 다음과 같은 코드가 있다 할 때 &lt;strong&gt;아이디 선택자가 가장 분명한 선택자&lt;/strong&gt; 이므로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;h1 class=&apos;title&apos; id=&apos;title&apos;/&amp;gt;&lt;/code&gt; 의 색상은 빨간색이 된다.&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;/* &amp;lt;h1 class=&apos;title&apos; id=&apos;title&apos;/&amp;gt; 이라는 html 태그가 존재한다고 가정하자 */&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;h1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;black&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.title&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;white&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nf&quot;&gt;#title&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;부모-자손-선택자-descendant-selector&quot;&gt;부모 자손 선택자 (descendant selector)&lt;/h3&gt;
+
+&lt;p&gt;만약 html 태그 안에 또 다른 html 태그가 있을 때, 우리는 그 관계를 부모자손 관계라고 부른다.&lt;/p&gt;
+
+&lt;p&gt;css 에서는 부모자손 관계를 선택자에서 이용할 수 있다. 그 종류는 다음과 같다.&lt;/p&gt;
+
+&lt;p&gt;🎯 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(띄어쓰기)&lt;/code&gt; , &lt;strong&gt;자손&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;첫 번째는 띄어쓰기를 이용하여 선택자를 구성하는 방법이다.&lt;/p&gt;
+
+&lt;p&gt;이 것은 앞에 나온 선택자의 자손 중 뒤에 나온 선택자가 존재할 때 style sheet 이 적용되는 상황이다.&lt;/p&gt;
+
+&lt;p&gt;이 때 기억해야할 점은 뒤에 나온 선택자가 앞에 나온 선택자의 &lt;strong&gt;몇 번째 자손이든 상관 없이 자손이기만 하면 된다&lt;/strong&gt;는 것이다.&lt;/p&gt;
+
+&lt;p&gt;아래 코드 중 첫 번째 블럭의 의미는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ul&lt;/code&gt; 태그의 자손 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;li&lt;/code&gt; 태그를 선택자로 삼아 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{}&lt;/code&gt; 에 등장하는 style sheet 을 적용시킨다는 의미이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;🎯 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt; , &lt;strong&gt;직계자손&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;두 번째는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt; 를 이용하여 선택자를 구성하는 방법이다&lt;/p&gt;
+
+&lt;p&gt;이 것은 앞에 나온 선택자의 &lt;strong&gt;직계 자손&lt;/strong&gt;(depth =1) 중 뒤 나온 선택자가 존재할 때 style sheet 이 적용되는 상황이다.&lt;/p&gt;
+
+&lt;p&gt;이 때 기억해야할 점은 뒤에 나온 선택자는 앞에 나온 선택자의 첫 번째 , 즉 직계 자손이어야 한다는 것이다.&lt;/p&gt;
+
+&lt;p&gt;아래 코드 중 두 번째 블럭의 의미는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;#lecture&lt;/code&gt; 아이디의 직계 자손 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;li&lt;/code&gt; 태그를 선택자로 삼아 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{}&lt;/code&gt; 에 등장하는 style sheet 을 적용시킨다는 의미이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;🎯 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;,&lt;/code&gt; , &lt;strong&gt;병렬&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;세 번째는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;,&lt;/code&gt; 를 이용하여 선택자를 구성하는 방법이다.&lt;/p&gt;
+
+&lt;p&gt;이 것은 간단하다! 그냥 병렬을 의미한다.&lt;/p&gt;
+
+&lt;p&gt;아 래 코드 중 세 번째 블럭의 의미는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ul&lt;/code&gt; 태그와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ol&lt;/code&gt; 태그 모두에게 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{}&lt;/code&gt; 에 등장하는 style sheet 을 적용시킨다는 의미이다.&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;ul&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;li&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;text-decoration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;underline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nf&quot;&gt;#lecture&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;li&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;ul&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;ol&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;powderblue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;가상-클래스-선택자-psuedo-class-selector&quot;&gt;가상 클래스 선택자 (psuedo class selector)&lt;/h3&gt;
+
+&lt;p&gt;다음과 같은 코드가 있다.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;UTF-8&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;http-equiv=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;X-UA-Compatible&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;IE=edge&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;viewport&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;width=device-width, initial-scale=1.0&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;style&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:link&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;black&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:visited&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:hover&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;yellow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:active&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;green&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:focus&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;white&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/style&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://www.naver.com&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;방문함&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://www.daum.net&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;방문함&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;위 코드를 보면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a:link&lt;/code&gt; , &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a:visited&lt;/code&gt; , &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a:hover&lt;/code&gt; , &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a:active&lt;/code&gt; , &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a:focus&lt;/code&gt; 등이 있다. 이를 &lt;strong&gt;가상 클래스 선택자&lt;/strong&gt; 라고 부른다. 이 의미는 다음과 같다.&lt;/p&gt;
+
+&lt;p&gt;✔️ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a:link&lt;/code&gt; : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;a/&amp;gt;&lt;/code&gt; 태그의 기본적인 상태를 지칭하는 선택자&lt;/p&gt;
+
+&lt;p&gt;✔️ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a:visited&lt;/code&gt; : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;a/&amp;gt;&lt;/code&gt; 태그가 방문된 상태를 지칭하는 선택자&lt;/p&gt;
+
+&lt;p&gt;✔️ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a:hover&lt;/code&gt; : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;a/&amp;gt;&lt;/code&gt; 태그에 마우스를 올려 놓은 상태를 지칭하는 선택자&lt;/p&gt;
+
+&lt;p&gt;✔️ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a:active&lt;/code&gt; : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;a/&amp;gt;&lt;/code&gt; 태그가 클릭된 상태를 지칭하는 선택자&lt;/p&gt;
+
+&lt;p&gt;✔️ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a:focusing&lt;/code&gt; : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;a/&amp;gt;&lt;/code&gt; 태그가 focusing 된 상태를 지칭하는 선택자&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;추가-정보&quot;&gt;추가 정보&lt;/h3&gt;
+
+&lt;h4 id=&quot;css-cheat-sheet&quot;&gt;css cheat sheet&lt;/h4&gt;
+
+&lt;p&gt;추가적으로 css cheat sheet 를 첨부한다. 필요시 참고하길 바란다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/136037767-805bee59-95af-427a-bddc-cd80867694b4.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;css-선택자-연습-사이트&quot;&gt;css 선택자 연습 사이트&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://flukeout.github.io/&quot;&gt;다음 사이트&lt;/a&gt; 에서 css 선택자를 고르는 연습을 할 수 있다. 참고하자 !&lt;/p&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="css" /><category term="css" /><category term="react" /><summary type="html">cascading style sheets 의 선택자 종류를 알아보자</summary></entry><entry><title type="html">[React] 사용자 입력을 통한 새로운 글 포스팅</title><link href="https://y00njaekim.github.io/react/input/" rel="alternate" type="text/html" title="[React] 사용자 입력을 통한 새로운 글 포스팅" /><published>2021-09-20T00:00:00+09:00</published><updated>2021-09-20T22:06:00+09:00</updated><id>https://y00njaekim.github.io/react/input</id><content type="html" xml:base="https://y00njaekim.github.io/react/input/">&lt;p&gt;이번 포스팅에서는 사용자의 입력을 받아 새로운 글을 업로드 하는 과정을 살펴보겠다.&lt;/p&gt;
 
 &lt;h2 id=&quot;input-태그&quot;&gt;input 태그&lt;/h2&gt;
 
@@ -208,7 +387,7 @@
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
   
   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-  	&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;repeatedUI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;repeatedUI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -258,7 +437,77 @@
   &lt;p&gt;한편, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.map()&lt;/code&gt; 을 이용하여 생성한 html (jsx) 요소에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;key={}&lt;/code&gt; 속성을 부여하지 않으면 warning 이 나타난다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/133751226-bc600ec1-5b3b-45f2-a15d-bb4b53644895.png&quot; /&gt;&lt;/p&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="react" /><category term="코딩애플_리액트" /><category term="react" /><summary type="html">React 에서 for, map() 사용하기</summary></entry><entry><title type="html">[React] 리액트 Component 사용법</title><link href="https://y00njaekim.github.io/react/Component/" rel="alternate" type="text/html" title="[React] 리액트 Component 사용법" /><published>2021-09-16T00:00:00+09:00</published><updated>2021-09-16T22:06:00+09:00</updated><id>https://y00njaekim.github.io/react/Component</id><content type="html" xml:base="https://y00njaekim.github.io/react/Component/">&lt;h2 id=&quot;what-is-react-component&quot;&gt;What is ‘React Component’&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/133751226-bc600ec1-5b3b-45f2-a15d-bb4b53644895.png&quot; /&gt;&lt;/p&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="react" /><category term="코딩애플_리액트" /><category term="react" /><summary type="html">React 에서 for, map() 사용하기</summary></entry><entry><title type="html">[React] 리액트 jsx 안에서 if/else 사용하기</title><link href="https://y00njaekim.github.io/react/jsx-%EC%95%88%EC%97%90%EC%84%9C-js/" rel="alternate" type="text/html" title="[React] 리액트 jsx 안에서 if/else 사용하기" /><published>2021-09-16T00:00:00+09:00</published><updated>2021-09-16T22:06:00+09:00</updated><id>https://y00njaekim.github.io/react/jsx-%EC%95%88%EC%97%90%EC%84%9C-js</id><content type="html" xml:base="https://y00njaekim.github.io/react/jsx-%EC%95%88%EC%97%90%EC%84%9C-js/">&lt;h2 id=&quot;삼항연산자-ternary-operator&quot;&gt;삼항연산자 Ternary Operator&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;if/else 구문으로 표현 가능한 문법들을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ternary Operator&lt;/code&gt; 를 이용해서도 표현할 수 있다. 아래 두 코드는 같은 기능을 수행한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;isNightTime&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isNightTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Turn on the lights!&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Turn off the lights!&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+이를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ternary Oerator&lt;/code&gt; 를 이용해서 표현하면 다음과 같다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;isNightTime&lt;/span&gt; 
+&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Turn on the lights!&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Turn off the lights!&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;htmljsx-안에-java-script-문법-사용하는-방법&quot;&gt;html(jsx) 안에 java script 문법 사용하는 방법&lt;/h2&gt;
+
+&lt;p&gt;html(jsx) 안에 html 태그뿐만 아니라  java script 문법도 사용할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;사용하기 위해서는 java script 표현을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{}&lt;/code&gt; 중괄호로 감싸주어야 한다.&lt;/p&gt;
+
+&lt;p&gt;가령 특정 조건이 성립하는 경우에만 어떤 html(jsx) 태그를 띄울 때, 위의 삼항연산자를 이용할 수 있는데 코드는 다음과 같다.&lt;/p&gt;
+
+&lt;div class=&quot;language-react highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;App&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;3은 1보다 커요&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;3은 1보다 작아요&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;삼항연산자-조건으로-사용하는-state&quot;&gt;삼항연산자 조건으로 사용하는 state&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;삼항연산자를 사용할 때 조건식이 필요하다. 조건식은 true/false 반환하는데, 리액트에서는 &lt;strong&gt;보통 조건식으로  state 를 많이 이용&lt;/strong&gt;한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;가령 버튼을 클릭했을 때 특정 html(jsx) ui가 보이고 버튼을 다시 클릭하면 그 ui가 사라지는 코드를 작성해보면 다음과 같다.&lt;/p&gt;
+
+&lt;div class=&quot;language-react highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;App&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onUI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setOnUI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;onUI&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;버튼이 클릭되었습니다&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;  
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;setOnUI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onUI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;버튼&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="react" /><category term="코딩애플_리액트" /><category term="react" /><summary type="html">리액트 jsx 안에서 삼항연산자 사용하기</summary></entry><entry><title type="html">[React] 리액트 Component 사용법</title><link href="https://y00njaekim.github.io/react/Component/" rel="alternate" type="text/html" title="[React] 리액트 Component 사용법" /><published>2021-09-16T00:00:00+09:00</published><updated>2021-09-16T22:06:00+09:00</updated><id>https://y00njaekim.github.io/react/Component</id><content type="html" xml:base="https://y00njaekim.github.io/react/Component/">&lt;h2 id=&quot;what-is-react-component&quot;&gt;What is ‘React Component’&lt;/h2&gt;
 
 &lt;p&gt;html(jsx)를 반환하는 &lt;strong&gt;함수&lt;/strong&gt;로서 html(jsx) 태그와 같이 사용할 수 있다.&lt;/p&gt;
 
@@ -1016,77 +1265,7 @@
         &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;&apos;\n&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="algorithm" /><category term="algorithm" /><category term="ps" /><summary type="html">최단경로 탐색 알고리즘</summary></entry><entry><title type="html">[React] 리액트 jsx 안에서 if/else 사용하기</title><link href="https://y00njaekim.github.io/react/jsx-%EC%95%88%EC%97%90%EC%84%9C-js/" rel="alternate" type="text/html" title="[React] 리액트 jsx 안에서 if/else 사용하기" /><published>2021-09-16T00:00:00+09:00</published><updated>2021-09-16T22:06:00+09:00</updated><id>https://y00njaekim.github.io/react/jsx-%EC%95%88%EC%97%90%EC%84%9C-js</id><content type="html" xml:base="https://y00njaekim.github.io/react/jsx-%EC%95%88%EC%97%90%EC%84%9C-js/">&lt;h2 id=&quot;삼항연산자-ternary-operator&quot;&gt;삼항연산자 Ternary Operator&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;if/else 구문으로 표현 가능한 문법들을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ternary Operator&lt;/code&gt; 를 이용해서도 표현할 수 있다. 아래 두 코드는 같은 기능을 수행한다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;isNightTime&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
-
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isNightTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Turn on the lights!&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Turn off the lights!&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;
-이를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ternary Oerator&lt;/code&gt; 를 이용해서 표현하면 다음과 같다.&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;isNightTime&lt;/span&gt; 
-&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Turn on the lights!&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Turn off the lights!&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;htmljsx-안에-java-script-문법-사용하는-방법&quot;&gt;html(jsx) 안에 java script 문법 사용하는 방법&lt;/h2&gt;
-
-&lt;p&gt;html(jsx) 안에 html 태그뿐만 아니라  java script 문법도 사용할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;사용하기 위해서는 java script 표현을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{}&lt;/code&gt; 중괄호로 감싸주어야 한다.&lt;/p&gt;
-
-&lt;p&gt;가령 특정 조건이 성립하는 경우에만 어떤 html(jsx) 태그를 띄울 때, 위의 삼항연산자를 이용할 수 있는데 코드는 다음과 같다.&lt;/p&gt;
-
-&lt;div class=&quot;language-react highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;App&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;3은 1보다 커요&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;3은 1보다 작아요&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;삼항연산자-조건으로-사용하는-state&quot;&gt;삼항연산자 조건으로 사용하는 state&lt;/h3&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;삼항연산자를 사용할 때 조건식이 필요하다. 조건식은 true/false 반환하는데, 리액트에서는 &lt;strong&gt;보통 조건식으로  state 를 많이 이용&lt;/strong&gt;한다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;가령 버튼을 클릭했을 때 특정 html(jsx) ui가 보이고 버튼을 다시 클릭하면 그 ui가 사라지는 코드를 작성해보면 다음과 같다.&lt;/p&gt;
-
-&lt;div class=&quot;language-react highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;App&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onUI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setOnUI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;onUI&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;버튼이 클릭되었습니다&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;  
-      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;setOnUI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onUI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;버튼&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="react" /><category term="코딩애플_리액트" /><category term="react" /><summary type="html">리액트 jsx 안에서 삼항연산자 사용하기</summary></entry><entry><title type="html">[Algorithm] 다익스트라 알고리즘</title><link href="https://y00njaekim.github.io/algorithm/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/" rel="alternate" type="text/html" title="[Algorithm] 다익스트라 알고리즘" /><published>2021-09-14T00:00:00+09:00</published><updated>2021-09-14T22:06:00+09:00</updated><id>https://y00njaekim.github.io/algorithm/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC</id><content type="html" xml:base="https://y00njaekim.github.io/algorithm/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/">&lt;h2 id=&quot;다익스트라-알고리즘이란&quot;&gt;다익스트라 알고리즘이란&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="algorithm" /><category term="algorithm" /><category term="ps" /><summary type="html">최단경로 탐색 알고리즘</summary></entry><entry><title type="html">[Algorithm] 다익스트라 알고리즘</title><link href="https://y00njaekim.github.io/algorithm/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/" rel="alternate" type="text/html" title="[Algorithm] 다익스트라 알고리즘" /><published>2021-09-14T00:00:00+09:00</published><updated>2021-09-14T22:06:00+09:00</updated><id>https://y00njaekim.github.io/algorithm/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC</id><content type="html" xml:base="https://y00njaekim.github.io/algorithm/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/">&lt;h2 id=&quot;다익스트라-알고리즘이란&quot;&gt;다익스트라 알고리즘이란&lt;/h2&gt;
 
 &lt;p&gt;다익스트라 알고리즘은 &lt;strong&gt;그리디 알고리즘&lt;/strong&gt;의 한 유형으로서,&lt;/p&gt;
 
@@ -1545,73 +1724,4 @@ git stash drop &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;stash 이름]
   &lt;li&gt;
     &lt;p&gt;&lt;a href=&quot;https://gmlwjd9405.github.io/2018/05/18/git-stash.html&quot;&gt;https://gmlwjd9405.github.io/2018/05/18/git-stash.html&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="git" /><category term="github" /><category term="git" /><summary type="html">github 사용법</summary></entry><entry><title type="html">[Http] 생활코딩 HTTP-2: 소개</title><link href="https://y00njaekim.github.io/cs/http-2/" rel="alternate" type="text/html" title="[Http] 생활코딩 HTTP-2: 소개" /><published>2021-09-08T00:00:00+09:00</published><updated>2021-09-08T22:06:00+09:00</updated><id>https://y00njaekim.github.io/cs/http-2</id><content type="html" xml:base="https://y00njaekim.github.io/cs/http-2/">&lt;h3 id=&quot;웹-브라우저-웹-서버&quot;&gt;웹 브라우저, 웹 서버&lt;/h3&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/132447069-123206b7-bc2a-469f-862f-89813aedebe3.png&quot; alt=&quot;fig1&quot; style=&quot;zoom:30%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;
-식당에 가면 직원과 손님이 있다. 손님은 직원에게 음식을 &lt;strong&gt;요청&lt;/strong&gt; 하고 직원은 손님에게 음식을 &lt;strong&gt;제공&lt;/strong&gt; 한다.&lt;/p&gt;
-
-&lt;p&gt;웹브라우저와 웹서버도 이와 같은 관계이다. 웹브라우저는 웹서버에게 특정 컨텐츠를 &lt;strong&gt;요청&lt;/strong&gt;하고 웹서버는 웹브라우저에게 해당 컨텐츠를 &lt;strong&gt;제공, 응답&lt;/strong&gt;한다.&lt;/p&gt;
-
-&lt;p&gt;어떤 컨텐츠들이 요청, 응답에서 오가는 지를 보려면 특정 웹페이지에 접속한 후 &lt;strong&gt;[개발자도구-네트워크]&lt;/strong&gt; 를 열어보면 된다.&lt;/p&gt;
-
-&lt;p&gt;그러면 다음과 같은 모습을 확인할 수 있다. &lt;del&gt;보이지 않는다면 네트워크 창을 연 후 새로고침을 해보자.&lt;/del&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/132447634-0da84e02-1825-4fc3-9112-92b34616a0ff.png&quot; alt=&quot;fig2&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;오른쪽에 나열되어 있는 모든 요소들이 웹브라우저와 웹서버 사이에서 전송된 컨텐츠들이다.&lt;/p&gt;
-
-&lt;p&gt;오른쪽 창 아래를 보면 &lt;strong&gt;356 requests&lt;/strong&gt; 라고 써져있는 걸 볼 수 있는데, 웹브라우저가 웹서버에게 총 356 번의 요청 주문을 하였다는 의미이다.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;http-란-무엇인가&quot;&gt;HTTP 란 무엇인가&lt;/h3&gt;
-
-&lt;p&gt;&lt;br /&gt;
-웹브라우저와 웹서버 사이의 통신이 발생할 때 우리는 그 통신이 좀 더 원활하게 진행될 수 있도록 규칙을 만들어 놓았다.&lt;/p&gt;
-
-&lt;p&gt;그 규칙(프로토콜) 이 바로 HTTP(HyperText Transer Protocol) 이다.&lt;/p&gt;
-
-&lt;p&gt;원래는 HTTP 의 규칙을 따라 컨텐츠를 전송할 때, 그 컨텐츠의 타입이 HyperText 에 국한되었다.&lt;/p&gt;
-
-&lt;p&gt;하지만 HTTP의 발전에 따라 현재는 이미지, 동영상 등의 다양한 미디어 컨텐츠를 전송할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[개발자도구-네트워크]&lt;/strong&gt; 를 열어서 아무 컨텐츠나 한 개를 클릭해보자.&lt;/p&gt;
-
-&lt;p&gt;그러면 다음과 같은 화면을 볼 수 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56385667/132448034-58935063-738c-445f-812b-373d2a3a6a38.png&quot; alt=&quot;fig3&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;오른쪽 창에 보면 Response Headers, Request Headers 에 적혀있는 내용을 볼 수 있는데, 이 형식이 HTTP 가 정해놓은 통신 규칙이다.&lt;/p&gt;
-
-&lt;p&gt;Response Headers 는 요청의 규칭이며 Request Headers 는 응답의 규칙이다.&lt;/p&gt;
-
-&lt;p&gt;우리가 보는 모든 웹 화면은 웹브라우저가 웹서버에게 요청하여 응답받은 것을 보여주는 것이다.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;웹의-네가지-요소&quot;&gt;웹의 네가지 요소&lt;/h3&gt;
-
-&lt;p&gt;&lt;br /&gt;
-마지막으로 간단하게 웹의 네가지 요소를 살펴보고 끝내자.&lt;/p&gt;
-
-&lt;p&gt;모든 웹은 다음과 같은 네가지 요소로 이루어져있다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;html : 웹페이지를 만드는 컴퓨터 언어&lt;/li&gt;
-  &lt;li&gt;url : 특정 웹페이지에 방문할 수 있도록 도와주는 주소 체계&lt;/li&gt;
-  &lt;li&gt;web browser : 웹서버와의 통신을 통해 웹페이지를 주고받는 소프트웨어&lt;/li&gt;
-  &lt;li&gt;http (HyperText Transfer Protocol) : 웹브라우저와 웹서버가 통신할 때 사용하는 통신 규칙&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=vHhWcTyJoS0&quot;&gt;https://www.youtube.com/watch?v=vHhWcTyJoS0&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="cs" /><category term="생활코딩" /><category term="cs" /><category term="http" /><summary type="html">Http 란 무엇인가</summary></entry></feed>
+&lt;/ol&gt;</content><author><name>YoonJae Kim</name><email>keymy00njae@gmail.com</email></author><category term="git" /><category term="github" /><category term="git" /><summary type="html">github 사용법</summary></entry></feed>

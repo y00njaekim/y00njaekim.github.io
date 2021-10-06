@@ -36,7 +36,7 @@ ms word 혹은 ms ppt 에서 새로운 서체를 이용하던 순간을 생각�
 
 ![fig3](https://user-images.githubusercontent.com/56385667/131068273-a3fa26e2-9b05-408d-94d1-cccaa8e8594f.png)
 
-아래 사진을보면 `font-family: $monospace` 가 적혀있는 줄을 볼 수 있다. 특정 영역 (ppt 에서 특정 텍스트박스에 글씨체를 적용하 듯이)에 `font-family` 명령어를 이용하여 ` $monospace` 라는 글씨체~~(정확히는 서체배열?)~~를 적용한다.
+아래 사진을보면 `font-family: $monospace` 가 적혀있는 줄을 볼 수 있다. 특정 영역 (ppt 에서 특정 텍스트박스에 글씨체를 적용하 듯이)에 `font-family` 명령어를 이용하여 `monospace` 라는 글씨체~~(정확히는 서체배열?)~~를 적용한다.
 
 위 사진에 나와있는 `$monospace` 를 보면 `Monaco, Consolas, ...` 등 여러 글씨체가 나열되어 있는데, 이는 `Monaco` 글씨체가 있으면 이를 우선으로 적용하고 만약 없으면 `Consolas` 를 적용하라는 의미로 1순위, 2순위, ... 등의 우선순위를 나타낸다.
 

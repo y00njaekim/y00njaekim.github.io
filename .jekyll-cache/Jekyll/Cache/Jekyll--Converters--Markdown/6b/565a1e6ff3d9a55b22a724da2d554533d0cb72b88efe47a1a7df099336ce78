@@ -1,0 +1,181 @@
+I"u0<p>이 글은 생활코딩 <a href="https://opentutorials.org/course/2418/13339">CSS 수업</a>을 정리하는 목적으로 작성하였다. 강의와 더불어 참고하길 바란다.</p>
+
+<h2 id="선택자-selector">선택자 (selector)</h2>
+
+<p>css 파일을 열어보면 다음과 같은 문법을 볼 수 있었을 거다. 이 때 이 안의 다음과 같은 명칭의 표현들이 존재함을 알아야 한다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56385667/136027915-fa6172a4-fbac-4900-947e-785661eff634.png" alt="2z4a3yh4" style="zoom:30%;" /></p>
+
+<p>🎯 <code class="language-plaintext highlighter-rouge">selector</code>: <strong>style sheet 을 적용시킬 대상</strong>을 지칭한다.</p>
+
+<p>🎯 <code class="language-plaintext highlighter-rouge">property</code>: style sheet 을 작성할 때 그 목적이 되는 구체적 style 을 의미한다.</p>
+
+<p>🎯 <code class="language-plaintext highlighter-rouge">value</code>: <code class="language-plaintext highlighter-rouge">property</code> 에 넣을 값을 의미한다.</p>
+
+<h3 id="선택자의-종류">선택자의 종류</h3>
+
+<p>선택자(selector) 는 여러가지 종류가 있다. 즉 style sheet 을 적용시킬 대상을 지칭할 때 그 표현의 방법이 여러가지 있다는 뜻이다. 다음은 그 종류이다.</p>
+
+<p>🎯 태그 선택자 (tag selector, type selector)</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* html 태그를 지칭하여 style sheet 을 적용한다 */</span>
+
+<span class="nt">h1</span> <span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>🎯 클래스 선택자 (class selector)</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* class 를 지칭하여 style sheet 을 적용한다 */</span>
+
+<span class="nc">.title</span> <span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>🎯 아이디 선택자 (id selector)</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* id 를 지칭하여 style sheet 을 적용한다 */</span>
+
+<span class="nf">#title</span> <span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>이 때 기억해야할 점은 <strong>선택자는 분명하게 지칭될 수록 우선순위가 높게 작용한다</strong>는 것이다.</p>
+
+<p>예를들어 다음과 같은 코드가 있다 할 때 <strong>아이디 선택자가 가장 분명한 선택자</strong> 이므로 <code class="language-plaintext highlighter-rouge">&lt;h1 class='title' id='title'/&gt;</code> 의 색상은 빨간색이 된다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* &lt;h1 class='title' id='title'/&gt; 이라는 html 태그가 존재한다고 가정하자 */</span>
+
+<span class="nt">h1</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.title</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nf">#title</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="부모-자손-선택자-descendant-selector">부모 자손 선택자 (descendant selector)</h3>
+
+<p>만약 html 태그 안에 또 다른 html 태그가 있을 때, 우리는 그 관계를 부모자손 관계라고 부른다.</p>
+
+<p>css 에서는 부모자손 관계를 선택자에서 이용할 수 있다. 그 종류는 다음과 같다.</p>
+
+<p>🎯 <code class="language-plaintext highlighter-rouge">(띄어쓰기)</code> , <strong>자손</strong></p>
+
+<p>첫 번째는 띄어쓰기를 이용하여 선택자를 구성하는 방법이다.</p>
+
+<p>이 것은 앞에 나온 선택자의 자손 중 뒤에 나온 선택자가 존재할 때 style sheet 이 적용되는 상황이다.</p>
+
+<p>이 때 기억해야할 점은 뒤에 나온 선택자가 앞에 나온 선택자의 <strong>몇 번째 자손이든 상관 없이 자손이기만 하면 된다</strong>는 것이다.</p>
+
+<p>아래 코드 중 첫 번째 블럭의 의미는 <code class="language-plaintext highlighter-rouge">ul</code> 태그의 자손 <code class="language-plaintext highlighter-rouge">li</code> 태그를 선택자로 삼아 <code class="language-plaintext highlighter-rouge">{}</code> 에 등장하는 style sheet 을 적용시킨다는 의미이다.</p>
+
+<p><br /></p>
+
+<p>🎯 <code class="language-plaintext highlighter-rouge">&gt;</code> , <strong>직계자손</strong></p>
+
+<p>두 번째는 <code class="language-plaintext highlighter-rouge">&gt;</code> 를 이용하여 선택자를 구성하는 방법이다</p>
+
+<p>이 것은 앞에 나온 선택자의 <strong>직계 자손</strong>(depth =1) 중 뒤 나온 선택자가 존재할 때 style sheet 이 적용되는 상황이다.</p>
+
+<p>이 때 기억해야할 점은 뒤에 나온 선택자는 앞에 나온 선택자의 첫 번째 , 즉 직계 자손이어야 한다는 것이다.</p>
+
+<p>아래 코드 중 두 번째 블럭의 의미는 <code class="language-plaintext highlighter-rouge">#lecture</code> 아이디의 직계 자손 <code class="language-plaintext highlighter-rouge">li</code> 태그를 선택자로 삼아 <code class="language-plaintext highlighter-rouge">{}</code> 에 등장하는 style sheet 을 적용시킨다는 의미이다.</p>
+
+<p><br /></p>
+
+<p>🎯 <code class="language-plaintext highlighter-rouge">,</code> , <strong>병렬</strong></p>
+
+<p>세 번째는 <code class="language-plaintext highlighter-rouge">,</code> 를 이용하여 선택자를 구성하는 방법이다.</p>
+
+<p>이 것은 간단하다! 그냥 병렬을 의미한다.</p>
+
+<p>아 래 코드 중 세 번째 블럭의 의미는 <code class="language-plaintext highlighter-rouge">ul</code> 태그와 <code class="language-plaintext highlighter-rouge">ol</code> 태그 모두에게 <code class="language-plaintext highlighter-rouge">{}</code> 에 등장하는 style sheet 을 적용시킨다는 의미이다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">ul</span> <span class="nt">li</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+  <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">underline</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#lecture</span> <span class="o">&gt;</span> <span class="nt">li</span> <span class="p">{</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">ul</span><span class="o">,</span>
+<span class="nt">ol</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="no">powderblue</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="가상-클래스-선택자-psuedo-class-selector">가상 클래스 선택자 (psuedo class selector)</h3>
+
+<p>다음과 같은 코드가 있다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=edge"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;style&gt;</span>
+      <span class="nt">a</span><span class="nd">:link</span> <span class="p">{</span>
+        <span class="nl">color</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="nt">a</span><span class="nd">:visited</span> <span class="p">{</span>
+        <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="nt">a</span><span class="nd">:hover</span> <span class="p">{</span>
+        <span class="nl">color</span><span class="p">:</span> <span class="no">yellow</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="nt">a</span><span class="nd">:active</span> <span class="p">{</span>
+        <span class="nl">color</span><span class="p">:</span> <span class="no">green</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="nt">a</span><span class="nd">:focus</span> <span class="p">{</span>
+        <span class="nl">color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="nt">&lt;/style&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://www.naver.com"</span><span class="nt">&gt;</span>방문함<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://www.daum.net"</span><span class="nt">&gt;</span>방문함<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>위 코드를 보면 <code class="language-plaintext highlighter-rouge">a:link</code> , <code class="language-plaintext highlighter-rouge">a:visited</code> , <code class="language-plaintext highlighter-rouge">a:hover</code> , <code class="language-plaintext highlighter-rouge">a:active</code> , <code class="language-plaintext highlighter-rouge">a:focus</code> 등이 있다. 이를 <strong>가상 클래스 선택자</strong> 라고 부른다. 이 의미는 다음과 같다.</p>
+
+<p>✔️ <code class="language-plaintext highlighter-rouge">a:link</code> : <code class="language-plaintext highlighter-rouge">&lt;a/&gt;</code> 태그의 기본적인 상태를 지칭하는 선택자</p>
+
+<p>✔️ <code class="language-plaintext highlighter-rouge">a:visited</code> : <code class="language-plaintext highlighter-rouge">&lt;a/&gt;</code> 태그가 방문된 상태를 지칭하는 선택자</p>
+
+<p>✔️ <code class="language-plaintext highlighter-rouge">a:hover</code> : <code class="language-plaintext highlighter-rouge">&lt;a/&gt;</code> 태그에 마우스를 올려 놓은 상태를 지칭하는 선택자</p>
+
+<p>✔️ <code class="language-plaintext highlighter-rouge">a:active</code> : <code class="language-plaintext highlighter-rouge">&lt;a/&gt;</code> 태그가 클릭된 상태를 지칭하는 선택자</p>
+
+<p>✔️ <code class="language-plaintext highlighter-rouge">a:focusing</code> : <code class="language-plaintext highlighter-rouge">&lt;a/&gt;</code> 태그가 focusing 된 상태를 지칭하는 선택자</p>
+
+<p><br /></p>
+
+<h3 id="추가-정보">추가 정보</h3>
+
+<h4 id="css-cheat-sheet">css cheat sheet</h4>
+
+<p>추가적으로 css cheat sheet 를 첨부한다. 필요시 참고하길 바란다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56385667/136037767-805bee59-95af-427a-bddc-cd80867694b4.png" /></p>
+
+<h4 id="css-선택자-연습-사이트">css 선택자 연습 사이트</h4>
+
+<p><a href="https://flukeout.github.io/">다음 사이트</a> 에서 css 선택자를 고르는 연습을 할 수 있다. 참고하자 !</p>
+:ET
