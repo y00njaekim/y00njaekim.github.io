@@ -100,4 +100,10 @@ var store = [{
         "tags": ["css","react"],
         "url": "/css/css-%EC%84%A0%ED%83%9D%EC%9E%90/",
         "teaser": "/assets/images/default.jpeg"
+      },{
+        "title": "[Algorithm] 무지의 먹방 라이브 - 그리디 알고리즘",
+        "excerpt":"이 문제의 제목은 무지의 먹방 라이브이다. 상당히 인상깊은 내용이 많아 이렇게 따로 기록하려 한다. 우선 내가 처음에 작성한 코드의 구조를 살펴보자 ⬇️ 🖥️ My Code ⬇️ #include &lt;string&gt; #include &lt;vector&gt; #include &lt;queue&gt; using namespace std; int getZeroCount(vector&lt;int&gt; v) { int res = 0; int vSize = v.size(); for(int i=0; i&lt;vSize;...","categories": ["algorithm"],
+        "tags": ["algorithm","ps"],
+        "url": "/algorithm/%EB%AC%B4%EC%A7%80%EC%9D%98%EB%A8%B9%EB%B0%A9%EB%9D%BC%EC%9D%B4%EB%B8%8C/",
+        "teaser": "/assets/images/default.jpeg"
       }]
