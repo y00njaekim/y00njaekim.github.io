@@ -106,4 +106,10 @@ var store = [{
         "tags": ["algorithm","ps"],
         "url": "/algorithm/%EB%AC%B4%EC%A7%80%EC%9D%98%EB%A8%B9%EB%B0%A9%EB%9D%BC%EC%9D%B4%EB%B8%8C/",
         "teaser": "/assets/images/default.jpeg"
+      },{
+        "title": "[Algorithm] 문자열 압축 - 구현",
+        "excerpt":"이번 포스팅에서는 문자열 압축 이라는 문제를 다룬다. 문제는 프로그래머스를 통해 풀고 오길 바란다. . 나동빈님의 코드를 짧게 분석해보며 문제에서 얻을 수 있는 포인트들을 챙겨보자. 코드는 다음과 같다. #include &lt;bits/stdc++.h&gt; using namespace std; int solution(string s) { int answer = s.size(); // 1개 단위(step)부터 압축 단위를 늘려가며 확인 for (int step...","categories": ["algorithm"],
+        "tags": ["algorithm","ps","cpp"],
+        "url": "/algorithm/%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%95%95%EC%B6%95/",
+        "teaser": ""
       }]
