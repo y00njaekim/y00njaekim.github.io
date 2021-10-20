@@ -291,7 +291,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          3 minute read
+          4 minute read
         
       </span>
     
@@ -307,7 +307,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#git-flow란">Git Flow란?</a></li><li><a href="#rebase-란">Rebase 란?</a></li><li><a href="#스테이징커밋-실수-대처-방법">스테이징/커밋 실수 대처 방법</a><ul><li><a href="#staging">staging</a></li><li><a href="#commit">commit</a></li></ul></li><li><a href="#git-stash-란">git stash 란?</a></li><li><a href="#reference">Reference</a></li></ul>
+              <ul class="toc__menu"><li><a href="#git-flow란">Git Flow란?</a></li><li><a href="#rebase-란">Rebase 란?</a></li><li><a href="#스테이징커밋-실수-대처-방법">스테이징/커밋 실수 대처 방법</a><ul><li><a href="#staging">staging</a></li><li><a href="#commit">commit</a></li></ul></li><li><a href="#git-stash-란">git stash 란?</a></li><li><a href="#git-ignore">git ignore</a><ul><li><a href="#what">What?</a></li><li><a href="#how">How?</a></li></ul></li><li><a href="#reference">Reference</a></li></ul>
 
             </nav>
           </aside>
@@ -519,6 +519,55 @@ git stash drop <span class="o">[</span>stash 이름]
 </code></pre></div></div>
 
 <p><br /></p>
+
+<h2 id="git-ignore">git ignore</h2>
+
+<h3 id="what">What?</h3>
+
+<p>Git 백업 시 특정 파일을 제외할 수 있도록 해주는 방법이다. <code class="language-plaintext highlighter-rouge">.gitignore</code> 파일을 통해 구현된다.</p>
+
+<p><br /></p>
+
+<h3 id="how">How?</h3>
+
+<ol>
+  <li>
+    <p>.gitignore 파일을 만든다. 최상위 Directory 에 만들어야 한다.</p>
+  </li>
+  <li>
+    <p>.git ignore 에 아래 코드를 참고하여 백업 시 제외할 파일을 설정한다</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 확장자가 .a 인 파일을 제외한다.
+*.a
+   
+# 확장자가 .a 인 파일을 제외시켰을 때, 예외적으로 lib.a 파일은 제외하지 않는다.
+!lib.a
+   
+# 현재 디렉토리에 있는 TODO 파일을 제외한다. 서브 디렉토리에 있는 TODO 파일은 해당하지 않는다.
+/TODO
+   
+# build 디렉토리에 있는 모든 파일을 제외한다.
+build/
+   
+# doc/notes.txt 등과 같이 doc 안에 있는 파일 중 확장자가 .txt 인 파일을 제외한다. 주의해야할 점은 doc/server/arch.txt 등과 같이 depth 가 2 이상인 서브 디렉토리의 .txt 파일은 해당하지 않는다는 점이다.
+doc/*.txt
+   
+# doc 디렉토리 안에 있는 모든 .pdf 파일을 제외한다.
+doc/**/*.pdf
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">.gitignore</code> 을 다 작성하였다면 다음과 같이 터미널에 입력하여 적용한다.</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git <span class="nb">rm</span> <span class="nt">-r</span> <span class="nt">--cached</span> <span class="nb">.</span>
+git add <span class="nb">.</span>
+git commit <span class="nt">-m</span> <span class="s2">"Apply .gitignore"</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p><br /></p>
+
 <h2 id="reference">Reference</h2>
 
 <ol>
@@ -533,6 +582,9 @@ git stash drop <span class="o">[</span>stash 이름]
   </li>
   <li>
     <p><a href="https://gmlwjd9405.github.io/2018/05/18/git-stash.html">https://gmlwjd9405.github.io/2018/05/18/git-stash.html</a></p>
+  </li>
+  <li>
+    <p><a href="https://nesoy.github.io/articles/2017-01/Git-Ignore">https://nesoy.github.io/articles/2017-01/Git-Ignore</a></p>
   </li>
 </ol>
 
@@ -627,6 +679,56 @@ git stash drop <span class="o">[</span>stash 이름]
     <div class="page__related">
       <h2 class="page__related-title">You may also enjoy</h2>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/react.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/react/promise/" rel="permalink">[React] 리액트 promise 란?
+</a>
+      
+    </h2>
+    
+      <span class="page__date">
+        <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        2021.10.20
+      </span>
+    
+    <!-- 
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+ -->
+    <p class="archive__item-excerpt" itemprop="description">리액트 promise
+</p>
+  </article>
+</div>
+
         
           
 
@@ -773,56 +875,6 @@ git stash drop <span class="o">[</span>stash 이름]
 
  -->
     <p class="archive__item-excerpt" itemprop="description">cascading style sheets 의 선택자 종류를 알아보자
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/images/react.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/react/input/" rel="permalink">[React] 사용자 입력을 통한 새로운 글 포스팅
-</a>
-      
-    </h2>
-    
-      <span class="page__date">
-        <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        2021.09.20
-      </span>
-    
-    <!-- 
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          1 minute read
-        
-      </span>
-    
-  </p>
-
- -->
-    <p class="archive__item-excerpt" itemprop="description">React 에서  태그 사용하기
 </p>
   </article>
 </div>

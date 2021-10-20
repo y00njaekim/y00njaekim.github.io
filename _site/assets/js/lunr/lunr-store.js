@@ -112,4 +112,10 @@ var store = [{
         "tags": ["algorithm","ps","cpp"],
         "url": "/algorithm/%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%95%95%EC%B6%95/",
         "teaser": ""
+      },{
+        "title": "[React] 리액트 promise 란?",
+        "excerpt":"아직 완성되지 않은 포스팅이라 후에 작성할 때 기준 삼을 간단한 구조를 미리 첨부한다. Promise What? 오브젝트. 오브젝트 안에 오브젝트를 포함하는 형태 Promise[프로미스]는 자바스크립트에서 비동기 처리에 사용되는 객체라고 한다. 비동기 처리는 코드 실행 후 결과를 받는것을 기다리지 않고 다음 코드를 계속 진행하는 처리 방식을 말한다. (동기 처리는 반대로 앞선 코드를 수행하고...","categories": ["react"],
+        "tags": ["react"],
+        "url": "/react/promise/",
+        "teaser": "/assets/images/react.png"
       }]
