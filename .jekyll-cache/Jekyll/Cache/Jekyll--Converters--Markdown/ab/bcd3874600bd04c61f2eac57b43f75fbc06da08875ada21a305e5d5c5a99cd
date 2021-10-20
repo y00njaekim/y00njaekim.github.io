@@ -1,0 +1,81 @@
+I"&'<p>이번 포스팅에서는 사용자의 입력을 받아 새로운 글을 업로드 하는 과정을 살펴보겠다.</p>
+
+<h2 id="input-태그">input 태그</h2>
+
+<p>코드를 먼저 살펴보자.</p>
+
+<div class="language-react highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="p">[</span><span class="nx">inVal</span><span class="p">,</span> <span class="nx">setInVal</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
+  <span class="k">return</span> <span class="p">(</span>
+  	<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+    	<span class="p">&lt;</span><span class="nt">input</span> <span class="na">onChange</span><span class="p">=</span><span class="si">{</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">setInVal</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span> <span class="p">}</span><span class="si">}</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>하나하나 살펴보면 다음과 같은 정보들을 얻을 수 있다.</p>
+
+<p>🎯 <code class="language-plaintext highlighter-rouge">e.target</code> 은 input 을 입력하는 공간을 의미한다.</p>
+
+<p>🎯 <code class="language-plaintext highlighter-rouge">e.target.value</code> 는 input 값을 의미한다. 정확히는 <code class="language-plaintext highlighter-rouge">e.target.value</code> 은 input 을 입력하는 공간에 기입된 값을 의미하는데, 이는 input 값과 동치이기 때문이다.</p>
+
+<p>🎯 <code class="language-plaintext highlighter-rouge">onChange</code> 는 input 값이 변경될 때마다 call 되는 함수이다. 위 코드는 input 값이 변경될 때마다 <code class="language-plaintext highlighter-rouge">setInVal()</code> 이 call 되는 기능을 수행한다.</p>
+
+<h2 id="ex-사용자-입력을-통한-새로운-글-업로드">Ex. 사용자 입력을 통한 새로운 글 업로드</h2>
+
+<p>사용자 입력을 통해 새로운 글을 업로드 하는 코드를 작성해보자.</p>
+
+<p>코드는 다음과 같다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">input</code> 태그에 있는 <code class="language-plaintext highlighter-rouge">onChange</code> 와 <code class="language-plaintext highlighter-rouge">button</code> 태그에 있는 <code class="language-plaintext highlighter-rouge">onClick</code> 을 유심히 살펴보면 잘 이해할 수 있을 거다.</p>
+
+<div class="language-react highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span><span class="nx">useState</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">logo</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./logo.svg</span><span class="dl">'</span>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">./App.css</span><span class="dl">'</span>
+
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="p">[</span><span class="nx">title</span><span class="p">,</span> <span class="nx">setTitle</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([</span><span class="dl">'</span><span class="s1">나이키</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">아디다스</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">퓨마</span><span class="dl">'</span><span class="p">]);</span>
+  <span class="kd">let</span> <span class="p">[</span><span class="nx">thumb</span><span class="p">,</span> <span class="nx">setThumb</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]);</span>
+  <span class="kd">let</span> <span class="p">[</span><span class="nx">inVal</span><span class="p">,</span> <span class="nx">setInVal</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="si">{</span>
+        <span class="nx">title</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="p">(</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">key</span><span class="p">=</span><span class="si">{</span><span class="nx">i</span><span class="si">}</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span> <span class="si">{</span> <span class="nx">e</span> <span class="si">}</span>
+                <span class="p">&lt;</span><span class="nt">span</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                  <span class="kd">var</span> <span class="nx">temp</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">thumb</span><span class="p">];</span>
+                  <span class="nx">temp</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">temp</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+                  <span class="nx">setThumb</span><span class="p">(</span><span class="nx">temp</span><span class="p">);</span>
+                <span class="p">}</span><span class="si">}</span><span class="p">&gt;</span>👍<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> <span class="si">{</span> <span class="nx">thumb</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="si">}</span>
+              <span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+          <span class="p">)</span>
+        <span class="p">})</span>
+      <span class="si">}</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">onChange</span><span class="p">=</span><span class="si">{</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">setInVal</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span> <span class="p">}</span> <span class="si">}</span><span class="p">&gt;&lt;/</span><span class="nt">input</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">_title</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">title</span><span class="p">];</span>
+        <span class="nx">_title</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="nx">inVal</span><span class="p">);</span>
+        <span class="kd">let</span> <span class="nx">_thumb</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">thumb</span><span class="p">];</span>
+        <span class="nx">_thumb</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+        <span class="nx">setTitle</span><span class="p">(</span><span class="nx">_title</span><span class="p">);</span>
+        <span class="nx">setThumb</span><span class="p">(</span><span class="nx">_thumb</span><span class="p">);</span>
+      <span class="p">}</span><span class="si">}</span><span class="p">&gt;</span>버튼<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span> 
+  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span>
+</code></pre></div></div>
+
+<p><br />
+결과 화면은 다음과 같이 출력된다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56385667/133980155-3bc1cc01-ca56-4bc0-897c-97d88eba233c.png" /></p>
+
+<p><img src="https://user-images.githubusercontent.com/56385667/133980166-30e5fb8a-c5e6-41e6-b7d5-37ae2725fb44.png" /></p>
+
+:ET

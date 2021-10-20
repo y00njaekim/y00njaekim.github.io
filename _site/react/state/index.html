@@ -1,0 +1,824 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[React] 리액트 state 사용법 - YoonJae’s DevLog</title>
+<meta name="description" content="리액트 state">
+
+
+  <meta name="author" content="YoonJae Kim">
+  
+  <meta property="article:author" content="YoonJae Kim">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="YoonJae's DevLog">
+<meta property="og:title" content="[React] 리액트 state 사용법">
+<meta property="og:url" content="https://y00njaekim.github.io/react/state/">
+
+
+  <meta property="og:description" content="리액트 state">
+
+
+
+  <meta property="og:image" content="https://y00njaekim.github.io/assets/images/react.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2021-09-01T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2021-09-01T22:06:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://y00njaekim.github.io/react/state/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "YoonJae Kim",
+      "url": "https://y00njaekim.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="YoonJae's DevLog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+    
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          YoonJae's DevLog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/react/">React</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/algorithm/">Algorithm</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://y00njaekim.github.io/">
+        <img src="/assets/images/bio-photo.jpg" alt="YoonJae Kim" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://y00njaekim.github.io/" itemprop="url">YoonJae Kim</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>GIST undergraduate stud.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">South Korea</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+            <li><a href="https://github.com/y00njaekim/" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:keymy00njae@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="keymy00njae@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[React] 리액트 state 사용법">
+    <meta itemprop="description" content="리액트 state">
+    <meta itemprop="datePublished" content="2021-09-01T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-09-01T22:06:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://y00njaekim.github.io/react/state/" class="u-url" itemprop="url">[React] 리액트 state 사용법
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+        
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#what-is-state">What is ‘state’</a></li><li><a href="#why-to-use-state">Why to use ‘state’</a></li><li><a href="#how-to-use-state">How to use ‘state’</a><ul><li><a href="#유의사항">유의사항</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h3 id="what-is-state">What is ‘state’</h3>
+
+<hr />
+
+<ul>
+  <li>state 는 변수 대신 사용하는 데이터 저장공간이다.</li>
+  <li>문자, 숫자, array, object 모두 저장 가능하다.</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="why-to-use-state">Why to use ‘state’</h3>
+
+<hr />
+
+<ul>
+  <li>react 를 웹앱처럼 동작하게 하는 데 핵심적인 역할을 한다.</li>
+  <li>state 로 만들어진 데이터가 바뀌면 <strong>새로고침 없이도 데이터를 담고 있는 html 이 자동 재렌더링</strong> 된다.</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="how-to-use-state">How to use ‘state’</h3>
+
+<hr />
+
+<p>1 . useState 를 import 한다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>2 . java script ES6 destructuring 문법을 사용하여 state 를 선언한다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="p">[</span><span class="nx">title</span><span class="p">,</span> <span class="nx">setTitle</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([</span><span class="dl">'</span><span class="s1">강남 우동 맛집</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">남자 코트 추천</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">개발팀 모집</span><span class="dl">'</span><span class="p">])</span>
+<span class="kd">let</span> <span class="p">[</span><span class="nx">thumbCount</span><span class="p">,</span> <span class="nx">setThumbCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><br />
+​	<em>ES6 destructuring 문법이란?</em></p>
+
+<p>​	✔️ array, objectd 에 있던 자료를 변수에 쉽게 담고 싶을 때 사용</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="p">[</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span> <span class="c1">// a 에 10, b 에 100 이 담긴다</span>
+</code></pre></div></div>
+
+<p><br />
+3 . html(jsx) 의 필요한 부분에 데이터 바인딩을 한다.</p>
+
+<div class="language-react highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span> <span class="si">{</span> <span class="nx">title</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="si">}{</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="si">}</span>
+    <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>👍<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="si">{</span> <span class="nx">thumbCount</span> <span class="si">}</span> 
+  <span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div></div>
+
+<p><br />
+4 . 데이터 값을 변경하고 싶을 때 함수를 사용한다.</p>
+
+<div class="language-react highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span> <span class="si">{</span> <span class="nx">title</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="si">}{</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="si">}</span>
+    <span class="p">&lt;</span><span class="nt">span</span>
+      <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">setThumbCount</span><span class="p">(</span><span class="nx">thumbCount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+      <span class="p">}</span><span class="si">}</span> <span class="na">style</span><span class="p">=&gt;</span>
+      👍
+    <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="si">{</span> <span class="nx">thumbCount</span> <span class="si">}</span> 
+  <span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<h4 id="유의사항">유의사항</h4>
+<hr />
+
+<p>1 . array 가 저장된 state 를 사용하는 방법</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="p">[</span><span class="nx">title</span><span class="p">,</span> <span class="nx">setTitle</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([</span><span class="dl">'</span><span class="s1">강남 우동 맛집</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">남자 코트 추천</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">개발팀 모집</span><span class="dl">'</span><span class="p">])</span>
+
+<span class="kd">function</span> <span class="nx">changeTitle</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">newArray</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">title</span><span class="p">];</span>
+  <span class="nx">newArray</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">강남 라멘 맛집</span><span class="dl">'</span><span class="p">;</span>
+  <span class="nx">setTitle</span><span class="p">(</span> <span class="nx">newArray</span> <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">var newArray = title</code>  이 아닌  <code class="language-plaintext highlighter-rouge">var newArray = [...title]</code>  이라 써야한다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">var newArray = title</code> 라고 쓰면 <strong>값 공유</strong>가 이루어진다.</p>
+
+<p>하지만  <code class="language-plaintext highlighter-rouge">var newArray = [...title]</code> 라고 쓰면 <strong>deep copy</strong>가 이루어진다. 즉, 서로 독립적인 값을 가지는 복사가 이루어진다.</p>
+
+<p>더 자세한 사항은 <em>reference data type</em> 을 검색해서 찾아보자!</p>
+
+<blockquote>
+  <p>React 의 대원칙 : immutable data.</p>
+</blockquote>
+
+<blockquote>
+  <p>즉 state data 들은 직접적인 수정이 발생하지 않도록 하기.</p>
+</blockquote>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#react" class="page__taxonomy-item p-category" rel="tag">react</a><span class="sep">, </span>
+    
+      <a href="/tags/#%EC%BD%94%EB%94%A9%EC%95%A0%ED%94%8C-%EB%A6%AC%EC%95%A1%ED%8A%B8" class="page__taxonomy-item p-category" rel="tag">코딩애플_리액트</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#react" class="page__taxonomy-item p-category" rel="tag">react</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-09-01">2021.09.01</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5BReact%5D+%EB%A6%AC%EC%95%A1%ED%8A%B8+state+%EC%82%AC%EC%9A%A9%EB%B2%95%20https%3A%2F%2Fy00njaekim.github.io%2Freact%2Fstate%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fy00njaekim.github.io%2Freact%2Fstate%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fy00njaekim.github.io%2Freact%2Fstate%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/jekyll/jekyll-code-font/" class="pagination--pager" title="[Jekyll] jekyll 코드 폰트 바꾸는 법
+">Previous</a>
+    
+    
+      <a href="/cs/http-2/" class="pagination--pager" title="[Http] 생활코딩 HTTP-2: 소개
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Leave a comment</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%95%95%EC%B6%95/" rel="permalink">[Algorithm] 문자열 압축 - 구현
+</a>
+      
+    </h2>
+    
+      <span class="page__date">
+        <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        2021.10.11
+      </span>
+    
+    <!-- 
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+ -->
+    <p class="archive__item-excerpt" itemprop="description">for 문을 대하는 태도
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/default.jpeg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/%EB%AC%B4%EC%A7%80%EC%9D%98%EB%A8%B9%EB%B0%A9%EB%9D%BC%EC%9D%B4%EB%B8%8C/" rel="permalink">[Algorithm] 무지의 먹방 라이브 - 그리디 알고리즘
+</a>
+      
+    </h2>
+    
+      <span class="page__date">
+        <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        2021.10.09
+      </span>
+    
+    <!-- 
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+ -->
+    <p class="archive__item-excerpt" itemprop="description">이것이 코딩 테스트다, 카카오 문제 풀이
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/default.jpeg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/css/css-%EC%84%A0%ED%83%9D%EC%9E%90/" rel="permalink">[CSS] CSS 선택자 종류
+</a>
+      
+    </h2>
+    
+      <span class="page__date">
+        <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        2021.10.06
+      </span>
+    
+    <!-- 
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+ -->
+    <p class="archive__item-excerpt" itemprop="description">cascading style sheets 의 선택자 종류를 알아보자
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/react.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/react/input/" rel="permalink">[React] 사용자 입력을 통한 새로운 글 포스팅
+</a>
+      
+    </h2>
+    
+      <span class="page__date">
+        <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        2021.09.20
+      </span>
+    
+    <!-- 
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+ -->
+    <p class="archive__item-excerpt" itemprop="description">React 에서  태그 사용하기
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 YoonJae Kim. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6RKJX9HDY2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6RKJX9HDY2', { 'anonymize_ip': false});
+</script>
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://y00njaekim.github.io/react/state/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/react/state"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://keymy00njae.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+<script type="text/javascript" async
+	src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+	MathJax.Hub.Config({
+	extensions: ["tex2jax.js"],
+	jax: ["input/TeX", "output/HTML-CSS"],
+	tex2jax: {
+		inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+		displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+		processEscapes: true
+	},
+	"HTML-CSS": { availableFonts: ["TeX"] }
+});
+</script>
+
+
+  </body>
+</html>

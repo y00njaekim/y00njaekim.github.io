@@ -1,0 +1,219 @@
+I"�P<blockquote>
+  <p>이 문제의 제목은 <a href="https://programmers.co.kr/learn/courses/30/lessons/42891">무지의 먹방 라이브</a>이다.</p>
+
+  <p>상당히 인상깊은 내용이 많아 이렇게 따로 기록하려 한다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<p>우선 내가 <strong>처음에 작성한</strong> 코드의 구조를 살펴보자</p>
+
+<p>⬇️ 🖥️ <strong>My Code</strong> ⬇️</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;string&gt;
+#include &lt;vector&gt;
+#include &lt;queue&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">getZeroCount</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">vSize</span> <span class="o">=</span> <span class="n">v</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">vSize</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="n">res</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">getMin</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">min</span> <span class="o">=</span> <span class="mf">1e9</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">vSize</span> <span class="o">=</span> <span class="n">v</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">vSize</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">min</span><span class="p">)</span> <span class="n">min</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">min</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">solution</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">food_times</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">getMin</span><span class="p">(</span><span class="n">food_times</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">food_times</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="n">getZeroCount</span><span class="p">(</span><span class="n">food_times</span><span class="p">))</span> <span class="o">&lt;=</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+    <span class="cm">/*
+        ...
+        food_times 갱신
+        k 갱신
+        ...
+    */</span>
+    <span class="p">}</span>
+    <span class="cm">/*
+
+    ...
+
+    */</span>
+    <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>내가 생각하는 이 문제의 핵심은 <strong>알맞은 자료구조</strong>의 사용이다.</p>
+
+<p>결론부터 말하자면 <code class="language-plaintext highlighter-rouge">vector</code> 가 아닌 <code class="language-plaintext highlighter-rouge">priority queue</code> 를 사용해야 했다.</p>
+
+<p><br /></p>
+
+<h3 id="그렇다면-priority-queue-를-사용하겠다는-발상을-어떻게-하는가">그렇다면 priority queue 를 사용하겠다는 발상을 어떻게 하는가?</h3>
+
+<p>라는 질문으로 넘어갈 수 있다.</p>
+
+<p><br /></p>
+
+<p>이 문제에서 priority queue 를 사용하게 유도하는 부분은</p>
+
+<p><code class="language-plaintext highlighter-rouge">while</code> 문 안에서 <code class="language-plaintext highlighter-rouge">getMin()</code> 을 반복해서 호출한다는 것이다.</p>
+
+<p>우선순위 큐는 &lt;<strong>여러 개의 값들 중에서 최댓값이나 최솟값을 빠르게 찾아내도록 만들어진, 일종의 반정렬 상태를 유지</strong>&gt; 하는 자료구조이다.</p>
+
+<p>때문에 <code class="language-plaintext highlighter-rouge">getMin()</code> 을 <code class="language-plaintext highlighter-rouge">vector</code> 에 대하여 반복적으로 호출하는 것보다 <code class="language-plaintext highlighter-rouge">priority queue</code> 를 이용하는 게 훨씬 효율적임을 알 수 있다.</p>
+
+<p><br />이 문제의 정답 코드를 보며 이야기를 계속 하고자 한다.</p>
+
+<p>⬇️ 🖥️ <strong>나동빈 님의 Code</strong> ⬇️ <a href="https://github.com/ndb796/python-for-coding-test/blob/master/11/6.cpp">(깃헙 주소)</a></p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;bits/stdc++.h&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">bool</span> <span class="nf">compare</span><span class="p">(</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">,</span> <span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">second</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">.</span><span class="n">second</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">solution</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">food_times</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 전체 음식을 먹는 시간보다 k가 크거나 같다면 -1</span>
+    <span class="kt">long</span> <span class="kt">long</span> <span class="n">summary</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">food_times</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">summary</span> <span class="o">+=</span> <span class="n">food_times</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">summary</span> <span class="o">&lt;=</span> <span class="n">k</span><span class="p">)</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+
+    <span class="c1">// 시간이 작은 음식부터 빼야 하므로 우선순위 큐를 이용</span>
+    <span class="n">priority_queue</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">pq</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">food_times</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// (음식 시간, 음식 번호) 형태로 우선순위 큐에 삽입</span>
+        <span class="n">pq</span><span class="p">.</span><span class="n">push</span><span class="p">({</span><span class="o">-</span><span class="n">food_times</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">});</span>
+    <span class="p">}</span>
+
+    <span class="n">summary</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 먹기 위해 사용한 시간</span>
+    <span class="kt">long</span> <span class="kt">long</span> <span class="n">previous</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 직전에 다 먹은 음식 시간</span>
+    <span class="kt">long</span> <span class="kt">long</span> <span class="n">length</span> <span class="o">=</span> <span class="n">food_times</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="c1">// 남은 음식의 개수</span>
+
+    <span class="c1">// summary + (현재의 음식 시간 - 이전 음식 시간) * 현재 음식 개수와 k 비교</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">summary</span> <span class="o">+</span> <span class="p">((</span><span class="o">-</span><span class="n">pq</span><span class="p">.</span><span class="n">top</span><span class="p">().</span><span class="n">first</span> <span class="o">-</span> <span class="n">previous</span><span class="p">)</span> <span class="o">*</span> <span class="n">length</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">now</span> <span class="o">=</span> <span class="o">-</span><span class="n">pq</span><span class="p">.</span><span class="n">top</span><span class="p">().</span><span class="n">first</span><span class="p">;</span>
+        <span class="n">pq</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+        <span class="n">summary</span> <span class="o">+=</span> <span class="p">(</span><span class="n">now</span> <span class="o">-</span> <span class="n">previous</span><span class="p">)</span> <span class="o">*</span> <span class="n">length</span><span class="p">;</span>
+        <span class="n">length</span> <span class="o">-=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 다 먹은 음식 제외</span>
+        <span class="n">previous</span> <span class="o">=</span> <span class="n">now</span><span class="p">;</span> <span class="c1">// 이전 음식 시간 재설정</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 남은 음식 중에서 몇 번째 음식인지 확인하여 출력</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">result</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">pq</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">food_time</span> <span class="o">=</span> <span class="o">-</span><span class="n">pq</span><span class="p">.</span><span class="n">top</span><span class="p">().</span><span class="n">first</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">pq</span><span class="p">.</span><span class="n">top</span><span class="p">().</span><span class="n">second</span><span class="p">;</span>
+        <span class="n">pq</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+        <span class="n">result</span><span class="p">.</span><span class="n">push_back</span><span class="p">({</span><span class="n">food_time</span><span class="p">,</span> <span class="n">num</span><span class="p">});</span>
+    <span class="p">}</span>
+    <span class="n">sort</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">result</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">compare</span><span class="p">);</span> <span class="c1">// 음식의 번호 기준으로 정렬</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">[(</span><span class="n">k</span> <span class="o">-</span> <span class="n">summary</span><span class="p">)</span> <span class="o">%</span> <span class="n">length</span><span class="p">].</span><span class="n">second</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>내가 이 정답코드에서 인상적으로 느낀 <strong>4개의 포인트</strong>에 대하여 말해보고자 한다.</p>
+
+<p>우선 나동빈 님은,</p>
+
+<h3 id="예외-케이스를-가장-먼저-작성하였다">예외 케이스를 가장 먼저 작성하였다.</h3>
+
+<p><br /></p>
+
+<p><code class="language-plaintext highlighter-rouge">solution()</code> 함수 상단을 보면 <code class="language-plaintext highlighter-rouge">if (summary &lt;= k) return -1;</code> 이 적혀있는 줄을 볼 수 있다.</p>
+
+<p>문제에서는 분명 &lt;<strong>만약 더 섭취해야 할 음식이 없다면 -1을 반환하면 된다.</strong>&gt; 고 말했다.</p>
+
+<p><br /></p>
+
+<p>나는 문제를 해결하는 알고리즘을 <strong>그대로 이용하여</strong> 문제를 풀 수 없음을, 즉 -1을 반환해야 함을 보이려고 했다.</p>
+
+<p>하지만 나동빈님은 문제를 풀 수 없음을 보이는 알고리즘을 <strong>따로 분리하여</strong> 코드 최상단에 작성하였다.</p>
+
+<p>풀 수 없는 문제에 대하여 <strong>가장 빠르게 풀 수 없음을 보이는 알고리즘을 따로 작성</strong>했다는 말이다.</p>
+
+<p>이 점이 첫 번째로 인상깊었다.</p>
+
+<p><br /></p>
+
+<p>두 번째로 인상깊은 점은 나동빈님이 주어진 <strong>k 를 취급하는 방식</strong>이다.</p>
+
+<p>나는 내가 작성한 코드의 <code class="language-plaintext highlighter-rouge">solution()</code> 함수 안의 <code class="language-plaintext highlighter-rouge">while</code> 문에서 k 값을 갱신해가며 답을 도출하려고 시도했다.</p>
+
+<p>하지만 나동빈님의 코드를 살펴보면,</p>
+
+<h3 id="k-값이-변하지-않음을-immutable-속성을-유지함을-볼-수-있다">k 값이 변하지 않음을, immutable 속성을 유지함을 볼 수 있다.</h3>
+
+<p><br /></p>
+
+<p>나동빈님은 <code class="language-plaintext highlighter-rouge">while</code> 문 안에서 <code class="language-plaintext highlighter-rouge">summary</code> <code class="language-plaintext highlighter-rouge">length</code> <code class="language-plaintext highlighter-rouge">previous</code> 를 갱신한다.</p>
+
+<p>그리고 그 갱신 값의 연산 값과 <code class="language-plaintext highlighter-rouge">k</code> 를 비교하는 식으로 <code class="language-plaintext highlighter-rouge">while</code> 문의 조건식을 수립한다.</p>
+
+<p>사실 문제에서 주어진 정보 변수를 변화시키는 것이 그렇게 바람직하게 느껴지지 않았다.</p>
+
+<p>앞으로 코드를 작성할 때 이렇게 <strong>특정 변수의 immutability 를 유지시키는 방향</strong>으로 코드를 작성해야겠다는 생각이 들어 기록한다.</p>
+
+<p><br /></p>
+
+<p>세 번째,</p>
+
+<h3 id="while-문의-조건식과-while-문-안의-수식이-유사한-구조를-갖는다">while 문의 조건식과 while 문 안의 수식이 유사한 구조를 갖는다.</h3>
+
+<p>코드를 작성하다보면 <code class="language-plaintext highlighter-rouge">while</code> 문 안의 코드가 더럽게 마구잡이로 작성될 때가 있다.</p>
+
+<p>하지만 나동빈님의 코드를 보면 <code class="language-plaintext highlighter-rouge">while</code> 문의 조건식으로 <code class="language-plaintext highlighter-rouge">summary + ((-pq.top().first - previous) * length</code> 이 들어가있다.</p>
+
+<p>또한 <code class="language-plaintext highlighter-rouge">while</code> 문 안에는 <code class="language-plaintext highlighter-rouge">summary += (now - previous) * length;</code> 의 코드를 볼 수 있다.</p>
+
+<p><strong>조건식과 내부식이 비슷한 구조를</strong> 유지하는 것, 깔끔하게 코드를 작성하는 방법임을 기억하고 적용해야겠다.</p>
+
+<p><br /></p>
+
+<p>마지막이다.</p>
+
+<p>마지막은 어떤 착안점으로부터 발상할 수 있는지 아직 잘 파악하지 못했다.</p>
+
+<p>아직까지 그저 창의성, 대단함 등으로 여겨진다.</p>
+
+<p>어떤 부분에서 인상이 깊었냐 하면, 바로</p>
+
+<h3 id="compare-함수를-만들고-priority-queue-의-원소들을-vector-에-다시-넣어-compare-의-방식으로-재정렬을-시키는-부분이다">compare 함수를 만들고 priority queue 의 원소들을 vector 에 다시 넣어 compare 의 방식으로 재정렬을 시키는 부분이다.</h3>
+
+<p><br /></p>
+
+<p>우선 챙겨갈 수 있는 내용은,</p>
+
+<p><strong>같은 원소를 가진 자료를 이용할 때 서로 다른 두개의 방식으로 각각 정렬하여 이용할 수 있다는 것이다.</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">pair.first</code> 를 기준으로 내림차순 정렬된 <code class="language-plaintext highlighter-rouge">priority queue</code> 를 이용함과 동시에 <code class="language-plaintext highlighter-rouge">pair.second</code> 를 기준으로 올림차순 정렬된 <code class="language-plaintext highlighter-rouge">vector</code> 또한 이용한다.</p>
+
+<p>뭐, 인상깊었다.</p>
+
+<p>일단은 이렇게 정리한다.</p>
+
+<p><br /></p>
+
+<p>이 문제를 한 줄로 요약하자면</p>
+
+<p>줄 건 주고 다시 생각해보자? 인 것 같다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">priority queue</code> 의 <code class="language-plaintext highlighter-rouge">front</code> 에 해당하는 할당량을 애초에 먼저 내어주는 느낌이랄까.</p>
+
+<p>잘 이해하길 바란다.</p>
+:ET

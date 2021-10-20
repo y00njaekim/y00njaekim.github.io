@@ -1,0 +1,53 @@
+I"�<h2 id="what-is-react-component">What is ‘React Component’</h2>
+
+<p>html(jsx)를 반환하는 <strong>함수</strong>로서 html(jsx) 태그와 같이 사용할 수 있다.</p>
+
+<h2 id="why-to-use-react-component">Why to use ‘React Component’</h2>
+
+<p>많은 html(jsx) 태그들을 한 단어로 줄이고 싶을 때 사용한다.</p>
+
+<p>특정 구조가 <strong>반복해서 사용</strong>되는 경우, 그 구조를 Component 로 만들면 관리하기 용이하다.</p>
+
+<p>또한 <strong>자주 변경되는 HTML UI</strong> 를 Component 로 만들면 재렌더링 측면에서 성능적인 이점이 있다.</p>
+
+<p><strong>다른 페이지를 만들 때</strong> 그 페이지의 html 내용을 하나의 컴포넌트로 만들기도 하며, 다른 팀원과 <strong>협업할 때</strong> 페이지를 컴포넌트 단위로 나눠서 작업을 분배하기도 한다.</p>
+
+<p>하지만, Component 는 결국 함수로서 Component body scope 를 벗어나는 변수나 state 등을 사용할 수 없다. 이 때 scope 를 벗어나는 변수나 state 를 사용하려면 <code class="language-plaintext highlighter-rouge">props</code> 문법을 이용해야 한다.</p>
+
+<h2 id="how-to-use-react-component">How to use ‘React Component’</h2>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">function Modal ()</code> 을 이용하여 Component 를 만들었다. 만들어진 Component 는 <code class="language-plaintext highlighter-rouge">App ()</code> 안에서 html tag 와 같이 사용된다. 이 때 <code class="language-plaintext highlighter-rouge">App()</code> 을 <strong>부모 컴포넌트</strong>, <code class="language-plaintext highlighter-rouge">Modal()</code> 을 <strong>자식 컴포넌트</strong> 라고 한다.</p>
+</blockquote>
+
+<div class="language-react highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">function</span> <span class="nx">App</span> <span class="p">(){</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      HTML 잔뜩있는 곳
+      ...
+      <span class="p">&lt;</span><span class="nc">Modal</span><span class="p">&gt;&lt;/</span><span class="nc">Modal</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">Modal</span><span class="p">(){</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"modal"</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>제목<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>날짜<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>상세내용<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="규칙">규칙</h3>
+
+<blockquote>
+  <p>컴포넌트를 만드는 규칙과 관습을 소개한다.</p>
+</blockquote>
+
+<p>우선, 컴포넌트의 첫 글자는 대문자로 시작하자. 관습이다.</p>
+
+<p>다음으로, return() 안에 있는 html(jsx) 는 하나의 태그로 묶어야 한다.</p>
+:ET
