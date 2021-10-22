@@ -118,4 +118,10 @@ var store = [{
         "tags": ["react"],
         "url": "/react/promise/",
         "teaser": "/assets/images/react.png"
+      },{
+        "title": "[CSS] SCSS 개념 및 사용법",
+        "excerpt":"이번 포스팅에서는 SASS 에 대해 알아보겠다. What? SASS 는 전처리기(Preprocessor)이다. 근데 이제 CSS 로 컴파일 해주는 기능을 곁들인.. Why? CSS 는 사용하기에 다소 불편한 감이 있다. 프로그래밍을 배우는 입장에서 굳이 CSS 를 그렇게 하나하나 다 입력하고 있어야 하나 라는 생각이 든다. 하지만 SCSS 는 프로그래밍 언어처럼 기능한다. 변수를 사용할 수...","categories": ["css"],
+        "tags": ["css","scss","react","코딩애플"],
+        "url": "/css/scss/",
+        "teaser": "/assets/images/default.jpeg"
       }]

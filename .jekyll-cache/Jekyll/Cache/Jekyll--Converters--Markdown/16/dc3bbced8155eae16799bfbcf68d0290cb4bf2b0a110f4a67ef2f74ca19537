@@ -1,0 +1,128 @@
+I"z<p>이번 포스팅에서는 SASS 에 대해 알아보겠다.</p>
+
+<h2 id="what">What?</h2>
+
+<p>SASS 는 전처리기(Preprocessor)이다. 근데 이제 CSS 로 컴파일 해주는 기능을 곁들인..</p>
+
+<p><br /></p>
+
+<h2 id="why">Why?</h2>
+
+<p>CSS 는 사용하기에 다소 불편한 감이 있다. 프로그래밍을 배우는 입장에서 굳이 CSS 를 그렇게 하나하나 다 입력하고 있어야 하나 라는 생각이 든다.</p>
+
+<p>하지만 SCSS 는 프로그래밍 언어처럼 기능한다. <strong>변수</strong>를 사용할 수 있고 다른 CSS 파일을 <strong>import</strong> 할 수 있으며 CSS 를 <strong>nesting</strong> 하게 짤 수도 있다. 또한 복붙 대신 <strong>extends</strong> 를 사용할 수도 있고 함수처럼 기능하는 <strong>mixin, include</strong> 를 사용할 수도 있다.</p>
+
+<p>위에 기술한 내용에 대해서는 후술할 예정이니 일단은 그냥 되게 편하구나~ 하고 넘어가자</p>
+
+<p><br /></p>
+
+<h2 id="how">How?</h2>
+
+<p>우선 SASS 를 설치해야한다</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install </span>node-sass
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="-변수">🎯 변수</h3>
+
+<p>mainColor 라는 변수를 사용하고자 할 때 다음과 같이 사용하면 된다.</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$mainColor</span><span class="p">:</span> <span class="mh">#ff0000</span><span class="p">;</span>
+
+<span class="nc">.red</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="nv">$mainColor</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="-import">🎯 @import</h3>
+
+<p>CSS 스타일 중에 자주 시용하는 것을 우선 <code class="language-plaintext highlighter-rouge">_reset.scss</code> 라는 이름으로 만들어보자.</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// (_reset.scss)</span>
+
+<span class="nt">body</span> <span class="p">{</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">div</span> <span class="p">{</span>
+  <span class="nl">box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>그 다음 <code class="language-plaintext highlighter-rouge">_reset.scss</code> 를 <code class="language-plaintext highlighter-rouge">App.scss</code> 에 똑같이 적용하려 한다. 이 때, <code class="language-plaintext highlighter-rouge">import</code> 를 사용하면 된다.</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// (App.scss)</span>
+
+<span class="k">@import</span> <span class="s2">"./_reset.scss"</span><span class="o">...</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="-nesting">🎯 nesting</h3>
+
+<p>nesting 은 CSS 선택자 중 한칸 띄어쓰기와 동일하게 기능하는 구조로 아래 두 번째 코드와 같이 사용한다.</p>
+
+<p>즉, 아래 두 코드가 같은 기능을 한다.</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span><span class="nc">.container</span> <span class="nt">h4</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">div</span><span class="nc">.container</span> <span class="nt">p</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">green</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span><span class="nc">.container</span> <span class="p">{</span>
+  <span class="nt">h4</span> <span class="p">{</span>
+    <span class="nt">color</span><span class="p">;</span> <span class="nt">blue</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nt">p</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">green</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="-extends">🎯 @extends</h3>
+
+<p><code class="language-plaintext highlighter-rouge">entend</code> 는 비슷한 스타일이지만 한 끗 다른 스타일을 작성할 때 복사 붙여넣기 대신 쓸 수 있는 기능이다. 다음과 같이 사용한다.</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.my-alert</span> <span class="p">{</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="mh">#eeeeee</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">15px</span><span class="p">;</span>
+  <span class="nl">border-radius</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+  <span class="nl">max-width</span><span class="p">:</span> <span class="m">500px</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.my-alert-yellow</span> <span class="p">{</span>
+  <span class="k">@extend</span> <span class="nc">.my-alert</span><span class="p">;</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="no">yellow</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="-mixin-include">🎯 @mixin/ @include</h3>
+
+<p><code class="language-plaintext highlighter-rouge">@mixin</code> 은 함수와 같이 기능한다. 즉 코드를 축약하고 재사용 하는 용도이다. 다음과 같이 사용한다.</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@mixin</span> <span class="nf">redFont</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="mh">#eeeeee</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">25px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.my-alert</span> <span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">redFont</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이 외에도 SCSS 에는 반복문 등 다양한 기능이 있으니 추가로 찾아보길 바란다.</p>
+:ET
