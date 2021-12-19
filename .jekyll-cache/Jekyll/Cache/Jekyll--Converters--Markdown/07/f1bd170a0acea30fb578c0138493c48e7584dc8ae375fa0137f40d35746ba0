@@ -1,0 +1,26 @@
+I"�<h2 id="why">Why</h2>
+
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">props</code> 를 사용하지 않고 모든 컴포넌트에서 <code class="language-plaintext highlighter-rouge">state</code> 를 가져다 쓸 수 있다</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">state</code> 관리가 용이하다</p>
+
+    <p>컴포넌트가 100개 정도 있는 대규모 사이트를 생각해보자. redux 를 이용하지 않고 <code class="language-plaintext highlighter-rouge">props</code> 만 이용하여 컴포넌트 100 곳에서 장바구니 <code class="language-plaintext highlighter-rouge">state</code>를 수정하는 코드를 짰을 때, 중간에 <code class="language-plaintext highlighter-rouge">state</code> 하나에 이상한 값이 들어와서 버그가 생긴다면 어떡해야 하나. 버그 찾으려고 어딜 뒤져야 하나. 아마 장바구니 state 를 수정하는 100개의 컴포넌트를 다 뒤져야 할 것이다!</p>
+
+    <p>근데 redux를 만들어 <code class="language-plaintext highlighter-rouge">state</code> 수정 방법을 미리 정해놓으면 위와 같은 버그가 발생하였을 때 redux안의 <code class="language-plaintext highlighter-rouge">reducer</code> 만 잘 들여다보면 된다. <code class="language-plaintext highlighter-rouge">state</code> 데이터가 어떻게 바뀌는지는 reducer에 전부 다 정의 되어있으니까 말이다.</p>
+  </li>
+</ol>
+
+<h2 id="how">How</h2>
+
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">state</code> 데이터의 수정 방법을 index.js에다가 미리 정의해놓는다 (일명 reducer)</p>
+  </li>
+  <li>
+    <p>원하는 곳에서 <code class="language-plaintext highlighter-rouge">dispatch()</code> 라는 함수를 써서 reducer에게 <code class="language-plaintext highlighter-rouge">state</code> 를 수정해달라고 요청 한다.</p>
+  </li>
+</ol>
+:ET

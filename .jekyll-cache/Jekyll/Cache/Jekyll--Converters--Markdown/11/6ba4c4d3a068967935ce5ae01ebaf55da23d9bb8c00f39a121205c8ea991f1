@@ -1,4 +1,4 @@
-I"2.<h2 id="플로이드-워셜-알고리즘이란">플로이드 워셜 알고리즘이란</h2>
+I"�.<h2 id="플로이드-워셜-알고리즘이란">플로이드 워셜 알고리즘이란</h2>
 
 <p><br />
 플로이드 워셜 알고리즘이란 <strong>최단 경로</strong>를 구하는 알고리즘으로 <strong>다이나믹 프로그래밍</strong>의 일종이다.</p>
@@ -66,7 +66,7 @@
         <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span> <span class="o">&gt;&gt;</span> <span class="n">b</span> <span class="o">&gt;&gt;</span> <span class="n">c</span><span class="p">;</span>
         <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
     <span class="p">}</span>
-    
+
     <span class="c1">// 점화식에 따라 플로이드 워셜 알고리즘을 수행</span>
     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">a</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">a</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
@@ -93,4 +93,11 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
+<hr />
+
+<h2 id="reference">Reference</h2>
+
+<ol>
+  <li>플로이드 와샬 알고리즘 오해 해결 <a href="https://www.youtube.com/watch?v=sLhT9u0jlu0">[유튜브]</a></li>
+</ol>
 :ET

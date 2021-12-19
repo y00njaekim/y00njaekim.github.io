@@ -1,0 +1,39 @@
+I"�
+<h2 id="문자열-자르기">문자열 자르기</h2>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+#include &lt;sstream&gt;
+</span>
+<span class="n">string</span> <span class="n">str</span> <span class="o">=</span> <span class="s">"java c c++ python"</span><span class="p">;</span>
+
+<span class="n">istringstream</span> <span class="nf">istrstream</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="n">string</span> <span class="n">strBuffer</span><span class="p">;</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">res</span><span class="p">;</span>
+<span class="n">res</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+
+<span class="k">while</span><span class="p">(</span><span class="n">getline</span><span class="p">(</span><span class="n">istrstream</span><span class="p">,</span> <span class="n">strBuffer</span><span class="p">,</span> <span class="sc">' '</span><span class="p">))</span> <span class="p">{</span>
+  <span class="n">res</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">strBuffer</span><span class="p">);</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">strBuffer</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">res</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">res</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="sc">'\n'</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><a href="https://chbuljumeok1997.tistory.com/42">[출처]</a></p>
+
+<p><br /></p>
+
+<h2 id="조합">조합</h2>
+
+<h2 id="class-정렬">class 정렬</h2>
+
+<h2 id="c-reference">C++ Reference</h2>
+
+<p>🚩 priority_queue <a href="https://www.cplusplus.com/reference/queue/priority_queue/">[공식문서]</a></p>
+
+<p>🚩 unordered_map <a href="https://www.cplusplus.com/reference/unordered_map/unordered_map/">[공식문서]</a> <a href="https://math-coding.tistory.com/31">[블로그]</a></p>
+:ET

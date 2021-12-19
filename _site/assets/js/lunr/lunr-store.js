@@ -130,4 +130,28 @@ var store = [{
         "tags": ["코딩애플_리액트","react"],
         "url": "/react/useEffect/",
         "teaser": "/assets/images/react.png"
+      },{
+        "title": "[Algorithm] 다이나믹 프로그래밍",
+        "excerpt":"내가 생각하는 다이나믹 프로그래밍 문제 풀이 과정은 다음과 같다. 한 단계 한 단계 살펴보며 디테일한 사항들을 확인하자. 1) DP 문제임을 인지한다 우선 첫 번째로 내가 풀려하는 문제가 DP 문제임을 인지해야 한다. DP 문제를 풀 때 다음과 같은 생각이 들면 DP 문제임을 의심하자. 🙇🏻‍♂️ 음, 이 문제를 어떻게 풀까? 완전 탐색...","categories": ["algorithm"],
+        "tags": ["algorithm","ps"],
+        "url": "/algorithm/%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/",
+        "teaser": "/assets/images/default.jpeg"
+      },{
+        "title": "[React] 리액트 redux 사용 이유",
+        "excerpt":"Why props 를 사용하지 않고 모든 컴포넌트에서 state 를 가져다 쓸 수 있다 state 관리가 용이하다 컴포넌트가 100개 정도 있는 대규모 사이트를 생각해보자. redux 를 이용하지 않고 props 만 이용하여 컴포넌트 100 곳에서 장바구니 state를 수정하는 코드를 짰을 때, 중간에 state 하나에 이상한 값이 들어와서 버그가 생긴다면 어떡해야 하나. 버그...","categories": ["react"],
+        "tags": ["코딩애플_리액트","react"],
+        "url": "/react/redux/",
+        "teaser": "/assets/images/react.png"
+      },{
+        "title": "[Algorithm] 코딩테스트 치트시트",
+        "excerpt":"문자열 자르기 #include &lt;iostream&gt; #include &lt;string&gt; #include &lt;vector&gt; #include &lt;sstream&gt; string str = \"java c c++ python\"; istringstream istrstream(str); string strBuffer; vector&lt;string&gt; res; res.clear(); while(getline(istrstream, strBuffer, ' ')) { res.push_back(strBuffer); cout &lt;&lt; strBuffer &lt;&lt; \" \"; } for(int i=0; i&lt;res.size(); i++){ cout &lt;&lt; res[i] &lt;&lt; '\\n'; } [출처] 조합 class...","categories": ["algorithm"],
+        "tags": ["algorithm","ps"],
+        "url": "/algorithm/%EC%B9%98%ED%8A%B8%EC%8B%9C%ED%8A%B8/",
+        "teaser": "/assets/images/default.jpeg"
+      },{
+        "title": "[Algorithm] c++ 문자열 split",
+        "excerpt":"C++ 로 코딩테스트를 준비하다보면 문자열을 쪼개야 하는 상황이 발생한다. 이 때 문자열을 단 하나의 문자로 쪼개는 경우가 있고 때로는 문자열을 기준으로 쪼개는 경우가 있다. 이 포스팅을 통해 그 일련의 과정을 찬찬히 살펴보자. 문자열을 쪼갤 때면 파이썬으로 갈아탈까 하는 생각이 들곤 한다.. 잘 알아두자.. Example 이 포스팅에서 최종적으로 해결하고자 하는 문제는...","categories": ["algorithm"],
+        "tags": ["algorithm","ps","cpp"],
+        "url": "/algorithm/cpp-%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%AA%BC%EA%B0%9C%EA%B8%B0/",
+        "teaser": "/assets/images/default.jpeg"
       }]
