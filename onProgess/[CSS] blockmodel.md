@@ -38,15 +38,13 @@ fixed postion 하면 부모와의 링크가 끊킴
 1. 부모의 크기 100% 를 사용하다가 안함 즉, 컨텐트의 크기만큼 width height 가 설정됨
 2. 부모 엘리먼트의 크기도 자식 엘리먼트를 포함하는 방향으로 설정되지 않음 (자식을 없는 셈 친다)
 
-
-
 Flex 레이아웃 잡을 때 쓰는 기능
 
 <container>
 
- <item></item>
+<item></item>
 
- <item></item>
+<item></item>
 
 </container>
 
@@ -73,8 +71,6 @@ block level element 에만 적용 가능
 mdn 싸이트에 document 처럼 css 양식 잘 나오는듯?
 
 transition
-
-
 
 🙋‍♂️ 아마 justify 가 가로정렬 align 이 세로정렬?
 
