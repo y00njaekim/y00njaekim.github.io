@@ -1,6 +1,0 @@
-onProgress/
-onProgress/*.md
-assets/**/*.smmx
-**/**/.DS_Store
-/_site
-/.jekyll-cache
