@@ -1,3 +1,4 @@
 onProgress/
 onProgress/*.md
 assets/**/*.smmx
+**/**/.DS_Store
