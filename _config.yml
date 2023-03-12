@@ -109,21 +109,15 @@ author:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       # url: "rladbswo12@gm.gist.ac.kr"
-    # - label: "Website"
-    # icon: "fas fa-fw fa-link"
-    # url: "https://your-website.com"
-    # - label: "Twitter"
-    # icon: "fab fa-fw fa-twitter-square"
-    # url: "https://twitter.com/"
-    # - label: "Facebook"
-    # icon: "fab fa-fw fa-facebook-square"
-    # url: "https://facebook.com/"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/yooonjae/"
+    - label: "Youtube"
+      icon: "fab fa-fw fa-youtube"
+      url: "https://www.youtube.com/@user-zr7mi6pb9q"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/y00njaekim/"
-    # - label: "Instagram"
-    # icon: "fab fa-fw fa-instagram"
-    # url: "https://instagram.com/"
 
 # Site Footer
 footer:
@@ -273,7 +267,8 @@ defaults:
     values:
       layout: single
       author_profile: true
-      read_time: true
+      read_time: false
+      show_date: true
       comments: true
       share: true
       related: true
@@ -286,6 +281,7 @@ defaults:
       layout: single
       author_profile: true
       read_time: false
+      show_date: true
       comments: false
       share: true
       related: false
