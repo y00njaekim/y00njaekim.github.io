@@ -35,6 +35,17 @@ body {
   flex: 1 0 auto;
 }
 
+.progress-bar {
+    background: linear-gradient(to right, #4F91A5 var(--scroll), transparent 0);
+    background-repeat: no-repeat;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 1px;
+    z-index: 9000;
+}
+
 .page {
   @include breakpoint($large) {
     float: right;
@@ -80,7 +91,7 @@ body {
   }
 
   & + .page__meta {
-    margin-top: -0.1em;
+    margin-top: -0.2em;
   }
 }
 

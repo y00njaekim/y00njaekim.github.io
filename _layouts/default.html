@@ -18,6 +18,25 @@
   </head>
 
   <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
+    <!-- This is the bar which shows scroll percentage -->
+    <div class="progress-bar"></div>
+      
+    <!-- progress-bar Script -->
+    <script>
+      var element = document.documentElement,
+        body = document.body,
+        scrollTop = 'scrollTop',
+        scrollHeight = 'scrollHeight',
+        progress = document.querySelector('.progress-bar'),
+        scroll;
+      
+      document.addEventListener('scroll', function() {
+        scroll = (element[scrollTop]||body[scrollTop]) / ((element[scrollHeight]||body[scrollHeight]) - element.clientHeight) * 100;
+        progress.style.setProperty('--scroll', scroll + '%');
+      });
+    </script>
+    
+
     {% include_cached skip-links.html %}
     {% include_cached browser-upgrade.html %}
     {% include_cached masthead.html %}
